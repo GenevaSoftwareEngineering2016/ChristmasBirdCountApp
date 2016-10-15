@@ -23,15 +23,17 @@ namespace ChristmasBirdCountApp
 
             mItems = new List<BirdCount>();
 
-            ArrayAdapter<BirdCount> adapter = new ArrayAdapter<BirdCount>(this, Android.Resource.Layout.SimpleListItem1, mItems);
+            //ArrayAdapter<BirdCount> adapter = new ArrayAdapter<BirdCount>(this, Android.Resource.Layout.SimpleListItem1, mItems);
 
-            mListView.Adapter = adapter;
+            //mListView.Adapter = adapter;
+            mListView.Adapter = new row_adapter(this, mItems);
 
             btnAdd.Click += delegate {
                 //mItems.Add(txtName);
                 string txtName = FindViewById<EditText>(Resource.Id.txtname).Text;
-                adapter.Insert(new BirdCount() { name = txtName }, 0);
-                ((ArrayAdapter)mListView.Adapter).NotifyDataSetChanged();
+                //adapter.Insert(new BirdCount() { name = txtName, count = "0" }, 0);
+                mItems.Add(new BirdCount() { name = txtName, count = "0" });
+                //((ArrayAdapter)mListView.Adapter).NotifyDataSetChanged();
                 FindViewById<EditText>(Resource.Id.txtname).Text = "";
             };
 
