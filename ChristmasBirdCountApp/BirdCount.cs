@@ -15,12 +15,12 @@ namespace ChristmasBirdCountApp
     class BirdCount
     {
         public string name { get; set; }
-        public string count { get; set; }
+        public int count { get; set; }
 
 
-        public override string ToString()
-        {
-            return name; 
-        }
+        //public override string ToString()
+        //{
+        //    return name + " -  " + count; 
+        //}
     }
 }

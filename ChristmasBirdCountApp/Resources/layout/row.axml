@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-  <TextView
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="100">
+    <TextView
         android:id="@+id/left"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_width="0px"
-        android:layout_weight="1"
+        android:layout_weight="80"
+        android:textSize="20dp"
         android:text="left" />
-  <TextView
-      android:id="@+id/right"
-      android:layout_height="wrap_content"
-      android:layout_width="0px"
-      android:layout_weight="1"
-      android:text="right" />
+    <TextView
+        android:id="@+id/right"
+        android:layout_height="60dp"
+        android:layout_width="0px"
+        android:layout_weight="20"
+        android:textSize="20dp"
+        android:text="right" />
 </LinearLayout>
-         

@@ -40,7 +40,14 @@ namespace ChristmasBirdCountApp
             }
 
             view.FindViewById<TextView>(Resource.Id.left).Text = item.name;
-            view.FindViewById<TextView>(Resource.Id.right).Text = item.count;
+            view.FindViewById<TextView>(Resource.Id.right).Text = item.count.ToString();
+
+            var leftClick = view.FindViewById<TextView>(Resource.Id.left);
+            var rightClick = view.FindViewById<TextView>(Resource.Id.right);
+            //rowClick.Clickable = true;
+
+            //leftClick.Click += (sender, args) => item.count++;
+            //rightClick.Click += (sender, args) => item.count++;
 
             return view;
 
