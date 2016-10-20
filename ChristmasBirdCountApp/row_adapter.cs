@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -39,8 +38,8 @@ namespace ChristmasBirdCountApp
                 view = inflater.Inflate(Resource.Layout.row, parent, false);
             }
 
-            view.FindViewById<TextView>(Resource.Id.left).Text = item.name;
-            view.FindViewById<TextView>(Resource.Id.right).Text = item.count.ToString();
+            view.FindViewById<TextView>(Resource.Id.left).Text = item.Name;
+            view.FindViewById<TextView>(Resource.Id.right).Text = item.Count.ToString();
 
             var leftClick = view.FindViewById<TextView>(Resource.Id.left);
             var rightClick = view.FindViewById<TextView>(Resource.Id.right);

@@ -8,8 +8,9 @@
         android:id="@+id/left"
         android:layout_height="60dp"
         android:layout_width="0px"
-        android:layout_weight="80"
+        android:layout_weight="70"
         android:textSize="20dp"
+        android:layout_centerVertical="true"
         android:text="left" />
     <TextView
         android:id="@+id/right"
@@ -17,5 +18,6 @@
         android:layout_width="0px"
         android:layout_weight="20"
         android:textSize="20dp"
+        android:gravity="center"
         android:text="right" />
 </LinearLayout>

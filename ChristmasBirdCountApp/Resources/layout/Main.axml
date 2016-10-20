@@ -5,11 +5,26 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <Button
+  <LinearLayout
+      android:orientation="horizontal"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/linearLayout1" >    
+        <Button
+        android:text="Clear All"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/btnClear" />
+        <Button
         android:text="Add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:id="@+id/btnAdd" />
+  </LinearLayout>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
