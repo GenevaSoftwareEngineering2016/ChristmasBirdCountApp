@@ -3,10 +3,8 @@ using Android.App;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
-using Android.Graphics;
-using Java.IO;
+using System;
 using System.IO;
-using System.Xml.Serialization;
 
 namespace ChristmasBirdCountApp
 {
@@ -25,6 +23,7 @@ namespace ChristmasBirdCountApp
             FindViewById<EditText>(Resource.Id.txtname).RequestFocus();
             Button btnAdd = FindViewById<Button>(Resource.Id.btnAdd);
             Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
+            Button btnSave = FindViewById<Button>(Resource.Id.btnSave);
             mListView = FindViewById<ListView>(Resource.Id.myListView);
 
             //mItems = new List<BirdCount>();
@@ -59,11 +58,43 @@ namespace ChristmasBirdCountApp
 
             mListView.ItemClick += MListView_ItemClick;
             btnClear.Click += BtnClear_Click;
+            btnSave.Click += BtnSave_Click;
 
             // Set our view from the "main" layout resource
             // SetContentView (Resource.Layout.Main);
         }
-        
+
+        private void BtnSave_Click(object sender, System.EventArgs e)
+        {
+            //    string path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal) + "/filetemp.txt");
+            //    FileStream fs = null;
+            //    bool bExists = false;
+            //    if (File.Exists(path))
+            //    {
+            //        fs = new FileStream(path, FileMode.Open);
+            //        bExists = true;
+            //    }
+            //    else
+            //    {
+            //        fs = new FileStream(path, FileMode.Create);
+            //    }
+            //    StreamWriter sw = new StreamWriter(fs);
+            //if (bExists)
+            //{
+            //    sw.Write("¬" + t.Result.Text);
+            //}
+            //else
+            //{
+            //    sw.Write(t.Result.Text);
+            //}
+
+            //    foreach (var item in mItems)
+            //    {
+            //        sw.Write(item.Name);
+            //    }
+
+            //    fs.Close();
+        }
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
