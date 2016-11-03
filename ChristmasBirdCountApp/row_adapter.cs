@@ -1,11 +1,6 @@
-using System;
+// (c) 2016 Geneva College Senior Software Project Team
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
