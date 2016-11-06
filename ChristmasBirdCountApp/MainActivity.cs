@@ -4,6 +4,9 @@ using Android.App;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
+using System;
+using Android.Content;
+using ChristmasBirdCountApp.Resources;
 
 namespace ChristmasBirdCountApp
 {
@@ -22,6 +25,7 @@ namespace ChristmasBirdCountApp
             FindViewById<EditText>(Resource.Id.txtname).RequestFocus();
             Button btnAdd = FindViewById<Button>(Resource.Id.btnAdd);
             Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
+            Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
             mListView = FindViewById<ListView>(Resource.Id.myListView);
 
             //mItems = new List<BirdCount>();
@@ -56,11 +60,19 @@ namespace ChristmasBirdCountApp
 
             mListView.ItemClick += MListView_ItemClick;
             btnClear.Click += BtnClear_Click;
+            btnSubmit.Click += BtnSubmit_Click;
 
             // Set our view from the "main" layout resource
             // SetContentView (Resource.Layout.Main);
         }
-        
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(EmailFormActivity));
+            StartActivity(intent);
+
+            SetContentView(Resource.Layout.EmailForm);
+        }
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
