@@ -1,5 +1,4 @@
 ﻿// (c) 2016 Geneva College Senior Software Project Team
-// With help (code) from: Sven-Michael Stübe @ http://stackoverflow.com/questions/39678310/add-email-body-text-and-send-email-from-xamarin-android-app/39681516#39681516
 using Android.App;
 using Android.Widget;
 using Android.OS;
