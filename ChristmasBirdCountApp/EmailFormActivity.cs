@@ -1,18 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 
-namespace ChristmasBirdCountApp.Resources
+namespace ChristmasBirdCountApp
 {
-    [Activity(Label = "EmailFormActivity")]
+    [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2")]
     public class EmailFormActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

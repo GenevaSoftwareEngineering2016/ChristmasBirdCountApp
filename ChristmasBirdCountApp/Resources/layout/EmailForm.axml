@@ -3,16 +3,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
-        android:text="Send"
-        android:layout_width="152.5dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSend" />
-    <Button
-        android:text="Return"
-        android:layout_width="152.5dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnReturn" />
     <TextView
         android:text="To:"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -45,4 +35,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtHoursDriven" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutSubmitPage">
+        <Button
+            android:text="Return"
+            android:layout_width="152.5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btnReturn"
+            android:clickable="true"
+            android:editable="false"
+            android:enabled="true" />
+        <Button
+            android:text="Send"
+            android:layout_width="152.5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btnSend"
+            android:clickable="true"
+            android:editable="false"
+            android:enabled="true" />
+    </LinearLayout>
 </LinearLayout>

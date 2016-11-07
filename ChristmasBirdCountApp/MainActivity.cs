@@ -6,7 +6,6 @@ using Android.OS;
 using System.Collections.Generic;
 using System;
 using Android.Content;
-using ChristmasBirdCountApp.Resources;
 
 namespace ChristmasBirdCountApp
 {
@@ -61,17 +60,6 @@ namespace ChristmasBirdCountApp
             mListView.ItemClick += MListView_ItemClick;
             btnClear.Click += BtnClear_Click;
             btnSubmit.Click += BtnSubmit_Click;
-
-            // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
-        }
-
-        private void BtnSubmit_Click(object sender, EventArgs e)
-        {
-            var intent = new Intent(this, typeof(EmailFormActivity));
-            StartActivity(intent);
-
-            SetContentView(Resource.Layout.EmailForm);
         }
 
         private void BtnClear_Click(object sender, System.EventArgs e)
@@ -87,6 +75,14 @@ namespace ChristmasBirdCountApp
 
             mListView = FindViewById<ListView>(Resource.Id.myListView);
             mListView.Adapter = new row_adapter(this, mItems);
+        }
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(EmailFormActivity));
+            StartActivity(intent);
+
+            SetContentView(Resource.Layout.EmailForm);
         }
     }
 }

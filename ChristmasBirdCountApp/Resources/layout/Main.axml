@@ -11,24 +11,33 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
+        android:id="@+id/linearLayoutMainScreen">
         <Button
             android:text="Clear All"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
+            android:editable="false"
+            android:enabled="true"
             android:id="@+id/btnClear" />
         <Button
             android:text="Add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
+            android:editable="false"
+            android:enabled="true"
             android:id="@+id/btnAdd" />
         <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
+            android:text="Submit Report"
             android:layout_height="match_parent"
-            android:id="@+id/btnSubmit" />
+            android:layout_width="wrap_content"
+            android:id="@+id/btnSubmit"
+            android:clickable="true"
+            android:editable="false"
+            android:enabled="true" />
     </LinearLayout>
     <EditText
         android:layout_width="match_parent"
