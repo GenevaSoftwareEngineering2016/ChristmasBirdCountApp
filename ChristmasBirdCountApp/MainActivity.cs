@@ -5,6 +5,8 @@ using Android.OS;
 using System.Collections.Generic;
 using System;
 using System.IO;
+using Android.Views;
+using Android.Content;
 
 namespace ChristmasBirdCountApp
 {
@@ -14,20 +16,26 @@ namespace ChristmasBirdCountApp
         private List<BirdCount> mItems;
         private ListView mListView;
 
+        public static Stream FilePath { get; private set; }
+        public int SelectedID = 0;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.Main);
 
+            // Set focus on Text Box
             FindViewById<EditText>(Resource.Id.txtname).RequestFocus();
+
+            // Initialize Button Variables
             Button btnAdd = FindViewById<Button>(Resource.Id.btnAdd);
             Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
-            Button btnSave = FindViewById<Button>(Resource.Id.btnSave);
+            
+            // Initialize ListView
             mListView = FindViewById<ListView>(Resource.Id.myListView);
 
-            //mItems = new List<BirdCount>();
-
+            // Initialize BirdCount List
             mItems = new List<BirdCount>
             {
                 new BirdCount { Name = "Robin", Count = 8 },
@@ -35,11 +43,10 @@ namespace ChristmasBirdCountApp
                 new BirdCount { Name = "Cardinal", Count = 12 }
             };
 
-            //ArrayAdapter<BirdCount> adapter = new ArrayAdapter<BirdCount>(this, Android.Resource.Layout.SimpleListItem1, mItems);
-
-            //mListView.Adapter = adapter;
+            // Initialize ListView Adapter
             mListView.Adapter = new row_adapter(this, mItems);
 
+            // Start Button Click Events
             btnAdd.Click += delegate
             {
                 string txtName = FindViewById<EditText>(Resource.Id.txtname).Text;
@@ -57,43 +64,59 @@ namespace ChristmasBirdCountApp
             };
 
             mListView.ItemClick += MListView_ItemClick;
+            mListView.ItemLongClick += MListView_ItemLongClick;
             btnClear.Click += BtnClear_Click;
-            btnSave.Click += BtnSave_Click;
+            // End Button Click Events
 
-            // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            // Calls the btnAdd Click Event when Enter Key is Pressed
+            FindViewById<EditText>(Resource.Id.txtname).EditorAction += (sender, e) => {
+                if (e.Event.Action == KeyEventActions.Down && e.Event.KeyCode == Keycode.Enter)
+                {
+                    btnAdd.PerformClick();
+                }
+                else
+                {
+                    e.Handled = false;
+                }
+            };
+
         }
 
-        private void BtnSave_Click(object sender, System.EventArgs e)
+        private void MListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
-            //    string path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal) + "/filetemp.txt");
-            //    FileStream fs = null;
-            //    bool bExists = false;
-            //    if (File.Exists(path))
-            //    {
-            //        fs = new FileStream(path, FileMode.Open);
-            //        bExists = true;
-            //    }
-            //    else
-            //    {
-            //        fs = new FileStream(path, FileMode.Create);
-            //    }
-            //    StreamWriter sw = new StreamWriter(fs);
-            //if (bExists)
-            //{
-            //    sw.Write("¬" + t.Result.Text);
-            //}
-            //else
-            //{
-            //    sw.Write(t.Result.Text);
-            //}
+            var alert = new AlertDialog.Builder(this);
+            SelectedID = e.Position;
+            alert.SetPositiveButton("Remove", removeClicked);
+            alert.SetNeutralButton("Clear Count", clearCount);
+            alert.SetNegativeButton("Close", closeClicked);
 
-            //    foreach (var item in mItems)
-            //    {
-            //        sw.Write(item.Name);
-            //    }
+            alert.Create().Show();
+        }
 
-            //    fs.Close();
+        private void closeClicked(object sender, DialogClickEventArgs e)
+        {
+            
+        }
+
+        private void clearCount(object sender, DialogClickEventArgs e)
+        {
+            mItems[SelectedID].Count = 0;
+            mListView = FindViewById<ListView>(Resource.Id.myListView);
+            mListView.Adapter = new row_adapter(this, mItems);
+
+            Toast.MakeText(this, mItems[SelectedID].Name + "'s Count has been set to \"0\"", ToastLength.Short).Show();
+        }
+
+        private void removeClicked(object sender, DialogClickEventArgs e)
+        {
+            string deletedName = mItems[SelectedID].Name;
+
+            mItems.RemoveAt(SelectedID);
+            mListView = FindViewById<ListView>(Resource.Id.myListView);
+            mListView.Adapter = new row_adapter(this, mItems);
+           
+            Toast.MakeText(this, deletedName + " has been removed", ToastLength.Short).Show();
+            
         }
 
         private void BtnClear_Click(object sender, System.EventArgs e)
