@@ -19,9 +19,20 @@ namespace ChristmasBirdCountApp.Resources
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.EmailForm);
+            Button btnReturn = FindViewById<Button>(Resource.Id.btnReturn);
+            btnReturn.Click += BtnReturn_Click;
 
             // Create your application here
         }
+
+        private void BtnReturn_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
+
+            SetContentView(Resource.Layout.Main);
+        }
+
         protected override void OnStart()
         {
             base.OnStart();

@@ -3,6 +3,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <Button
+        android:text="Send"
+        android:layout_width="152.5dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSend" />
+    <Button
+        android:text="Return"
+        android:layout_width="152.5dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnReturn" />
     <TextView
         android:text="To:"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -14,4 +24,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edtxtToEmail" />
+    <TextView
+        android:text="Region"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblRegion" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnRegion" />
+    <TextView
+        android:text="Hours Driven"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblHoursDriven" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtHoursDriven" />
 </LinearLayout>
