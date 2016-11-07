@@ -3,7 +3,6 @@ using Android.App;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
-using System;
 using System.IO;
 using Android.Views;
 using Android.Content;

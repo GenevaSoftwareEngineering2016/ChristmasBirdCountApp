@@ -1,21 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
+// (c) 2016 Geneva College Senior Software Project Team
 namespace ChristmasBirdCountApp
 {
-    class BirdCount
+    public class BirdCount
     {
         public string Name { get; set; }
         public int Count { get; set; }
-
     }
 }
