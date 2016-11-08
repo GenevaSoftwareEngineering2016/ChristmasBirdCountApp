@@ -77,14 +77,6 @@ namespace ChristmasBirdCountApp
             // Load Existing List of Birds from .csv File
             birdList = BirdListFile.LoadBirdListFromFile();
 
-            // Initialize BirdCount List
-            //birdList = new List<BirdCount>
-            //{
-            //    new BirdCount { Name = "Robin", Count = 8 },
-            //    new BirdCount { Name = "Blue Jay", Count = 10 },
-            //    new BirdCount { Name = "Cardinal", Count = 12 }
-            //};
-
             // Initialize ListView Adapter
             mListView.Adapter = new row_adapter(this, birdList);
 
@@ -133,8 +125,7 @@ namespace ChristmasBirdCountApp
             mListView = FindViewById<ListView>(Resource.Id.myListView);
             mListView.Adapter = new row_adapter(this, birdList);
            
-            Toast.MakeText(this, deletedName + " has been removed", ToastLength.Short).Show();
-            
+            Toast.MakeText(this, deletedName + " has been removed", ToastLength.Short).Show();    
         }
 
         private void BtnClear_Click(object sender, System.EventArgs e)

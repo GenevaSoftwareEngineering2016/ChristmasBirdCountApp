@@ -92,10 +92,8 @@ namespace ChristmasBirdCountApp
                 Toast.MakeText(Application.Context, "Could not load file or file does not exist!", ToastLength.Long).Show();
             }
 
-            // HACK - ADC 11/07/2016
             // Invert the Bird List to Correct for Reading the .csv File "Backwards"
             loadedBirdList.Reverse();
-            // END HACK - ADC 11/07/2016
 
             return loadedBirdList;
         }
