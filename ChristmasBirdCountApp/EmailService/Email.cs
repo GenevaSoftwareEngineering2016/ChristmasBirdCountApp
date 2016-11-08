@@ -11,13 +11,10 @@ namespace EmailService
     {
         public MimeMessage EmailMessage { get; set; }
 
-        public void CreateEmailMessage(string toAddress, string subjectText, string bodyText)
+        public void CreateEmailMessage(string toAddress, string subjectText, StringBuilder emailBody)
         {
             // Following Code Adapted From Morten Godrim Jensen @ http://stackoverflow.com/questions/30255789/how-to-send-a-mail-in-xamarin-using-system-net-mail-smtpclient
             // Following Code Adapted From https://github.com/jstedfast/MailKit
-            // Build the Body of the Email
-            var emailBody = new StringBuilder();
-            emailBody.AppendLine(bodyText);
 
             // Set Up Email Parameters
             EmailMessage = new MimeMessage();

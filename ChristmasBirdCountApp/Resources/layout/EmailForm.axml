@@ -31,6 +31,34 @@
             android:editable="false"
             android:enabled="true" />
     </LinearLayout>
+<!-- Below: Collect Names of All Team/Party Members -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutPartyMembers">
+      <TextView
+          android:text="Party Members:"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblPartyMembers"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="text"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtPartyMembers"
+          android:clickable="true"
+          android:editable="true"
+          android:enabled="true" />
+    </LinearLayout>
 <!-- Below: Collect Region of Count Circle -->
     <LinearLayout
         android:orientation="horizontal"
@@ -192,34 +220,6 @@
             android:id="@+id/txtHoursOwling"
             android:clickable="true"
             android:editable="false"
-            android:enabled="true" />
-    </LinearLayout>
-<!-- Below: Collect Names of All Team/Party Members -->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayoutPartyMembers">
-        <TextView
-            android:text="Party Members:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblPartyMembers"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <EditText
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtPartyMembers"
-            android:clickable="true"
-            android:editable="true"
             android:enabled="true" />
     </LinearLayout>
 <!-- Below: Collect Any Additional Notes -->

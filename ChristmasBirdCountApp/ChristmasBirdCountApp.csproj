@@ -104,6 +104,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\audubon_society2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="EmailService\EmailService.csproj">
+      <Project>{878E5A89-575E-4E17-ADD7-0C11CEE5FE64}</Project>
+      <Name>EmailService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
