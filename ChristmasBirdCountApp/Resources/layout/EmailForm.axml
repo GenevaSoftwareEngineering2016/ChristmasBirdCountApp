@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- (c) 2016 Geneva College Senior Software Project Team -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -39,25 +40,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutPartyMembers">
-      <TextView
-          android:text="Party Members:"
-          android:textAppearance="?android:attr/textAppearanceLarge"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:id="@+id/lblPartyMembers"
-          android:clickable="false"
-          android:editable="false"
-          android:enabled="true" />
-      <EditText
-          android:inputType="text"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:id="@+id/txtPartyMembers"
-          android:clickable="true"
-          android:editable="true"
-          android:enabled="true" />
+        <TextView
+            android:text="Party Members:"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/lblPartyMembers"
+            android:clickable="false"
+            android:editable="false"
+            android:enabled="true" />
+        <EditText
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/txtPartyMembers"
+            android:clickable="true"
+            android:editable="true"
+            android:enabled="true" />
     </LinearLayout>
 <!-- Below: Collect Region of Count Circle -->
     <LinearLayout

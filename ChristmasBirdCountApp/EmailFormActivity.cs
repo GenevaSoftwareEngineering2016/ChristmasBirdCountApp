@@ -1,3 +1,4 @@
+// (c) 2016 Geneva College Senior Software Project Team
 using System;
 using System.Text;
 using Android.App;
