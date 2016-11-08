@@ -84,13 +84,20 @@ namespace ChristmasBirdCountApp
 
         private void MListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
-            var alert = new AlertDialog.Builder(this);
-            SelectedID = e.Position;
-            alert.SetPositiveButton("Remove", removeClicked);
-            alert.SetNeutralButton("Clear Count", clearCount);
-            alert.SetNegativeButton("Close", closeClicked);
+            //pull up dialog
 
-            alert.Create().Show();
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+
+            PopUp PopDialog = new PopUp();
+            PopDialog.Show(transaction, "Dialog Fragment");
+
+            //var alert = new AlertDialog.Builder(this);
+            //SelectedID = e.Position;
+            //alert.SetPositiveButton("Remove", removeClicked);
+            //alert.SetNeutralButton("Clear Count", clearCount);
+            //alert.SetNegativeButton("Close", closeClicked);
+
+            //alert.Create().Show();
         }
 
         private void closeClicked(object sender, DialogClickEventArgs e)
