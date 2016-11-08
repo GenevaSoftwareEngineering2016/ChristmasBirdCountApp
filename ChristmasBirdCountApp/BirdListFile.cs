@@ -33,25 +33,71 @@ namespace ChristmasBirdCountApp
                 csvTextBuilder.AppendLine(string.Join(delimiter, csvOutput[index]));
             }
 
-            SaveBirdListToFile(csvTextBuilder); // Save the attachment for later access when sending the email
+            SaveBirdListToFile(csvTextBuilder); // Save the bird list for later loading data into app or access for attachment when sending email
+            // NOTE: Bird count list is saved in .csv file in same order as displayed in app.  Will be read back into app "backwards" (unless a List<T>.Reverse() is used).
         }
 
-        public static void SaveBirdListToFile(StringBuilder csvText)
+        private static void SaveBirdListToFile(StringBuilder csvText)
         {
             Directory = Environment.ExternalStorageDirectory.ToString();
             FilePath = Path.Combine(Directory, "BirdCountResults.csv");
 
             try
             {
-                using (var streamWriter = new StreamWriter(FilePath, true))
+                using (StreamWriter streamWriter = new StreamWriter(FilePath, false))
                 {
                     streamWriter.WriteLine(csvText.ToString());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
                 Toast.MakeText(Application.Context, "Could not create file!", ToastLength.Long).Show();
             }
+        }
+
+        public static List<BirdCount> LoadBirdListFromFile()
+        {
+            List<BirdCount> loadedBirdList = new List<BirdCount>();
+            Directory = Environment.ExternalStorageDirectory.ToString();
+            FilePath = Path.Combine(Directory, "BirdCountResults.csv");
+
+            try
+            {
+                if (File.Exists(FilePath))
+                {
+                    using (StreamReader fileReader = new StreamReader(File.OpenRead(FilePath)))
+                    {
+                        while (!fileReader.EndOfStream)
+                        {
+                            var line = fileReader.ReadLine();
+                            var birdCountItem = line.Split(',');
+                            if (birdCountItem[0] != "" && birdCountItem[0] != null)
+                            {
+                                loadedBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]) });
+                            }
+                            else { }
+                        }
+                    }
+                }
+                else
+                {
+                    // Create a new file, because one does not already exist.
+                    using (StreamWriter streamWriter = new StreamWriter(File.Create(FilePath))){}
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                Toast.MakeText(Application.Context, "Could not load file or file does not exist!", ToastLength.Long).Show();
+            }
+
+            // HACK - ADC 11/07/2016
+            // Invert the Bird List to Correct for Reading the .csv File "Backwards"
+            loadedBirdList.Reverse();
+            // END HACK - ADC 11/07/2016
+
+            return loadedBirdList;
         }
     }
 }
