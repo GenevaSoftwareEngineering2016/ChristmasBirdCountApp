@@ -32,7 +32,6 @@ namespace ChristmasBirdCountApp
             Button btnAdd = FindViewById<Button>(Resource.Id.btnAdd);
             Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
             Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
-
             
             // Initialize ListView
             mListView = FindViewById<ListView>(Resource.Id.myListView);
@@ -101,19 +100,19 @@ namespace ChristmasBirdCountApp
         {
             var alert = new AlertDialog.Builder(this);
             SelectedID = e.Position;
-            alert.SetPositiveButton("Remove", removeClicked);
-            alert.SetNeutralButton("Clear Count", clearCount);
-            alert.SetNegativeButton("Close", closeClicked);
+            alert.SetPositiveButton("Remove", Remove_Click);
+            alert.SetNeutralButton("Clear Count", ClearCount_Click);
+            alert.SetNegativeButton("Close", Close_Click);
 
             alert.Create().Show();
         }
 
-        private void closeClicked(object sender, DialogClickEventArgs e)
+        private void Close_Click(object sender, DialogClickEventArgs e)
         {
-            
+            // Closes Long-Click Modal
         }
 
-        private void clearCount(object sender, DialogClickEventArgs e)
+        private void ClearCount_Click(object sender, DialogClickEventArgs e)
         {
             birdList[SelectedID].Count = 0;
             mListView = FindViewById<ListView>(Resource.Id.myListView);
@@ -122,7 +121,7 @@ namespace ChristmasBirdCountApp
             Toast.MakeText(this, birdList[SelectedID].Name + "'s Count has been set to \"0\"", ToastLength.Short).Show();
         }
 
-        private void removeClicked(object sender, DialogClickEventArgs e)
+        private void Remove_Click(object sender, DialogClickEventArgs e)
         {
             string deletedName = birdList[SelectedID].Name;
 
@@ -150,6 +149,10 @@ namespace ChristmasBirdCountApp
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
+            // Save Existing List of Birds to .csv File
+            BirdListFile.CreateBirdListFile(birdList);
+
+            // Start New Intent to Open New Screen for Submit Form
             var intent = new Intent(this, typeof(EmailFormActivity));
             StartActivity(intent);
 

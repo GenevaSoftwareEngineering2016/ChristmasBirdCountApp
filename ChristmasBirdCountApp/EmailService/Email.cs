@@ -24,28 +24,35 @@ namespace EmailService
             EmailMessage.Body = new TextPart("plain") { Text = emailBody.ToString() };
         }
 
-        public void AddAttachmentToEmail(string filepath)
-        {
-            // Code and Comments Borrowed from http://www.mimekit.net/docs/html/CreatingMessages.htm#CreateMessageWithAttachments
-            // Create an attachment for the file located at path
-            var attachment = new MimePart("file", "csv")
-            {
-                ContentObject = new ContentObject(File.OpenRead(filepath), ContentEncoding.Default),
-                ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
-                ContentTransferEncoding = ContentEncoding.Base64,
-                FileName = Path.GetFileName(filepath)
-            };
+        //public void AddAttachmentToEmail(string filepath)
+        //{
+        //    // Code and Comments Borrowed from http://www.mimekit.net/docs/html/CreatingMessages.htm#CreateMessageWithAttachments
+        //    try
+        //    {
+        //        // Create an attachment for the file located at path
+        //        var attachment = new MimePart("file", "csv")
+        //        {
+        //            ContentObject = new ContentObject(File.OpenRead(filepath), ContentEncoding.Default),
+        //            ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
+        //            ContentTransferEncoding = ContentEncoding.Base64,
+        //            FileName = Path.GetFileName(filepath)
+        //        };
 
-            // Create the multipart/mixed container to hold the message text and the file attachment
-            var multipart = new Multipart("mixed");
-            multipart.Add(EmailMessage.Body);
-            multipart.Add(attachment);
+        //        // Create the multipart/mixed container to hold the message text and the file attachment
+        //        var multipart = new Multipart("mixed");
+        //        multipart.Add(EmailMessage.Body);
+        //        multipart.Add(attachment);
 
-            // Set the multipart/mixed as the message body
-            EmailMessage.Body = multipart;
-        }
+        //        // Set the multipart/mixed as the message body
+        //        EmailMessage.Body = multipart;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine(ex);
+        //    }  
+        //}
 
-        public bool SendEmail()
+        public bool SendEmail(bool addAttachment = false, string attachmentFilePath = "")
         {
             // Connect to SMTP Email Server
             SmtpConnection smtpConnection = new SmtpConnection();
@@ -63,20 +70,65 @@ namespace EmailService
                 return false;   // The email failed to send becuase a connection to the SMTP server could not be established.
             }
 
-            // Attempt to Send Email
-            try
+            if (addAttachment)
             {
-                // Send Email
-                smtpConnection.Client.Send(EmailMessage);
+                // Code and Comments Borrowed from http://www.mimekit.net/docs/html/CreatingMessages.htm#CreateMessageWithAttachments
+                try
+                {
+                    // Create an attachment for the file located at path,
+                    // Add that attachment to the email,
+                    // And Send the Email
+                    using (FileStream fileOpener = File.OpenRead(attachmentFilePath))
+                    {
+                        var attachment = new MimePart("file", "csv")
+                        {
+                            ContentObject = new ContentObject(fileOpener, ContentEncoding.Default),
+                            ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
+                            ContentTransferEncoding = ContentEncoding.Base64,
+                            FileName = Path.GetFileName(attachmentFilePath)
+                        };
 
-                // Close the SMTP Client/Server Connection
-                smtpConnection.CloseSmtpConnection();
+                        // Create the multipart/mixed container to hold the message text and the file attachment
+                        var multipart = new Multipart("mixed");
+                        multipart.Add(EmailMessage.Body);
+                        multipart.Add(attachment);
 
-                return true;    // The email was sent.
+                        // Set the multipart/mixed as the message body
+                        EmailMessage.Body = multipart;
+
+                        // Send Email
+                        smtpConnection.Client.Send(EmailMessage);
+                    }
+
+                    // Close the SMTP Client/Server Connection
+                    smtpConnection.CloseSmtpConnection();
+
+                    return true;    // The email was sent.
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
+                    return false;   // The email failed to send.
+                }
             }
-            catch (Exception)
+            else
             {
-                return false;   // The email failed to send.
+                // Attempt to Send Email
+                try
+                {
+                    // Send Email
+                    smtpConnection.Client.Send(EmailMessage);
+
+                    // Close the SMTP Client/Server Connection
+                    smtpConnection.CloseSmtpConnection();
+
+                    return true;    // The email was sent.
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
+                    return false;   // The email failed to send.
+                }
             }
         }
     }

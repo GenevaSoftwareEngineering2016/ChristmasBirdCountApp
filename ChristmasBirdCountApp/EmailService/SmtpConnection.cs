@@ -24,7 +24,7 @@ namespace EmailService
                 Client.AuthenticationMechanisms.Remove("XOAUTH2");
 
                 // SMTP Server Requires Authentication
-                Client.Authenticate("gc.seniorsoftwareproject@gmail.com", "----------");
+                Client.Authenticate("gc.seniorsoftwareproject@gmail.com", "M0b1l3F1rst(-)");
             }
             catch (Exception)
             {

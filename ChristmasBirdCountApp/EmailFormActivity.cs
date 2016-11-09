@@ -165,10 +165,8 @@ namespace ChristmasBirdCountApp
 
             emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _regionSelection.SelectedItem, emailBodyText);
 
-            // Attach BirdCountFile To Email
-            //emailToSend.AddAttachmentToEmail(/*Path to File*/);
-
-            emailSent = emailToSend.SendEmail();
+            // Send the Email - We Are Adding an Attachment
+            emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);
 
             if (emailSent)
             {
@@ -178,6 +176,11 @@ namespace ChristmasBirdCountApp
             {
                 Toast.MakeText(this, "Unable to send email.", ToastLength.Short).Show();
             }
+
+            // Return to the Main App Screen
+            var intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
+            SetContentView(Resource.Layout.Main);
         }
     }
 }
