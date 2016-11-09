@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ApplicationName">ChristmasBirdCountApp</string>
+  <string name="ApplicationName">ChristmasBirdCountApp</string>
   <string name="RegionPrompt">Choose a Region</string>
   <string-array name="RegionList">
     <item>Beaver</item>

@@ -1,5 +1,6 @@
 ﻿// (c) 2016 Geneva College Senior Software Project Team
 using System;
+using System.Runtime.Versioning;
 using MailKit.Net.Smtp;
 
 namespace EmailService
@@ -24,7 +25,7 @@ namespace EmailService
                 Client.AuthenticationMechanisms.Remove("XOAUTH2");
 
                 // SMTP Server Requires Authentication
-                Client.Authenticate("gc.seniorsoftwareproject@gmail.com", "M0b1l3F1rst(-)");
+                Client.Authenticate("gc.seniorsoftwareproject@gmail.com", "-----");
             }
             catch (Exception)
             {
