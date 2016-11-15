@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- (c) 2016 Geneva College Senior Software Project Team -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -11,19 +12,34 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
+        android:id="@+id/linearLayoutMainScreen">
+		
         <Button
             android:text="Clear All"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
+            android:editable="false"
+            android:enabled="true"
             android:id="@+id/btnClear" />
         <Button
             android:text="Add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:clickable="true"
+            android:editable="false"
+            android:enabled="true"
             android:id="@+id/btnAdd" />
+        <Button
+            android:text="Submit Report"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/btnSubmit"
+            android:clickable="true"
+            android:editable="false"
+            android:enabled="true" />
     </LinearLayout>
     <EditText
         android:layout_width="match_parent"

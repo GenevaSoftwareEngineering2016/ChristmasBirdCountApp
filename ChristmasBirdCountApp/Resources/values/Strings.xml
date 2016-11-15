@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">ChristmasBirdCountApp</string>
+  <string name="ApplicationName">ChristmasBirdCountApp</string>
+  <string name="RegionPrompt">Choose a Region</string>
+  <string-array name="RegionList">
+    <item>Beaver</item>
+    <item>Beaver Falls</item>
+    <item>Big Beaver</item>
+    <item>Brighton Township</item>
+    <item>Meadville</item>
+    <item>Pittsburgh - Downtown</item>
+    <item>Pittsburgh - North Hills</item>
+    <item>Pittsburgh - Oakland</item>
+  </string-array>
 </resources>

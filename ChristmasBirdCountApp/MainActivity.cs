@@ -13,7 +13,7 @@ namespace ChristmasBirdCountApp
     [Activity(Label = "Bird Counter", MainLauncher = true, Icon = "@drawable/audubon_society2")]
     public class MainActivity : Activity
     {
-        private List<BirdCount> mItems;
+        private List<BirdCount> birdList;
         private ListView mListView;
 
         public static Stream FilePath { get; private set; }
@@ -31,20 +31,10 @@ namespace ChristmasBirdCountApp
             // Initialize Button Variables
             Button btnAdd = FindViewById<Button>(Resource.Id.btnAdd);
             Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
+            Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
             
             // Initialize ListView
             mListView = FindViewById<ListView>(Resource.Id.myListView);
-
-            // Initialize BirdCount List
-            mItems = new List<BirdCount>
-            {
-                new BirdCount { Name = "Robin", Count = 8 },
-                new BirdCount { Name = "Blue Jay", Count = 10 },
-                new BirdCount { Name = "Cardinal", Count = 12 }
-            };
-
-            // Initialize ListView Adapter
-            mListView.Adapter = new row_adapter(this, mItems);
 
             // Start Button Click Events
             btnAdd.Click += delegate
@@ -52,8 +42,8 @@ namespace ChristmasBirdCountApp
                 string txtName = FindViewById<EditText>(Resource.Id.txtname).Text;
                 if (txtName != "")
                 {
-                    mItems.Insert(0, new BirdCount() { Name = txtName, Count = 0 });
-                    mListView.Adapter = new row_adapter(this, mItems);
+                    birdList.Insert(0, new BirdCount() { Name = txtName, Count = 0 });
+                    mListView.Adapter = new row_adapter(this, birdList);
                     FindViewById<EditText>(Resource.Id.txtname).Text = "";
                 }
                 else
@@ -66,6 +56,8 @@ namespace ChristmasBirdCountApp
             mListView.ItemClick += MListView_ItemClick;
             mListView.ItemLongClick += MListView_ItemLongClick;
             btnClear.Click += BtnClear_Click;
+            btnSubmit.Click += BtnSubmit_Click;
+			
             // End Button Click Events
 
             // Calls the btnAdd Click Event when Enter Key is Pressed
@@ -80,6 +72,28 @@ namespace ChristmasBirdCountApp
                 }
             };
 
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            // Load Existing List of Birds from .csv File
+            birdList = BirdListFile.LoadBirdListFromFile();
+
+            // Initialize ListView Adapter
+            mListView.Adapter = new row_adapter(this, birdList);
+
+            // Register Event Handlers
+        }
+
+        protected override void OnStop()
+        {
+            // Save Existing List of Birds to .csv File
+            BirdListFile.CreateBirdListFile(birdList);
+
+            // Deregister Event Handlers
+            base.OnStop();
         }
 
         private void MListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
@@ -156,17 +170,29 @@ namespace ChristmasBirdCountApp
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
-            mItems.Clear();
+            birdList.Clear();
             mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, mItems);
+            mListView.Adapter = new row_adapter(this, birdList);
         }
 
         private void MListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            mItems[e.Position].Count++;
+            birdList[e.Position].Count++;
 
             mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, mItems);
+            mListView.Adapter = new row_adapter(this, birdList);
+        }
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            // Save Existing List of Birds to .csv File
+            BirdListFile.CreateBirdListFile(birdList);
+
+            // Start New Intent to Open New Screen for Submit Form
+            var intent = new Intent(this, typeof(EmailFormActivity));
+            StartActivity(intent);
+
+            SetContentView(Resource.Layout.EmailForm);
         }
     }
 }
