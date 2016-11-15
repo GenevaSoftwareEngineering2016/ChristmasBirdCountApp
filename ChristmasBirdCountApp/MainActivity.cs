@@ -99,6 +99,7 @@ namespace ChristmasBirdCountApp
             PopUp PopDialog = new PopUp(id, birdName, birdCount);
             PopDialog.Show(transaction, "Dialog Fragment");
 
+            //subscribing to events in popup class
             PopDialog.OnDelete += PopDialog_OnDelete;
             PopDialog.OnUpdate += PopDialog_OnUpdate;
 

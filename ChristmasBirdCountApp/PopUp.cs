@@ -16,7 +16,7 @@ namespace ChristmasBirdCountApp
     //custome event arguments for deleting a bird
     public class OnDeleteEventArgs : EventArgs
     {
-        private int mid;
+        //private int mid;
 
         public int id { get; set; }
 
@@ -28,9 +28,9 @@ namespace ChristmasBirdCountApp
     //custom event arguments for updating a bird
     public class OnUpdateEventArgs : EventArgs
     {
-        private int mid;
-        private string mBirdName;
-        private string mBirdCount;
+        //private int mid;
+        //private string mBirdName;
+        //private string mBirdCount;
 
         public int id { get; set; }
         public string birdName { get; set; }
@@ -90,19 +90,23 @@ namespace ChristmasBirdCountApp
 
         private void BtnUpdateListing_Click(object sender, EventArgs e)
         {
+            //calling the update event
             OnUpdate.Invoke(this, new OnUpdateEventArgs(birdId, txtBirdName.Text, txtBirdCount.Text));
             this.Dismiss();
         }
 
         void btnClearListing_Click(object sender, EventArgs e)
         {
+            //calling the delete event
             OnDelete.Invoke(this, new OnDeleteEventArgs(birdId));
             this.Dismiss();
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
+            //removing title bar of fragment for cleaner look
             Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
+
             base.OnActivityCreated(savedInstanceState);
             //Dialog.Window.Attributes.WindowAnimations = Resource
         }
