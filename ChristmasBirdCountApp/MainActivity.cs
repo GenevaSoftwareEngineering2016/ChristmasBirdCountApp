@@ -84,13 +84,25 @@ namespace ChristmasBirdCountApp
 
         private void MListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
-            //pull up dialog
+            // get selected bird info
+            int id = e.Position;
+            string birdName = mItems[id].Name;
+            int birdCount = mItems[id].Count;
 
+            //Bundle args = new Bundle();
+            //args.PutInt("birdCount", birdCount);
+            //args.PutString("birdName", birdName);
+
+            //pull up the dialog
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
 
-            PopUp PopDialog = new PopUp();
+            PopUp PopDialog = new PopUp(id, birdName, birdCount);
             PopDialog.Show(transaction, "Dialog Fragment");
 
+            PopDialog.OnDelete += PopDialog_OnDelete;
+            PopDialog.OnUpdate += PopDialog_OnUpdate;
+
+            // OLD CODE: first way of deleting a row
             //var alert = new AlertDialog.Builder(this);
             //SelectedID = e.Position;
             //alert.SetPositiveButton("Remove", removeClicked);
@@ -100,31 +112,46 @@ namespace ChristmasBirdCountApp
             //alert.Create().Show();
         }
 
-        private void closeClicked(object sender, DialogClickEventArgs e)
+        private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
         {
+            mItems.RemoveAt(e.id);
+            int count = Int32.Parse(e.birdCount);
+            mItems.Insert(e.id, new BirdCount() { Name = e.birdName, Count = count });
+            mListView.Adapter = new row_adapter(this, mItems);
+        }
+
+        private void PopDialog_OnDelete(object sender, OnDeleteEventArgs e)
+        {
+            mItems.RemoveAt(e.id);
+            mListView = FindViewById<ListView>(Resource.Id.myListView);
+            mListView.Adapter = new row_adapter(this, mItems);
+        }
+
+        //private void closeClicked(object sender, DialogClickEventArgs e)
+        //{
             
-        }
+        //}
 
-        private void clearCount(object sender, DialogClickEventArgs e)
-        {
-            mItems[SelectedID].Count = 0;
-            mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, mItems);
+        //private void clearCount(object sender, DialogClickEventArgs e)
+        //{
+        //    mItems[SelectedID].Count = 0;
+        //    mListView = FindViewById<ListView>(Resource.Id.myListView);
+        //    mListView.Adapter = new row_adapter(this, mItems);
 
-            Toast.MakeText(this, mItems[SelectedID].Name + "'s Count has been set to \"0\"", ToastLength.Short).Show();
-        }
+        //    Toast.MakeText(this, mItems[SelectedID].Name + "'s Count has been set to \"0\"", ToastLength.Short).Show();
+        //}
 
-        private void removeClicked(object sender, DialogClickEventArgs e)
-        {
-            string deletedName = mItems[SelectedID].Name;
+        //private void removeClicked(object sender, DialogClickEventArgs e)
+        //{
+        //    string deletedName = mItems[SelectedID].Name;
 
-            mItems.RemoveAt(SelectedID);
-            mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, mItems);
+        //    mItems.RemoveAt(SelectedID);
+        //    mListView = FindViewById<ListView>(Resource.Id.myListView);
+        //    mListView.Adapter = new row_adapter(this, mItems);
            
-            Toast.MakeText(this, deletedName + " has been removed", ToastLength.Short).Show();
+        //    Toast.MakeText(this, deletedName + " has been removed", ToastLength.Short).Show();
             
-        }
+        //}
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
