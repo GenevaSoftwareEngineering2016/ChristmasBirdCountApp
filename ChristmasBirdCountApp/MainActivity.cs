@@ -100,8 +100,8 @@ namespace ChristmasBirdCountApp
         {
             // get selected bird info
             int id = e.Position;
-            string birdName = mItems[id].Name;
-            int birdCount = mItems[id].Count;
+            string birdName = birdList[id].Name;
+            int birdCount = birdList[id].Count;
 
             //Bundle args = new Bundle();
             //args.PutInt("birdCount", birdCount);
@@ -129,17 +129,17 @@ namespace ChristmasBirdCountApp
 
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
         {
-            mItems.RemoveAt(e.id);
+            birdList.RemoveAt(e.id);
             int count = Int32.Parse(e.birdCount);
-            mItems.Insert(e.id, new BirdCount() { Name = e.birdName, Count = count });
-            mListView.Adapter = new row_adapter(this, mItems);
+            birdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = count });
+            mListView.Adapter = new row_adapter(this, birdList);
         }
 
         private void PopDialog_OnDelete(object sender, OnDeleteEventArgs e)
         {
-            mItems.RemoveAt(e.id);
+            birdList.RemoveAt(e.id);
             mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, mItems);
+            mListView.Adapter = new row_adapter(this, birdList);
         }
 
         //private void closeClicked(object sender, DialogClickEventArgs e)
