@@ -17,10 +17,10 @@
             android:text="Bird Name:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             android:typeface="sans"
+            android:typeface="sans"
             android:textColor="#000"
             android:id="@+id/lblBirdName"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,13 +43,14 @@
             android:typeface="sans"
             android:textColor="#000"
             android:id="@+id/lblBirdName"
-            android:layout_weight="1"/>
-        <EditText
+            android:layout_weight="1" />
+      <EditText
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtBirdCount"
             android:typeface="sans"
-            android:textColor="#000" 
+            android:textColor="#000"
             android:layout_weight="1" />
     </LinearLayout>
     <Button
@@ -62,5 +63,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnClearListing" />
-    
 </LinearLayout>
