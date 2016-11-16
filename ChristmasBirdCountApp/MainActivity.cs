@@ -130,7 +130,16 @@ namespace ChristmasBirdCountApp
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
         {
             birdList.RemoveAt(e.id);
-            int count = Int32.Parse(e.birdCount);
+            int count = 0;
+            if (e.birdCount == "")
+            {
+                count = 0;
+            }
+            else
+            {
+                count = Int32.Parse(e.birdCount);
+            }
+            
             birdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = count });
             mListView.Adapter = new row_adapter(this, birdList);
         }
