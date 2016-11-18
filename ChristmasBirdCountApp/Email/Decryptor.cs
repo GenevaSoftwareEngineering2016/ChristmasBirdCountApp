@@ -7,7 +7,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace EmailService
+namespace ChristmasBirdCountApp.Email
 {
     class Decryptor
     {

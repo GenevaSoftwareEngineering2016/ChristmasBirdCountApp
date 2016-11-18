@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasBirdCountApp", "ChristmasBirdCountApp.csproj", "{B112D0F3-091B-42FF-A1D4-FC2830881338}"
-	ProjectSection(ProjectDependencies) = postProject
-		{878E5A89-575E-4E17-ADD7-0C11CEE5FE64} = {878E5A89-575E-4E17-ADD7-0C11CEE5FE64}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{878E5A89-575E-4E17-ADD7-0C11CEE5FE64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +14,9 @@ Global
 		{B112D0F3-091B-42FF-A1D4-FC2830881338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B112D0F3-091B-42FF-A1D4-FC2830881338}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B112D0F3-091B-42FF-A1D4-FC2830881338}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{B112D0F3-091B-42FF-A1D4-FC2830881338}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B112D0F3-091B-42FF-A1D4-FC2830881338}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B112D0F3-091B-42FF-A1D4-FC2830881338}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{878E5A89-575E-4E17-ADD7-0C11CEE5FE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{878E5A89-575E-4E17-ADD7-0C11CEE5FE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{878E5A89-575E-4E17-ADD7-0C11CEE5FE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{878E5A89-575E-4E17-ADD7-0C11CEE5FE64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{878E5A89-575E-4E17-ADD7-0C11CEE5FE64}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B112D0F3-091B-42FF-A1D4-FC2830881338}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B112D0F3-091B-42FF-A1D4-FC2830881338}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B112D0F3-091B-42FF-A1D4-FC2830881338}.Release|Any CPU.Deploy.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,7 @@ using System;
 using System.IO;
 using Android.Views;
 using Android.Content;
+using ChristmasBirdCountApp.Email;
 
 namespace ChristmasBirdCountApp
 {

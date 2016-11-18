@@ -5,9 +5,8 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Widget;
-using EmailService;
 
-namespace ChristmasBirdCountApp
+namespace ChristmasBirdCountApp.Email
 {
     [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2")]
     public class EmailFormActivity : Activity
@@ -166,7 +165,8 @@ namespace ChristmasBirdCountApp
             emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _regionSelection.SelectedItem, emailBodyText);
 
             // Send the Email - We Are Adding an Attachment
-            emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);
+            Context appContext = this;  // We need to get and pass in the app context so that we can access the email address/password saved as an app resource
+            emailSent = emailToSend.SendEmail(appContext, true, BirdListFile.FilePath);
 
             if (emailSent)
             {

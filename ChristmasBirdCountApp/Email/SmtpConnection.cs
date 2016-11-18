@@ -1,34 +1,37 @@
 ﻿// (c) 2016 Geneva College Senior Software Project Team
 using System;
-using System.Reflection;
-using System.Resources;
+using Android.Content;
 using MailKit.Net.Smtp;
 
-namespace EmailService
+namespace ChristmasBirdCountApp.Email
 {
     public class SmtpConnection
     {
-        private string _encryptedPassword;
-        private string _sharedSecret;
+        private string _emailAddress;
         private string _emailPassword;
+        private string _sharedSecret;
 
         public SmtpClient Client { get; set; }
 
-        public void CreateSmtpConnection()
+        public void CreateSmtpConnection(Context appContext)
         {
             // Set Up SMTP Client
             Client = new SmtpClient();
 
             // Decrypt Email Password
+            try
+            {
+                // Get Email Resources
+                _emailPassword = appContext.GetString(Resource.String.EmailPassword);
+                _sharedSecret = appContext.GetString(Resource.String.SharedSecret);
 
-            // 1) Get Encrypted Password
-            Assembly assembly = this.GetType().Assembly;
-            ResourceManager resourceManager = new ResourceManager("Resources.EmailStrings", assembly);
-            _encryptedPassword = resourceManager.GetString("EmailPassword");
-            _sharedSecret = resourceManager.GetString("SharedSecret");
-
-            // 2) Decrypt Password
-            _emailPassword = Decryptor.DecryptStringAES(_encryptedPassword, _sharedSecret);
+                // Decrypt Password
+                _emailPassword = Decryptor.DecryptStringAES(_emailPassword, _sharedSecret);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("ERROR! " + ex.ToString());
+            }
 
             try
             {
@@ -41,7 +44,10 @@ namespace EmailService
                 Client.AuthenticationMechanisms.Remove("XOAUTH2");
 
                 // SMTP Server Requires Authentication
-                Client.Authenticate("gc.seniorsoftwareproject@gmail.com", _emailPassword);
+                // 1) Get the Email Address
+                _emailAddress = appContext.GetString(Resource.String.EmailAddress);
+                // 2) Authenticate
+                Client.Authenticate(_emailAddress, _emailPassword);
             }
             catch (Exception)
             {

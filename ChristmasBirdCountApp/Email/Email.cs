@@ -3,9 +3,10 @@
 using System;
 using System.IO;
 using System.Text;
+using Android.Content;
 using MimeKit;
 
-namespace EmailService
+namespace ChristmasBirdCountApp.Email
 {
     public class Email
     {
@@ -24,35 +25,7 @@ namespace EmailService
             EmailMessage.Body = new TextPart("plain") { Text = emailBody.ToString() };
         }
 
-        //public void AddAttachmentToEmail(string filepath)
-        //{
-        //    // Code and Comments Borrowed from http://www.mimekit.net/docs/html/CreatingMessages.htm#CreateMessageWithAttachments
-        //    try
-        //    {
-        //        // Create an attachment for the file located at path
-        //        var attachment = new MimePart("file", "csv")
-        //        {
-        //            ContentObject = new ContentObject(File.OpenRead(filepath), ContentEncoding.Default),
-        //            ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
-        //            ContentTransferEncoding = ContentEncoding.Base64,
-        //            FileName = Path.GetFileName(filepath)
-        //        };
-
-        //        // Create the multipart/mixed container to hold the message text and the file attachment
-        //        var multipart = new Multipart("mixed");
-        //        multipart.Add(EmailMessage.Body);
-        //        multipart.Add(attachment);
-
-        //        // Set the multipart/mixed as the message body
-        //        EmailMessage.Body = multipart;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        System.Diagnostics.Debug.WriteLine(ex);
-        //    }  
-        //}
-
-        public bool SendEmail(bool addAttachment = false, string attachmentFilePath = "")
+        public bool SendEmail(Context appContext, bool addAttachment = false, string attachmentFilePath = "")
         {
             // Connect to SMTP Email Server
             SmtpConnection smtpConnection = new SmtpConnection();
@@ -61,7 +34,7 @@ namespace EmailService
 
             do
             {
-                smtpConnection.CreateSmtpConnection();
+                smtpConnection.CreateSmtpConnection(appContext);
                 connectionAttempts++;
             } while (smtpConnection.Client == null && connectionAttempts <= 5);  // May make 5 attempts to connect to SMTP Server
 
@@ -77,7 +50,7 @@ namespace EmailService
                 {
                     // Create an attachment for the file located at path,
                     // Add that attachment to the email,
-                    // And Send the Email
+                    // And send the email
                     using (FileStream fileOpener = File.OpenRead(attachmentFilePath))
                     {
                         var attachment = new MimePart("file", "csv")
