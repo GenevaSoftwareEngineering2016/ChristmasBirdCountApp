@@ -12,7 +12,4 @@
     <item>Pittsburgh - North Hills</item>
     <item>Pittsburgh - Oakland</item>
   </string-array>
-  <string name="EmailAddress">gc.seniorsoftwareproject@gmail.com</string>
-  <string name="EmailPassword">EAAAAHLyzQXhmNRQoE7/tO56TMzh+smGIU/UsnpxI2VGqojL</string>
-  <string name="SharedSecret">GCEmailPW16</string>
 </resources>

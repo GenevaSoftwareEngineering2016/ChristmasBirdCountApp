@@ -50,8 +50,7 @@ namespace ChristmasBirdCountApp
                 else
                 {
                     Toast.MakeText(this, "Please enter a bird name", ToastLength.Short).Show();
-                }
-                
+                }          
             };
 
             mListView.ItemClick += MListView_ItemClick;
@@ -72,7 +71,6 @@ namespace ChristmasBirdCountApp
                     e.Handled = false;
                 }
             };
-
         }
 
         protected override void OnStart()

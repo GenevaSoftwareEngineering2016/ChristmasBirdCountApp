@@ -25,7 +25,7 @@ namespace ChristmasBirdCountApp.Email
             EmailMessage.Body = new TextPart("plain") { Text = emailBody.ToString() };
         }
 
-        public bool SendEmail(Context appContext, bool addAttachment = false, string attachmentFilePath = "")
+        public bool SendEmail(bool addAttachment = false, string attachmentFilePath = "")
         {
             // Connect to SMTP Email Server
             SmtpConnection smtpConnection = new SmtpConnection();
@@ -34,7 +34,7 @@ namespace ChristmasBirdCountApp.Email
 
             do
             {
-                smtpConnection.CreateSmtpConnection(appContext);
+                smtpConnection.CreateSmtpConnection();
                 connectionAttempts++;
             } while (smtpConnection.Client == null && connectionAttempts <= 5);  // May make 5 attempts to connect to SMTP Server
 

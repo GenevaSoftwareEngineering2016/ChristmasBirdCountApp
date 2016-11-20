@@ -165,8 +165,7 @@ namespace ChristmasBirdCountApp.Email
             emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _regionSelection.SelectedItem, emailBodyText);
 
             // Send the Email - We Are Adding an Attachment
-            Context appContext = this;  // We need to get and pass in the app context so that we can access the email address/password saved as an app resource
-            emailSent = emailToSend.SendEmail(appContext, true, BirdListFile.FilePath);
+            emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);
 
             if (emailSent)
             {

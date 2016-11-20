@@ -13,7 +13,7 @@ namespace ChristmasBirdCountApp.Email
 
         public SmtpClient Client { get; set; }
 
-        public void CreateSmtpConnection(Context appContext)
+        public void CreateSmtpConnection()
         {
             // Set Up SMTP Client
             Client = new SmtpClient();
@@ -22,8 +22,8 @@ namespace ChristmasBirdCountApp.Email
             try
             {
                 // Get Email Resources
-                _emailPassword = appContext.GetString(Resource.String.EmailPassword);
-                _sharedSecret = appContext.GetString(Resource.String.SharedSecret);
+                _emailPassword = EmailResource.EmailPassword;
+                _sharedSecret = EmailResource.SharedSecret;
 
                 // Decrypt Password
                 _emailPassword = Decryptor.DecryptStringAES(_emailPassword, _sharedSecret);
@@ -45,7 +45,7 @@ namespace ChristmasBirdCountApp.Email
 
                 // SMTP Server Requires Authentication
                 // 1) Get the Email Address
-                _emailAddress = appContext.GetString(Resource.String.EmailAddress);
+                _emailAddress = EmailResource.EmailAddress;
                 // 2) Authenticate
                 Client.Authenticate(_emailAddress, _emailPassword);
             }
