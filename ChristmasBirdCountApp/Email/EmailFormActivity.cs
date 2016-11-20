@@ -5,9 +5,8 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Widget;
-using EmailService;
 
-namespace ChristmasBirdCountApp
+namespace ChristmasBirdCountApp.Email
 {
     [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2")]
     public class EmailFormActivity : Activity

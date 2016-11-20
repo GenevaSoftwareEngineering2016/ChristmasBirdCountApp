@@ -7,6 +7,7 @@ using System;
 using System.IO;
 using Android.Views;
 using Android.Content;
+using ChristmasBirdCountApp.Email;
 
 namespace ChristmasBirdCountApp
 {
@@ -49,8 +50,7 @@ namespace ChristmasBirdCountApp
                 else
                 {
                     Toast.MakeText(this, "Please enter a bird name", ToastLength.Short).Show();
-                }
-                
+                }          
             };
 
             mListView.ItemClick += MListView_ItemClick;
@@ -71,7 +71,6 @@ namespace ChristmasBirdCountApp
                     e.Handled = false;
                 }
             };
-
         }
 
         protected override void OnStart()
