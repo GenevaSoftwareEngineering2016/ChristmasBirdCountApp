@@ -22,7 +22,7 @@
             android:editable="false"
             android:enabled="true" />
         <EditText
-            android:inputType="textEmailAddress"
+            android:inputType="text|textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -50,7 +50,7 @@
             android:editable="false"
             android:enabled="true" />
         <EditText
-            android:inputType="text"
+            android:inputType="text|textMultiLine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutRegion">
         <TextView
-            android:text="Region:"
+            android:text="Count Circle Code:"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,12 +77,15 @@
             android:clickable="false"
             android:editable="false"
             android:enabled="true" />
-        <Spinner
+        <EditText
+            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/spnRegion"
-            android:clickable="true" />
+            android:id="@+id/txtRegion"
+            android:clickable="true"
+            android:editable="true"
+            android:enabled="true" />
     </LinearLayout>
 <!-- Below: Collect the Number of Hours Driven and Miles Driven -->
     <LinearLayout
@@ -103,7 +106,7 @@
             android:editable="false"
             android:enabled="true" />
         <EditText
-            android:inputType="number"
+            android:inputType="number|numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -130,7 +133,7 @@
             android:editable="false"
             android:enabled="true" />
         <EditText
-            android:inputType="number"
+            android:inputType="number|numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -158,7 +161,7 @@
             android:editable="false"
             android:enabled="true" />
         <EditText
-            android:inputType="number"
+            android:inputType="number|numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -185,7 +188,7 @@
             android:editable="false"
             android:enabled="true" />
         <EditText
-            android:inputType="number"
+            android:inputType="number|numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -213,7 +216,7 @@
             android:editable="false"
             android:enabled="true" />
         <EditText
-            android:inputType="number"
+            android:inputType="number|numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -241,7 +244,7 @@
             android:editable="false"
             android:enabled="true" />
         <EditText
-            android:inputType="text"
+            android:inputType="text|textMultiLine|textCapSentences|textAutoCorrect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

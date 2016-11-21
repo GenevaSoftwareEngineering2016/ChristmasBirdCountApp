@@ -19,6 +19,8 @@ namespace ChristmasBirdCountApp
             StringBuilder csvTextBuilder = new StringBuilder();
             string delimiter = ",";
 
+            // NEW: Compare birdList with "Master" and use "Master" below....
+
             string[][] csvOutput = new string[birdList.Count][];
 
             for (int i = 0; i < birdList.Count; i++)
@@ -74,7 +76,13 @@ namespace ChristmasBirdCountApp
                             var birdCountItem = line.Split(',');
                             if (birdCountItem[0] != "" && birdCountItem[0] != null)
                             {
-                                loadedBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]) });
+                                // Only add birds to list if their count is > 0 because we do not want to display all birds on screen
+                                // We only want to display birds on screen that have been added (i.e. have a count > 0)
+                                if (Convert.ToInt32(birdCountItem[1]) > 0)
+                                {
+                                    loadedBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]) });
+                                }
+                                else { /* Skip over this bird, becuase the user had not "added" it to the list (i.e. count = 0) */ }
                             }
                             else { }
                         }
@@ -96,6 +104,12 @@ namespace ChristmasBirdCountApp
             loadedBirdList.Reverse();
 
             return loadedBirdList;
+        }
+
+        public static void UpdateMasterBirdList(List<BirdCount> updatedBirdList)
+        {
+           // Compare the updatedBirdList (passed in from the app's MainActivity display (visible to user) to "Master" bird list.
+           // Update all values in "Master" bird list where the names of birds match (exact match required)
         }
     }
 }

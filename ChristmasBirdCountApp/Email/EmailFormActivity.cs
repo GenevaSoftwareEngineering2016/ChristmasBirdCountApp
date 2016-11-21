@@ -12,7 +12,7 @@ namespace ChristmasBirdCountApp.Email
     public class EmailFormActivity : Activity
     {
         private EditText _recipientEmail;
-        private Spinner _regionSelection;
+        private EditText _regionEntry;
         private EditText _hoursDriven;
         private EditText _milesDriven;
         private EditText _hoursWalked;
@@ -30,7 +30,7 @@ namespace ChristmasBirdCountApp.Email
 
             // Register Fields and Buttons
             _recipientEmail = FindViewById<EditText>(Resource.Id.txtRecipientEmail);
-            _regionSelection = FindViewById<Spinner>(Resource.Id.spnRegion);
+            _regionEntry = FindViewById<EditText>(Resource.Id.txtRegion);
             _hoursDriven = FindViewById<EditText>(Resource.Id.txtHoursDriven);
             _milesDriven = FindViewById<EditText>(Resource.Id.txtMilesDriven);
             _hoursWalked = FindViewById<EditText>(Resource.Id.txtHoursWalked);
@@ -40,13 +40,6 @@ namespace ChristmasBirdCountApp.Email
             _optionalNotes = FindViewById<EditText>(Resource.Id.txtNotes);
             _returnButton = FindViewById<Button>(Resource.Id.btnReturn);
             _sendButton = FindViewById<Button>(Resource.Id.btnSend);
-
-            var spinnerAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.RegionList,
-                Android.Resource.Layout.SimpleSpinnerItem);
-
-            spinnerAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-
-            _regionSelection.Adapter = spinnerAdapter;
         }
 
         protected override void OnStart()
@@ -54,15 +47,6 @@ namespace ChristmasBirdCountApp.Email
             base.OnStart();
 
             // Register event handlers
-            //_recipientEmail.TextChanged += RecipientEmailOnTextChanged;
-            //_regionSelection.ItemSelected += RegionSelectionOnItemSelected;
-            //_hoursDriven.TextChanged += HoursDrivenOnTextChanged;
-            //_milesDriven.TextChanged += MilesDrivenOnTextChanged;
-            //_hoursWalked.TextChanged += HoursWalkedOnTextChanged;
-            //_milesWalked.TextChanged += MilesWalkedOnTextChanged;
-            //_hoursOwling.TextChanged += HoursOwlingOnTextChanged;
-            //_partyMembers.TextChanged += PartyMembersOnTextChanged;
-            //_optionalNotes.TextChanged += OptionalNotesOnTextChanged;
             _returnButton.Click += ReturnButtonOnClick;
             _sendButton.Click += SendButtonOnClick;
 
@@ -71,65 +55,11 @@ namespace ChristmasBirdCountApp.Email
         protected override void OnStop()
         {
             // Deregister event handlers
-            //_recipientEmail.TextChanged -= RecipientEmailOnTextChanged;
-            //_regionSelection.ItemSelected-= RegionSelectionOnItemSelected;
-            //_hoursDriven.TextChanged -= HoursDrivenOnTextChanged;
-            //_milesDriven.TextChanged -= MilesDrivenOnTextChanged;
-            //_hoursWalked.TextChanged -= HoursWalkedOnTextChanged;
-            //_milesWalked.TextChanged -= MilesWalkedOnTextChanged;
-            //_hoursOwling.TextChanged -= HoursOwlingOnTextChanged;
-            //_partyMembers.TextChanged -= PartyMembersOnTextChanged;
-            //_optionalNotes.TextChanged -= OptionalNotesOnTextChanged;
             _returnButton.Click -= ReturnButtonOnClick;
             _sendButton.Click -= SendButtonOnClick;
 
             base.OnStop();
         }
-
-        //private void RecipientEmailOnTextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void RegionSelectionOnItemSelected(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void HoursDrivenOnTextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void MilesDrivenOnTextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void HoursWalkedOnTextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void MilesWalkedOnTextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void HoursOwlingOnTextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void PartyMembersOnTextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void OptionalNotesOnTextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         private void ReturnButtonOnClick(object sender, EventArgs e)
         {
@@ -148,7 +78,7 @@ namespace ChristmasBirdCountApp.Email
             StringBuilder emailBodyText = new StringBuilder();
             emailBodyText.AppendLine("Christmas Bird Count Results\n");
             emailBodyText.AppendLine(currentDateTime + "\n");
-            emailBodyText.AppendLine("Region: " + _regionSelection.SelectedItem + "\n");
+            emailBodyText.AppendLine("Region: " + _regionEntry.Text + "\n");
             emailBodyText.AppendLine("--------------------------------------\n");
             emailBodyText.AppendLine("Party Members: " + _partyMembers.Text + "\n");
             emailBodyText.AppendLine("Hours Driven: " + _hoursDriven.Text + "\n");
@@ -162,7 +92,7 @@ namespace ChristmasBirdCountApp.Email
             // Create and Send the Email Message
             Email emailToSend = new Email();
 
-            emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _regionSelection.SelectedItem, emailBodyText);
+            emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _regionEntry.Text, emailBodyText);
 
             // Send the Email - We Are Adding an Attachment
             emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);

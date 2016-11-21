@@ -3,7 +3,6 @@
 using System;
 using System.IO;
 using System.Text;
-using Android.Content;
 using MimeKit;
 
 namespace ChristmasBirdCountApp.Email
@@ -19,7 +18,7 @@ namespace ChristmasBirdCountApp.Email
 
             // Set Up Email Parameters
             EmailMessage = new MimeMessage();
-            EmailMessage.From.Add(new MailboxAddress("Christmas Bird Count App Log", "gc.seniorsoftwareproject@gmail.com"));
+            EmailMessage.From.Add(new MailboxAddress("Christmas Bird Count App Log", EmailResource.EmailAddress));
             EmailMessage.To.Add(new MailboxAddress("Compiler", toAddress));     // The "Compiler" is the recipient of the email.
             EmailMessage.Subject = subjectText;
             EmailMessage.Body = new TextPart("plain") { Text = emailBody.ToString() };
