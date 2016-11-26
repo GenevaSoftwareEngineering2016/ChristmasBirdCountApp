@@ -25,6 +25,7 @@ namespace ChristmasBirdCountApp
             id = birdid;
         }
     }
+
     //custom event arguments for updating a bird
     public class OnUpdateEventArgs : EventArgs
     {
@@ -44,6 +45,7 @@ namespace ChristmasBirdCountApp
 
         }
     }
+
     class PopUp : DialogFragment
     {
         private EditText txtBirdName;
@@ -85,6 +87,7 @@ namespace ChristmasBirdCountApp
             //Updating a bird
             btnUpdateListing = view.FindViewById<Button>(Resource.Id.btnUpdateListing);
             btnUpdateListing.Click += BtnUpdateListing_Click;
+
             return view;
         }
 

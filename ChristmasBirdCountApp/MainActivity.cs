@@ -102,28 +102,56 @@ namespace ChristmasBirdCountApp
             string birdName = birdList[id].Name;
             int birdCount = birdList[id].Count;
 
-            //Bundle args = new Bundle();
-            //args.PutInt("birdCount", birdCount);
-            //args.PutString("birdName", birdName);
-
             //pull up the dialog
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
 
-            PopUp PopDialog = new PopUp(id, birdName, birdCount);
+            PopUpAdd PopAdd = new PopUpAdd(id, birdName, birdCount);
+            PopAdd.Show(transaction, "Dialog Fragment");
+
+            //Subscribe to events in PopUpAdd class
+            PopAdd.OnAdd += PopAdd_OnAdd;
+            PopAdd.OnEdit += PopAdd_OnEdit;
+
+            //PopUp PopDialog = new PopUp(id, birdName, birdCount);
+            //PopDialog.Show(transaction, "Dialog Fragment");
+
+            ////subscribing to events in popup class
+            //PopDialog.OnDelete += PopDialog_OnDelete;
+            //PopDialog.OnUpdate += PopDialog_OnUpdate;
+            
+        }
+
+        private void PopAdd_OnEdit(object sender, OnEditEventArgs e)
+        {
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+
+            PopUp PopDialog = new PopUp(e.id, e.birdName, e.birdCount);
             PopDialog.Show(transaction, "Dialog Fragment");
 
             //subscribing to events in popup class
             PopDialog.OnDelete += PopDialog_OnDelete;
             PopDialog.OnUpdate += PopDialog_OnUpdate;
+        }
 
-            // OLD CODE: first way of deleting a row
-            //var alert = new AlertDialog.Builder(this);
-            //SelectedID = e.Position;
-            //alert.SetPositiveButton("Remove", removeClicked);
-            //alert.SetNeutralButton("Clear Count", clearCount);
-            //alert.SetNegativeButton("Close", closeClicked);
+        private void PopAdd_OnAdd(object sender, OnAddEventArgs e)
+        {
+            birdList.RemoveAt(e.id);
+            int totalCount;
+            int addBirds;
+            if (e.addNumber == "")
+            {
+                addBirds = 0;
+            }
+            else
+            {
+                addBirds = Int32.Parse(e.addNumber);
+            }
 
-            //alert.Create().Show();
+            //add count to existing bird count
+            totalCount = e.birdCount + addBirds;
+
+            birdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = totalCount });
+            mListView.Adapter = new row_adapter(this, birdList);
         }
 
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
