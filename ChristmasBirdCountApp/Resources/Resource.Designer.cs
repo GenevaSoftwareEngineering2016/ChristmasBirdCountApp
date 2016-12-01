@@ -66,29 +66,26 @@ namespace ChristmasBirdCountApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050020
-			public const int btnAdd = 2131034144;
-			
 			// aapt resource value: 0x7f05001f
-			public const int btnClear = 2131034143;
+			public const int btnAdd = 2131034143;
 			
-			// aapt resource value: 0x7f05002a
-			public const int btnClearListing = 2131034154;
-			
-			// aapt resource value: 0x7f05001c
-			public const int btnReturn = 2131034140;
-			
-			// aapt resource value: 0x7f05001d
-			public const int btnSend = 2131034141;
-			
-			// aapt resource value: 0x7f050021
-			public const int btnSubmit = 2131034145;
+			// aapt resource value: 0x7f05001e
+			public const int btnClear = 2131034142;
 			
 			// aapt resource value: 0x7f050029
-			public const int btnUpdateListing = 2131034153;
+			public const int btnClearListing = 2131034153;
 			
-			// aapt resource value: 0x7f050025
-			public const int lblBirdName = 2131034149;
+			// aapt resource value: 0x7f05001c
+			public const int btnSend = 2131034140;
+			
+			// aapt resource value: 0x7f050020
+			public const int btnSubmit = 2131034144;
+			
+			// aapt resource value: 0x7f050028
+			public const int btnUpdateListing = 2131034152;
+			
+			// aapt resource value: 0x7f050024
+			public const int lblBirdName = 2131034148;
 			
 			// aapt resource value: 0x7f05000a
 			public const int lblHoursDriven = 2131034122;
@@ -117,14 +114,14 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f050007
 			public const int lblRegion = 2131034119;
 			
-			// aapt resource value: 0x7f05002b
-			public const int left = 2131034155;
+			// aapt resource value: 0x7f05002a
+			public const int left = 2131034154;
 			
-			// aapt resource value: 0x7f050027
-			public const int linearLayoutBirdCount = 2131034151;
+			// aapt resource value: 0x7f050026
+			public const int linearLayoutBirdCount = 2131034150;
 			
-			// aapt resource value: 0x7f050024
-			public const int linearLayoutBirdName = 2131034148;
+			// aapt resource value: 0x7f050023
+			public const int linearLayoutBirdName = 2131034147;
 			
 			// aapt resource value: 0x7f050000
 			public const int linearLayoutEmailRecipient = 2131034112;
@@ -138,8 +135,8 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f05000f
 			public const int linearLayoutHoursWalked = 2131034127;
 			
-			// aapt resource value: 0x7f05001e
-			public const int linearLayoutMainScreen = 2131034142;
+			// aapt resource value: 0x7f05001d
+			public const int linearLayoutMainScreen = 2131034141;
 			
 			// aapt resource value: 0x7f05000c
 			public const int linearLayoutMilesDriven = 2131034124;
@@ -159,17 +156,17 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f050006
 			public const int linearLayoutRegion = 2131034118;
 			
-			// aapt resource value: 0x7f050023
-			public const int myListView = 2131034147;
+			// aapt resource value: 0x7f050022
+			public const int myListView = 2131034146;
 			
-			// aapt resource value: 0x7f05002c
-			public const int right = 2131034156;
+			// aapt resource value: 0x7f05002b
+			public const int right = 2131034155;
 			
-			// aapt resource value: 0x7f050028
-			public const int txtBirdCount = 2131034152;
+			// aapt resource value: 0x7f050027
+			public const int txtBirdCount = 2131034151;
 			
-			// aapt resource value: 0x7f050026
-			public const int txtBirdName = 2131034150;
+			// aapt resource value: 0x7f050025
+			public const int txtBirdName = 2131034149;
 			
 			// aapt resource value: 0x7f05000b
 			public const int txtHoursDriven = 2131034123;
@@ -198,8 +195,8 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f050008
 			public const int txtRegion = 2131034120;
 			
-			// aapt resource value: 0x7f050022
-			public const int txtname = 2131034146;
+			// aapt resource value: 0x7f050021
+			public const int txtname = 2131034145;
 			
 			static Id()
 			{

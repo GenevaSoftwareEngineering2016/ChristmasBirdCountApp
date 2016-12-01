@@ -4,6 +4,8 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 
 namespace ChristmasBirdCountApp.Email
@@ -20,7 +22,6 @@ namespace ChristmasBirdCountApp.Email
         private EditText _hoursOwling;
         private EditText _partyMembers;
         private EditText _optionalNotes;
-        private Button _returnButton;
         private Button _sendButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -38,7 +39,6 @@ namespace ChristmasBirdCountApp.Email
             _hoursOwling = FindViewById<EditText>(Resource.Id.txtHoursOwling);
             _partyMembers = FindViewById<EditText>(Resource.Id.txtPartyMembers);
             _optionalNotes = FindViewById<EditText>(Resource.Id.txtNotes);
-            _returnButton = FindViewById<Button>(Resource.Id.btnReturn);
             _sendButton = FindViewById<Button>(Resource.Id.btnSend);
         }
 
@@ -47,7 +47,6 @@ namespace ChristmasBirdCountApp.Email
             base.OnStart();
 
             // Register event handlers
-            _returnButton.Click += ReturnButtonOnClick;
             _sendButton.Click += SendButtonOnClick;
 
         }
@@ -55,15 +54,15 @@ namespace ChristmasBirdCountApp.Email
         protected override void OnStop()
         {
             // Deregister event handlers
-            _returnButton.Click -= ReturnButtonOnClick;
             _sendButton.Click -= SendButtonOnClick;
 
             base.OnStop();
         }
 
-        private void ReturnButtonOnClick(object sender, EventArgs e)
+        public override void OnBackPressed()
         {
             // Return to the Main App Screen
+            // By overriding the function of the device's "Back" button
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
             SetContentView(Resource.Layout.Main);

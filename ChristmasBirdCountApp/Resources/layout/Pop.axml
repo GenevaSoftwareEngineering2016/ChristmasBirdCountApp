@@ -22,6 +22,8 @@
             android:id="@+id/lblBirdName"
             android:layout_weight="1" />
         <EditText
+            android:imeOptions="actionDone"
+            android:singleLine="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtBirdName"
@@ -44,8 +46,10 @@
             android:textColor="#000"
             android:id="@+id/lblBirdName"
             android:layout_weight="1" />
-      <EditText
+        <EditText
             android:inputType="number"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtBirdCount"
