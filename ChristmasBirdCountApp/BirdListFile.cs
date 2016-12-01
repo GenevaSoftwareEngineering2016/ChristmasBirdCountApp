@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Android.App;
+using Android.Content.Res;
 using Android.Widget;
 using Environment = Android.OS.Environment;
 
@@ -14,7 +16,7 @@ namespace ChristmasBirdCountApp
         public static string Directory { get; set; }
         public static string FilePath { get; set; }
 
-        public static void CreateBirdListFile(List<BirdCount> birdList)
+        public static void CreateWorkingBirdListFile(List<BirdCount> birdList)
         {
             StringBuilder csvTextBuilder = new StringBuilder();
             string delimiter = ",";
@@ -35,14 +37,14 @@ namespace ChristmasBirdCountApp
                 csvTextBuilder.AppendLine(string.Join(delimiter, csvOutput[index]));
             }
 
-            SaveBirdListToFile(csvTextBuilder); // Save the bird list for later loading data into app or access for attachment when sending email
+            SaveWorkingBirdListToFile(csvTextBuilder); // Save the bird list for later loading data into app or access for attachment when sending email
             // NOTE: Bird count list is saved in .csv file in same order as displayed in app.  Will be read back into app "backwards" (unless a List<T>.Reverse() is used).
         }
 
-        private static void SaveBirdListToFile(StringBuilder csvText)
+        private static void SaveWorkingBirdListToFile(StringBuilder csvText)
         {
             Directory = Environment.ExternalStorageDirectory.ToString();
-            FilePath = Path.Combine(Directory, "BirdCountResults.csv");
+            FilePath = Path.Combine(Directory, "Bird Count Results.csv");
 
             try
             {
@@ -58,11 +60,11 @@ namespace ChristmasBirdCountApp
             }
         }
 
-        public static List<BirdCount> LoadBirdListFromFile()
+        public static List<BirdCount> LoadWorkingBirdListFromFile()
         {
             List<BirdCount> loadedBirdList = new List<BirdCount>();
             Directory = Environment.ExternalStorageDirectory.ToString();
-            FilePath = Path.Combine(Directory, "BirdCountResults.csv");
+            FilePath = Path.Combine(Directory, "Bird Count Results.csv");
 
             try
             {
@@ -106,10 +108,58 @@ namespace ChristmasBirdCountApp
             return loadedBirdList;
         }
 
-        public static void UpdateMasterBirdList(List<BirdCount> updatedBirdList)
+        public static List<BirdCount> LoadMasterBirdList(Android.Content.Context appContext)
         {
-           // Compare the updatedBirdList (passed in from the app's MainActivity display (visible to user) to "Master" bird list.
-           // Update all values in "Master" bird list where the names of birds match (exact match required)
+            List<BirdCount> loadedMasterBirdList = new List<BirdCount>();
+            AssetManager appAssets = appContext.Assets;     // Master bird list is included as an asset in the project
+
+            try
+            {
+                using (StreamReader fileReader = new StreamReader(File.OpenRead(FilePath)))
+                {
+                    while (!fileReader.EndOfStream)
+                    {
+                        var line = fileReader.ReadLine();
+                        var birdCountItem = line.Split(',');
+                        if (birdCountItem[0] != "" && birdCountItem[0] != null)
+                        {
+                            loadedMasterBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]) });
+                        }
+                        else { }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                Toast.MakeText(Application.Context, "Could not load file or file does not exist!", ToastLength.Long).Show();
+            }
+
+            return loadedMasterBirdList;
+        }
+
+        public static List<BirdCount> UpdateWorkingBirdListFromMaster(List<BirdCount> masterBirdList, List<BirdCount> workingBirdList)
+        {
+            // Update the "working" bird list from the "Master" bird list.
+            // The "Master" bird list is only ever changed when a new list is included with the app in an app update.
+
+            List<BirdCount> updatedWorkingBirdList = masterBirdList;
+
+            foreach (BirdCount updatedBird in updatedWorkingBirdList)
+            {
+                // See where items in "workingBirdList" match the "updatedWorkingBirdList," and fill in those items
+                foreach (BirdCount workingBird in workingBirdList)
+                {
+                    if (workingBird.Name == updatedBird.Name)
+                    {
+                        updatedBird.Count = workingBird.Count;
+                        break;
+                    }
+                    else { /* Have not yet found a matching bird in the "updatedWorkingBirdList" */ }
+                }
+            }
+
+            return updatedWorkingBirdList;
         }
     }
 }
