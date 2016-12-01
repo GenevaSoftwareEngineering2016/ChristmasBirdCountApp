@@ -115,24 +115,27 @@ namespace ChristmasBirdCountApp
 
             try
             {
-                using (StreamReader fileReader = new StreamReader(File.OpenRead(FilePath)))
+                using (Stream fileStream = appAssets.Open("Simplified ABA Checklist.csv"))
                 {
-                    while (!fileReader.EndOfStream)
+                    using (StreamReader fileReader = new StreamReader(fileStream))
                     {
-                        var line = fileReader.ReadLine();
-                        var birdCountItem = line.Split(',');
-                        if (birdCountItem[0] != "" && birdCountItem[0] != null)
+                        while (!fileReader.EndOfStream)
                         {
-                            loadedMasterBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]) });
+                            var line = fileReader.ReadLine();
+                            var birdCountItem = line.Split(',');
+                            if (birdCountItem[0] != "" && birdCountItem[0] != null)
+                            {
+                                loadedMasterBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]) });
+                            }
+                            else { }
                         }
-                        else { }
                     }
                 }
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
-                Toast.MakeText(Application.Context, "Could not load file or file does not exist!", ToastLength.Long).Show();
+                Toast.MakeText(Application.Context, "Could not find master bird list!", ToastLength.Long).Show();
             }
 
             return loadedMasterBirdList;
