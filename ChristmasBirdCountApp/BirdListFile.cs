@@ -21,9 +21,11 @@ namespace ChristmasBirdCountApp
             StringBuilder csvTextBuilder = new StringBuilder();
             string delimiter = ",";
 
-            // Compare birdList with "Master" and use "Master" below....
+            // Compare birdList with "Master" and use "Master" below.
+            // The 'finalBirdList' uses 'masterBirdList' to get all known birds (including 0 counts),
+            // And updates counts for birds where user added sightings in the app.
+            // This 'finalBirdList' is used for saving to disk and reporting in the email.
             List<BirdCount> finalBirdList = UpdateWorkingBirdListFromMaster(masterBirdList, workingBirdList);
-
 
             string[][] csvOutput = new string[finalBirdList.Count][];
 
