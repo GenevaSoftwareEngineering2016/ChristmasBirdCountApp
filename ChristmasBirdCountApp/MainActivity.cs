@@ -86,7 +86,7 @@ namespace ChristmasBirdCountApp
             workingBirdList = BirdListFile.LoadWorkingBirdListFromFile();
 
             // Update the "Working" bird list from the "Master" bird list
-            workingBirdList = BirdListFile.UpdateWorkingBirdListFromMaster(masterBirdList, workingBirdList);
+            //workingBirdList = BirdListFile.UpdateWorkingBirdListFromMaster(masterBirdList, workingBirdList);
 
             // Initialize ListView Adapter
             mListView.Adapter = new row_adapter(this, workingBirdList);
@@ -97,7 +97,7 @@ namespace ChristmasBirdCountApp
         protected override void OnStop()
         {
             // Save Existing List of Birds to .csv File
-            BirdListFile.CreateWorkingBirdListFile(workingBirdList);
+            BirdListFile.CreateWorkingBirdListFile(masterBirdList, workingBirdList);
 
             // Deregister Event Handlers
             base.OnStop();
@@ -202,7 +202,7 @@ namespace ChristmasBirdCountApp
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
             // Save Existing List of Birds to .csv File
-            BirdListFile.CreateWorkingBirdListFile(workingBirdList);
+            BirdListFile.CreateWorkingBirdListFile(masterBirdList, workingBirdList);
 
             // Start New Intent to Open New Screen for Submit Form
             var intent = new Intent(this, typeof(EmailFormActivity));

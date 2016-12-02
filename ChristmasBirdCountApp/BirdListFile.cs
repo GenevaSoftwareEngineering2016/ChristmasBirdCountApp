@@ -16,18 +16,20 @@ namespace ChristmasBirdCountApp
         public static string Directory { get; set; }
         public static string FilePath { get; set; }
 
-        public static void CreateWorkingBirdListFile(List<BirdCount> birdList)
+        public static void CreateWorkingBirdListFile(List<BirdCount> masterBirdList, List<BirdCount> workingBirdList)
         {
             StringBuilder csvTextBuilder = new StringBuilder();
             string delimiter = ",";
 
-            // NEW: Compare birdList with "Master" and use "Master" below....
+            // Compare birdList with "Master" and use "Master" below....
+            List<BirdCount> finalBirdList = UpdateWorkingBirdListFromMaster(masterBirdList, workingBirdList);
 
-            string[][] csvOutput = new string[birdList.Count][];
 
-            for (int i = 0; i < birdList.Count; i++)
+            string[][] csvOutput = new string[finalBirdList.Count][];
+
+            for (int i = 0; i < finalBirdList.Count; i++)
             {
-                csvOutput[i] = new string[] { birdList[i].Name, birdList[i].Count.ToString() };
+                csvOutput[i] = new string[] { finalBirdList[i].Name, finalBirdList[i].Count.ToString() };
             }
 
             int listLength = csvOutput.Length;
@@ -137,6 +139,8 @@ namespace ChristmasBirdCountApp
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
                 Toast.MakeText(Application.Context, "Could not find master bird list!", ToastLength.Long).Show();
             }
+
+            loadedMasterBirdList.Reverse(); // Reverse list so that all items appear in correct order
 
             return loadedMasterBirdList;
         }
