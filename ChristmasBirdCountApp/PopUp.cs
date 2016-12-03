@@ -1,19 +1,13 @@
+// (c) 2016 Geneva College Senior Software Project Team
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-
 namespace ChristmasBirdCountApp
 {
-    //custome event arguments for deleting a bird
+    // Custom event arguments for deleting a bird
     public class OnDeleteEventArgs : EventArgs
     {
         //private int mid;
@@ -25,7 +19,7 @@ namespace ChristmasBirdCountApp
             id = birdid;
         }
     }
-    //custom event arguments for updating a bird
+    // Custom event arguments for updating a bird
     public class OnUpdateEventArgs : EventArgs
     {
         //private int mid;

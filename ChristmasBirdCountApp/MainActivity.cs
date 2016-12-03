@@ -16,7 +16,10 @@ namespace ChristmasBirdCountApp
     {
         private List<BirdCount> masterBirdList;     // Most up-to-date list of all birds; Used by search function to add birds to "workingBirdList"
         private List<BirdCount> workingBirdList;    // List of all birds with counts 0+; This list is submitted with email report to Compiler
+        private List<BirdCount> filteredBirdList;
+        private Button btnAddBird;
         private ListView mListView;
+        private EditText birdNameFilter;
 
         public static Stream FilePath { get; private set; }
         public int SelectedID = 0;
@@ -28,50 +31,27 @@ namespace ChristmasBirdCountApp
             SetContentView(Resource.Layout.Main);
 
             // Set focus on Text Box
-            FindViewById<EditText>(Resource.Id.txtname).RequestFocus();
+            FindViewById<EditText>(Resource.Id.txtNameFilter).RequestFocus();
 
             // Initialize Button Variables
-            Button btnAdd = FindViewById<Button>(Resource.Id.btnAdd);
             Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
             Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
-            
+
+            // Initialize Filter (Search) Box
+            birdNameFilter = FindViewById<EditText>(Resource.Id.txtNameFilter);
+
             // Initialize ListView
             mListView = FindViewById<ListView>(Resource.Id.myListView);
 
             // Start Button Click Events
-            btnAdd.Click += delegate
-            {
-                string txtName = FindViewById<EditText>(Resource.Id.txtname).Text;
-                if (txtName != "")
-                {
-                    workingBirdList.Insert(0, new BirdCount() { Name = txtName, Count = 0 });
-                    mListView.Adapter = new row_adapter(this, workingBirdList);
-                    FindViewById<EditText>(Resource.Id.txtname).Text = "";
-                }
-                else
-                {
-                    Toast.MakeText(this, "Please enter a bird name", ToastLength.Short).Show();
-                }          
-            };
 
+            birdNameFilter.TextChanged += BirdNameFilter_OnTextChanged;
             mListView.ItemClick += MListView_ItemClick;
             mListView.ItemLongClick += MListView_ItemLongClick;
             btnClear.Click += BtnClear_Click;
             btnSubmit.Click += BtnSubmit_Click;
 			
             // End Button Click Events
-
-            // Calls the btnAdd Click Event when Enter Key is Pressed
-            FindViewById<EditText>(Resource.Id.txtname).EditorAction += (sender, e) => {
-                if (e.Event.Action == KeyEventActions.Down && e.Event.KeyCode == Keycode.Enter)
-                {
-                    btnAdd.PerformClick();
-                }
-                else
-                {
-                    e.Handled = false;
-                }
-            };
         }
 
         protected override void OnStart()
@@ -92,6 +72,17 @@ namespace ChristmasBirdCountApp
             mListView.Adapter = new row_adapter(this, workingBirdList);
 
             // Register Event Handlers
+            btnAddBird.Click += AddBird_OnClick;
+
+            // USE TEST 'workingBirdList' ENTRIES FOR TESTING SEARCH
+            workingBirdList.Insert(0, new BirdCount() { Name = "Dove", Count = 0 });
+            workingBirdList.Insert(0, new BirdCount() { Name = "Bluejay", Count = 0 });
+            workingBirdList.Insert(0, new BirdCount() { Name = "Robin", Count = 0 });
+            workingBirdList.Insert(0, new BirdCount() { Name = "Bald Eagle", Count = 0 });
+            workingBirdList.Insert(0, new BirdCount() { Name = "Pidgeon", Count = 0 });
+            workingBirdList.Insert(0, new BirdCount() { Name = "Canadian Goose", Count = 0 });
+            workingBirdList.Insert(0, new BirdCount() { Name = "American Goose", Count = 0 });
+            // END TESTING
         }
 
         protected override void OnStop()
@@ -100,7 +91,27 @@ namespace ChristmasBirdCountApp
             BirdListFile.CreateWorkingBirdListFile(masterBirdList, workingBirdList);
 
             // Deregister Event Handlers
+            btnAddBird.Click -= AddBird_OnClick;
             base.OnStop();
+        }
+
+        private void AddBird_OnClick(object sender, EventArgs e)
+        {
+            // Open the "Add Bird" PopUp
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+
+            AddBirdPopUp addBirdPopDialog = new AddBirdPopUp();
+            addBirdPopDialog.Show(transaction, "Dialog Fragment");
+
+            // Subscribing to events in popup class
+            //addBirdPopDialog.OnDelete += PopDialog_OnDelete;
+            //addBirdPopDialog.OnUpdate += PopDialog_OnUpdate;
+        }
+
+        private void BirdNameFilter_OnTextChanged(object sender, EventArgs e)
+        {
+            filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);
+            mListView.Adapter = new row_adapter(this, filteredBirdList);
         }
 
         private void MListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
