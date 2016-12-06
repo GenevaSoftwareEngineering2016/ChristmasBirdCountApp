@@ -65,7 +65,6 @@ namespace ChristmasBirdCountApp
 		
 		public partial class Id
 		{
-			
 			// aapt resource value: 0x7f050003
 			public const int addBirdListView = 2131034115;
 			
@@ -74,6 +73,12 @@ namespace ChristmasBirdCountApp
 			
 			// aapt resource value: 0x7f050004
 			public const int btnAddBirdPopUp = 2131034116;
+			
+			// aapt resource value: 0x7f060001
+			public const int btnAddBirds = 2131099649;
+			
+			// aapt resource value: 0x7f060002
+			public const int btnEditBird = 2131099650;
 			
 			// aapt resource value: 0x7f050023
 			public const int btnClear = 2131034147;
@@ -195,6 +200,9 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f05001f
 			public const int txtNotes = 2131034143;
 			
+			// aapt resource value: 0x7f060000
+			public const int txtNumber = 2131099648;
+			
 			// aapt resource value: 0x7f05000a
 			public const int txtPartyMembers = 2131034122;
 			
@@ -218,7 +226,11 @@ namespace ChristmasBirdCountApp
 		{
 			
 			// aapt resource value: 0x7f030000
+<<<<<<< HEAD
 			public const int AddBirdPopUp = 2130903040;
+=======
+			public const int BulkAdd = 2130903040;
+>>>>>>> master
 			
 			// aapt resource value: 0x7f030001
 			public const int EmailForm = 2130903041;
