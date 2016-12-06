@@ -36,6 +36,7 @@ namespace ChristmasBirdCountApp
             // Initialize Button Variables
             Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
             Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
+            btnAddBird = FindViewById<Button>(Resource.Id.btnAddBirdMain);
 
             // Initialize Filter (Search) Box
             birdNameFilter = FindViewById<EditText>(Resource.Id.txtNameFilter);
@@ -44,7 +45,6 @@ namespace ChristmasBirdCountApp
             mListView = FindViewById<ListView>(Resource.Id.myListView);
 
             // Start Button Click Events
-
             birdNameFilter.TextChanged += BirdNameFilter_OnTextChanged;
             mListView.ItemClick += MListView_ItemClick;
             mListView.ItemLongClick += MListView_ItemLongClick;
@@ -101,11 +101,8 @@ namespace ChristmasBirdCountApp
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
 
             AddBirdPopUp addBirdPopDialog = new AddBirdPopUp();
+            addBirdPopDialog.AddBirdList(masterBirdList);
             addBirdPopDialog.Show(transaction, "Dialog Fragment");
-
-            // Subscribing to events in popup class
-            //addBirdPopDialog.OnDelete += PopDialog_OnDelete;
-            //addBirdPopDialog.OnUpdate += PopDialog_OnUpdate;
         }
 
         private void BirdNameFilter_OnTextChanged(object sender, EventArgs e)
