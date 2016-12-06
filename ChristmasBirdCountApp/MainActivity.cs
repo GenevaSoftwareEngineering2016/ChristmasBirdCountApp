@@ -14,7 +14,8 @@ namespace ChristmasBirdCountApp
     [Activity(Label = "Bird Counter", MainLauncher = true, Icon = "@drawable/audubon_society2")]
     public class MainActivity : Activity
     {
-        private List<BirdCount> birdList;
+        private List<BirdCount> masterBirdList;     // Most up-to-date list of all birds; Used by search function to add birds to "workingBirdList"
+        private List<BirdCount> workingBirdList;    // List of all birds with counts 0+; This list is submitted with email report to Compiler
         private ListView mListView;
 
         public static Stream FilePath { get; private set; }
@@ -43,8 +44,8 @@ namespace ChristmasBirdCountApp
                 string txtName = FindViewById<EditText>(Resource.Id.txtname).Text;
                 if (txtName != "")
                 {
-                    birdList.Insert(0, new BirdCount() { Name = txtName, Count = 0 });
-                    mListView.Adapter = new row_adapter(this, birdList);
+                    workingBirdList.Insert(0, new BirdCount() { Name = txtName, Count = 0 });
+                    mListView.Adapter = new row_adapter(this, workingBirdList);
                     FindViewById<EditText>(Resource.Id.txtname).Text = "";
                 }
                 else
@@ -77,11 +78,18 @@ namespace ChristmasBirdCountApp
         {
             base.OnStart();
 
-            // Load Existing List of Birds from .csv File
-            birdList = BirdListFile.LoadBirdListFromFile();
+            // Load the "Master" Bird List
+            Context appContext = this.ApplicationContext;
+            masterBirdList = BirdListFile.LoadMasterBirdList(appContext);
+
+            // Load Existing "Working" List of Birds from .csv File
+            workingBirdList = BirdListFile.LoadWorkingBirdListFromFile();
+
+            // Update the "Working" bird list from the "Master" bird list
+            //workingBirdList = BirdListFile.UpdateWorkingBirdListFromMaster(masterBirdList, workingBirdList);
 
             // Initialize ListView Adapter
-            mListView.Adapter = new row_adapter(this, birdList);
+            mListView.Adapter = new row_adapter(this, workingBirdList);
 
             // Register Event Handlers
         }
@@ -89,7 +97,7 @@ namespace ChristmasBirdCountApp
         protected override void OnStop()
         {
             // Save Existing List of Birds to .csv File
-            BirdListFile.CreateBirdListFile(birdList);
+            BirdListFile.CreateWorkingBirdListFile(masterBirdList, workingBirdList);
 
             // Deregister Event Handlers
             base.OnStop();
@@ -99,8 +107,8 @@ namespace ChristmasBirdCountApp
         {
             // get selected bird info
             int id = e.Position;
-            string birdName = birdList[id].Name;
-            int birdCount = birdList[id].Count;
+            string birdName = workingBirdList[id].Name;
+            int birdCount = workingBirdList[id].Count;
 
             //pull up the dialog
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
@@ -156,7 +164,7 @@ namespace ChristmasBirdCountApp
 
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
         {
-            birdList.RemoveAt(e.id);
+            workingBirdList.RemoveAt(e.id);
             int count = 0;
             if (e.birdCount == "")
             {
@@ -167,15 +175,15 @@ namespace ChristmasBirdCountApp
                 count = Int32.Parse(e.birdCount);
             }
             
-            birdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = count });
-            mListView.Adapter = new row_adapter(this, birdList);
+            workingBirdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = count });
+            mListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void PopDialog_OnDelete(object sender, OnDeleteEventArgs e)
         {
-            birdList.RemoveAt(e.id);
+            workingBirdList.RemoveAt(e.id);
             mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, birdList);
+            mListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         //private void closeClicked(object sender, DialogClickEventArgs e)
@@ -206,23 +214,23 @@ namespace ChristmasBirdCountApp
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
-            birdList.Clear();
+            workingBirdList.Clear();
             mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, birdList);
+            mListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void MListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            birdList[e.Position].Count++;
+            workingBirdList[e.Position].Count++;
 
             mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, birdList);
+            mListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
             // Save Existing List of Birds to .csv File
-            BirdListFile.CreateBirdListFile(birdList);
+            BirdListFile.CreateWorkingBirdListFile(masterBirdList, workingBirdList);
 
             // Start New Intent to Open New Screen for Submit Form
             var intent = new Intent(this, typeof(EmailFormActivity));

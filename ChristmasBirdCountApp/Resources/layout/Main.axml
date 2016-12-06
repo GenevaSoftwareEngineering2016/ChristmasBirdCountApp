@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- (c) 2016 Geneva College Senior Software Project Team -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -13,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutMainScreen">
-		
         <Button
             android:text="Clear All"
             android:layout_width="match_parent"
@@ -42,6 +40,7 @@
             android:enabled="true" />
     </LinearLayout>
     <EditText
+        android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtname"

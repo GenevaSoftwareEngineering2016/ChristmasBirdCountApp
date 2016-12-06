@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<!-- Below: Collect Recipient Email Address -->
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+  <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+    <!-- Below: Collect Recipient Email Address -->
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -11,27 +16,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutEmailRecipient">
-        <TextView
-            android:text="Recipient Email:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblRecipientEmail"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <EditText
-            android:inputType="textEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtRecipientEmail"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true" />
+      <TextView
+          android:text="Recipient Email:"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblRecipientEmail"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="text|textEmailAddress"
+          android:imeOptions="actionDone"
+          android:singleLine="true"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtRecipientEmail"
+          android:clickable="true"
+          android:editable="false"
+          android:enabled="true" />
     </LinearLayout>
-<!-- Below: Collect Names of All Team/Party Members -->
+    <!-- Below: Collect Names of All Team/Party Members -->
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -39,27 +46,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutPartyMembers">
-        <TextView
-            android:text="Party Members:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblPartyMembers"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <EditText
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtPartyMembers"
-            android:clickable="true"
-            android:editable="true"
-            android:enabled="true" />
+      <TextView
+          android:text="Party Members:"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblPartyMembers"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="text|textMultiLine"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtPartyMembers"
+          android:clickable="true"
+          android:editable="true"
+          android:enabled="true" />
     </LinearLayout>
-<!-- Below: Collect Region of Count Circle -->
+    <!-- Below: Collect Region of Count Circle -->
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -67,24 +74,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutRegion">
-        <TextView
-            android:text="Region:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblRegion"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/spnRegion"
-            android:clickable="true" />
+      <TextView
+          android:text="Count Circle Code:"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblRegion"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="text"
+          android:imeOptions="actionDone"
+          android:singleLine="true"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtRegion"
+          android:clickable="true"
+          android:editable="true"
+          android:enabled="true" />
     </LinearLayout>
-<!-- Below: Collect the Number of Hours Driven and Miles Driven -->
+    <!-- Below: Collect the Number of Hours Driven and Miles Driven -->
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -92,25 +104,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutHoursDriven">
-        <TextView
-            android:text="Hours Driven:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblHoursDriven"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <EditText
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtHoursDriven"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true" />
+      <TextView
+          android:text="Hours Driven:"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblHoursDriven"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="number|numberDecimal"
+          android:imeOptions="actionDone"
+          android:singleLine="true"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtHoursDriven"
+          android:clickable="true"
+          android:editable="false"
+          android:enabled="true" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -119,27 +133,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutMilesDriven">
-        <TextView
-            android:text="Miles Driven:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblMilesDriven"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <EditText
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtMilesDriven"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true" />
+      <TextView
+          android:text="Miles Driven:"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblMilesDriven"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="number|numberDecimal"
+          android:imeOptions="actionDone"
+          android:singleLine="true"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtMilesDriven"
+          android:clickable="true"
+          android:editable="false"
+          android:enabled="true" />
     </LinearLayout>
-<!-- Below: Collect the Number of Hours Walked and Miles Walked -->
+    <!-- Below: Collect the Number of Hours Walked and Miles Walked -->
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -147,25 +163,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutHoursWalked">
-        <TextView
-            android:text="Hours Walked:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblHoursWalked"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <EditText
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtHoursWalked"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true" />
+      <TextView
+          android:text="Hours Walked:"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblHoursWalked"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="number|numberDecimal"
+          android:imeOptions="actionDone"
+          android:singleLine="true"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtHoursWalked"
+          android:clickable="true"
+          android:editable="false"
+          android:enabled="true" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -174,27 +192,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutMilesWalked">
-        <TextView
-            android:text="Miles Walked:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblMilesWalked"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <EditText
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtMilesWalked"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true" />
+      <TextView
+          android:text="Miles Walked:"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblMilesWalked"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="number|numberDecimal"
+          android:imeOptions="actionDone"
+          android:singleLine="true"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtMilesWalked"
+          android:clickable="true"
+          android:editable="false"
+          android:enabled="true" />
     </LinearLayout>
-<!-- Below: Collect the Number of Hours Spent Owling -->
+    <!-- Below: Collect the Number of Hours Spent Owling -->
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -202,27 +222,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutHoursOwling">
-        <TextView
-            android:text="Hours Owling:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblHoursOwling"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <EditText
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtHoursOwling"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true" />
+      <TextView
+          android:text="Hours Owling:"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblHoursOwling"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="number|numberDecimal"
+          android:imeOptions="actionDone"
+          android:singleLine="true"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtHoursOwling"
+          android:clickable="true"
+          android:editable="false"
+          android:enabled="true" />
     </LinearLayout>
-<!-- Below: Collect Any Additional Notes -->
+    <!-- Below: Collect Any Additional Notes -->
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -230,27 +252,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutNotes">
-        <TextView
-            android:text="Notes (Optional):"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/lblNotes"
-            android:clickable="false"
-            android:editable="false"
-            android:enabled="true" />
-        <EditText
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtNotes"
-            android:clickable="true"
-            android:editable="true"
-            android:enabled="true" />
+      <TextView
+          android:text="Notes (Optional):"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/lblNotes"
+          android:clickable="false"
+          android:editable="false"
+          android:enabled="true" />
+      <EditText
+          android:inputType="text|textMultiLine|textCapSentences|textAutoCorrect"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/txtNotes"
+          android:clickable="true"
+          android:editable="true"
+          android:enabled="true" />
     </LinearLayout>
-<!-- Controls Below Allow User to Navigate Back to Main App Screen or To Submit (Send) Email Report -->
+    <!-- Controls Below Allow User to Navigate Back to Main App Screen or To Submit (Send) Email Report -->
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -258,23 +280,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutNavigateSubmitPage">
-        <Button
-            android:text="Return"
-            android:layout_width="152.5dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/btnReturn"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true" />
-        <Button
-            android:text="Send"
-            android:layout_width="152.5dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/btnSend"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true" />
+      <Button
+          android:text="Send"
+          android:layout_width="152.5dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/btnSend"
+          android:clickable="true"
+          android:editable="false"
+          android:enabled="true" />
     </LinearLayout>
-</LinearLayout>
+  </LinearLayout>
+</ScrollView>

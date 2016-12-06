@@ -28,22 +28,6 @@ namespace ChristmasBirdCountApp
 		{
 		}
 		
-		public partial class Array
-		{
-			
-			// aapt resource value: 0x7f050000
-			public const int RegionList = 2131034112;
-			
-			static Array()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Array()
-			{
-			}
-		}
-		
 		public partial class Attribute
 		{
 			
@@ -269,9 +253,6 @@ namespace ChristmasBirdCountApp
 			
 			// aapt resource value: 0x7f040000
 			public const int ApplicationName = 2130968576;
-			
-			// aapt resource value: 0x7f040001
-			public const int RegionPrompt = 2130968577;
 			
 			static String()
 			{
