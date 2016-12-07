@@ -65,7 +65,6 @@ namespace ChristmasBirdCountApp
 		
 		public partial class Id
 		{
-			
 			// aapt resource value: 0x7f050003
 			public const int addBirdListView = 2131034115;
 			
