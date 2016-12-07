@@ -108,22 +108,14 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\row.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\Pop.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row.axml" />
+    <AndroidResource Include="Resources\layout\Pop.axml" />
     <AndroidResource Include="Resources\layout\EmailForm.axml" />
-    <AndroidResource Include="Resources\layout\AddBirdPopUp.axml">
-    <AndroidResource Include="Resources\layout\BulkAdd.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddBirdPopUp.axml" />
+    <AndroidResource Include="Resources\layout\BulkAdd.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Main.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

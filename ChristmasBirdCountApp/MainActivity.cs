@@ -5,7 +5,6 @@ using Android.OS;
 using System.Collections.Generic;
 using System;
 using System.IO;
-using Android.Views;
 using Android.Content;
 using ChristmasBirdCountApp.Email;
 
@@ -113,28 +112,20 @@ namespace ChristmasBirdCountApp
 
         private void MListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
-            // get selected bird info
+            // Get selected bird info
             int id = e.Position;
             string birdName = workingBirdList[id].Name;
             int birdCount = workingBirdList[id].Count;
 
-            //pull up the dialog
+            // Pull up the dialog
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
 
             PopUpAdd PopAdd = new PopUpAdd(id, birdName, birdCount);
             PopAdd.Show(transaction, "Dialog Fragment");
 
-            //Subscribe to events in PopUpAdd class
+            // Subscribe to events in PopUpAdd class
             PopAdd.OnAdd += PopAdd_OnAdd;
             PopAdd.OnEdit += PopAdd_OnEdit;
-
-            //PopUp PopDialog = new PopUp(id, birdName, birdCount);
-            //PopDialog.Show(transaction, "Dialog Fragment");
-
-            ////subscribing to events in popup class
-            //PopDialog.OnDelete += PopDialog_OnDelete;
-            //PopDialog.OnUpdate += PopDialog_OnUpdate;
-            
         }
 
         private void PopAdd_OnEdit(object sender, OnEditEventArgs e)
@@ -151,7 +142,7 @@ namespace ChristmasBirdCountApp
 
         private void PopAdd_OnAdd(object sender, OnAddEventArgs e)
         {
-            birdList.RemoveAt(e.id);
+            workingBirdList.RemoveAt(e.id);
             int totalCount;
             int addBirds;
             if (e.addNumber == "")
@@ -166,8 +157,8 @@ namespace ChristmasBirdCountApp
             //add count to existing bird count
             totalCount = e.birdCount + addBirds;
 
-            birdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = totalCount });
-            mListView.Adapter = new row_adapter(this, birdList);
+            workingBirdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = totalCount });
+            mListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
@@ -193,32 +184,6 @@ namespace ChristmasBirdCountApp
             mListView = FindViewById<ListView>(Resource.Id.myListView);
             mListView.Adapter = new row_adapter(this, workingBirdList);
         }
-
-        //private void closeClicked(object sender, DialogClickEventArgs e)
-        //{
-            
-        //}
-
-        //private void clearCount(object sender, DialogClickEventArgs e)
-        //{
-        //    mItems[SelectedID].Count = 0;
-        //    mListView = FindViewById<ListView>(Resource.Id.myListView);
-        //    mListView.Adapter = new row_adapter(this, mItems);
-
-        //    Toast.MakeText(this, mItems[SelectedID].Name + "'s Count has been set to \"0\"", ToastLength.Short).Show();
-        //}
-
-        //private void removeClicked(object sender, DialogClickEventArgs e)
-        //{
-        //    string deletedName = mItems[SelectedID].Name;
-
-        //    mItems.RemoveAt(SelectedID);
-        //    mListView = FindViewById<ListView>(Resource.Id.myListView);
-        //    mListView.Adapter = new row_adapter(this, mItems);
-           
-        //    Toast.MakeText(this, deletedName + " has been removed", ToastLength.Short).Show();
-            
-        //}
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {

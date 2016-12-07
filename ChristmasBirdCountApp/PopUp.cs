@@ -11,7 +11,6 @@ namespace ChristmasBirdCountApp
     public class OnDeleteEventArgs : EventArgs
     {
         //private int mid;
-
         public int id { get; set; }
 
         public OnDeleteEventArgs(int birdid) : base()
@@ -36,7 +35,6 @@ namespace ChristmasBirdCountApp
             id = birdid;
             birdName = birdname;
             birdCount = birdcount;
-
         }
     }
 
