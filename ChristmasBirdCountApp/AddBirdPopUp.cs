@@ -1,5 +1,4 @@
 // (c) 2016 Geneva College Senior Software Project Team
-
 using System.Collections.Generic;
 using Android.App;
 using Android.OS;
@@ -11,11 +10,14 @@ namespace ChristmasBirdCountApp
     public class AddBirdPopUp : DialogFragment
     {
         private ListView addBirdListView;
-        private List<BirdCount> masterBirdList;
+        private List<BirdCount> mstrBirdList;
+        private List<BirdCount> wrkBirdList;
+        //private EditText addBirdNameFilter;
 
-        public void AddBirdList(List<BirdCount> birdList)
+        public void AddBirdLists(List<BirdCount> masterBirdList, List<BirdCount> workingBirdList)
         {
-            masterBirdList = birdList;
+            mstrBirdList = masterBirdList;
+            wrkBirdList = workingBirdList;
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -24,9 +26,11 @@ namespace ChristmasBirdCountApp
 
             var view = inflater.Inflate(Resource.Layout.AddBirdPopUp, container, false);
 
+            //addBirdNameFilter = view.FindViewById<EditText>(Resource.Id.txtAddBirdNameFilter);
+
             addBirdListView = view.FindViewById<ListView>(Resource.Id.addBirdListView);
 
-            addBirdListView.Adapter = new row_adapter(this.Context, masterBirdList);
+            addBirdListView.Adapter = new row_adapter(this.Context, mstrBirdList);
 
             return view;
         }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#DEDEDC"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="300dp"
@@ -18,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:typeface="sans"
-            android:textColor="#000"
+            android:textColor="#FFF"
             android:id="@+id/lblBirdName"
             android:layout_weight="1" />
         <EditText
@@ -28,7 +27,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtBirdName"
             android:typeface="sans"
-            android:textColor="#000"
+            android:textColor="#FFF"
             android:layout_weight="1" />
     </LinearLayout>
     <LinearLayout
@@ -43,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:typeface="sans"
-            android:textColor="#000"
+            android:textColor="#FFF"
             android:id="@+id/lblBirdName"
             android:layout_weight="1" />
         <EditText
@@ -54,7 +53,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtBirdCount"
             android:typeface="sans"
-            android:textColor="#000"
+            android:textColor="#FFF"
             android:layout_weight="1" />
     </LinearLayout>
     <Button

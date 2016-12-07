@@ -1,48 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#DEDEDC"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="300dp"
     android:minHeight="400dp">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
+    <TextView
+        android:text="Tap on a bird to add it to your list:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayoutBirdName">
-        <TextView
-            android:text="Bird Name:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:typeface="sans"
-            android:textColor="#000"
-            android:id="@+id/lblBirdName"
-            android:layout_weight="1" />
-        <EditText
-            android:imeOptions="actionDone"
-            android:singleLine="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtBirdName"
-            android:typeface="sans"
-            android:textColor="#000"
-            android:layout_weight="1" />
-    </LinearLayout>
+        android:typeface="sans"
+        android:textColor="#FFF"
+        android:id="@+id/lblAddBirdInstructions" />
+    <EditText
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAddBirdNameFilter"
+        android:typeface="sans"
+        android:hint="Enter a bird name to filter results"
+        android:textColor="#FFF" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:minHeight="300dp"
         android:fillViewport="true">
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/addBirdListView" />
     </ScrollView>
-    <Button
-        android:text="Add Bird"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnAddBirdPopUp" />
 </LinearLayout>

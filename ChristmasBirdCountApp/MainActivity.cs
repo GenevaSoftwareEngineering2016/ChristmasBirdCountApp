@@ -100,7 +100,7 @@ namespace ChristmasBirdCountApp
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
 
             AddBirdPopUp addBirdPopDialog = new AddBirdPopUp();
-            addBirdPopDialog.AddBirdList(masterBirdList);
+            addBirdPopDialog.AddBirdLists(masterBirdList, workingBirdList);
             addBirdPopDialog.Show(transaction, "Dialog Fragment");
         }
 
