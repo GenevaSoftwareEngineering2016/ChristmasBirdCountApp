@@ -143,7 +143,7 @@ namespace ChristmasBirdCountApp
 
         private void PopAdd_OnAdd(object sender, OnAddEventArgs e)
         {
-            birdList.RemoveAt(e.id);
+            workingBirdList.RemoveAt(e.id);
             int totalCount;
             int addBirds;
             if (e.addNumber == "")
@@ -158,8 +158,8 @@ namespace ChristmasBirdCountApp
             //add count to existing bird count
             totalCount = e.birdCount + addBirds;
 
-            birdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = totalCount });
-            mListView.Adapter = new row_adapter(this, birdList);
+            workingBirdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = totalCount });
+            mListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
