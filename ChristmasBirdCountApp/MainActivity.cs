@@ -29,9 +29,6 @@ namespace ChristmasBirdCountApp
 
             SetContentView(Resource.Layout.Main);
 
-            // Set focus on Text Box
-            FindViewById<EditText>(Resource.Id.txtNameFilter).RequestFocus();
-
             // Initialize Button Variables
             Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
             Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
@@ -49,7 +46,9 @@ namespace ChristmasBirdCountApp
             mListView.ItemLongClick += MListView_ItemLongClick;
             btnClear.Click += BtnClear_Click;
             btnSubmit.Click += BtnSubmit_Click;
-			
+
+            birdNameFilter.ClearFocus();    // Do not focus on text field for filter by default.
+
             // End Button Click Events
         }
 
@@ -81,6 +80,7 @@ namespace ChristmasBirdCountApp
             workingBirdList.Insert(0, new BirdCount() { Name = "Pidgeon", Count = 0 });
             workingBirdList.Insert(0, new BirdCount() { Name = "Canadian Goose", Count = 0 });
             workingBirdList.Insert(0, new BirdCount() { Name = "American Goose", Count = 0 });
+
             // END TESTING
         }
 

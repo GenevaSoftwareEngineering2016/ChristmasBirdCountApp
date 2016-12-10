@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtNameFilter"
-        android:hint="Enter a bird name to filter results"
+        android:hint="Enter a bird name to filter your list"
         android:typeface="sans" />
     <ListView
         android:layout_width="match_parent"

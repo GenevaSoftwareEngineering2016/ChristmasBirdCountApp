@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtAddBirdNameFilter"
         android:typeface="sans"
-        android:hint="Enter a bird name to filter results"
+        android:hint="Enter a bird name to filter list"
         android:textColor="#FFF" />
     <ScrollView
         android:layout_width="match_parent"
