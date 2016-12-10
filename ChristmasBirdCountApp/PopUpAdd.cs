@@ -46,7 +46,7 @@ namespace ChristmasBirdCountApp
         private string birdName;
         private int count;
         private int birdId;
-        private string addCount;
+        //private string addCount;
 
         //broadcast events
         public event EventHandler<OnAddEventArgs> OnAdd;

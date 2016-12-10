@@ -102,6 +102,16 @@ namespace ChristmasBirdCountApp
             AddBirdPopUp addBirdPopDialog = new AddBirdPopUp();
             addBirdPopDialog.AddBirdLists(masterBirdList, workingBirdList);
             addBirdPopDialog.Show(transaction, "Dialog Fragment");
+
+            addBirdPopDialog.OnTap += AddBirdPopDialog_OnTap;
+        }
+
+        private void AddBirdPopDialog_OnTap(object sender, OnTapEventArgs e)
+        {
+            workingBirdList.Add(new BirdCount() { Name = e.birdName, Count = 0 });
+
+            mListView = FindViewById<ListView>(Resource.Id.myListView);
+            mListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void BirdNameFilter_OnTextChanged(object sender, EventArgs e)
