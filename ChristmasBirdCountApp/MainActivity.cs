@@ -17,7 +17,7 @@ namespace ChristmasBirdCountApp
         private List<BirdCount> workingBirdList;    // List of all birds with counts 0+; This list is submitted with email report to Compiler
         private List<BirdCount> filteredBirdList;
         private Button btnAddBird;
-        private ListView mListView;
+        private ListView userBirdListView;
         private EditText birdNameFilter;
 
         public static Stream FilePath { get; private set; }
@@ -38,12 +38,12 @@ namespace ChristmasBirdCountApp
             birdNameFilter = FindViewById<EditText>(Resource.Id.txtNameFilter);
 
             // Initialize ListView
-            mListView = FindViewById<ListView>(Resource.Id.myListView);
+            userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
 
             // Start Button Click Events
             birdNameFilter.TextChanged += BirdNameFilter_OnTextChanged;
-            mListView.ItemClick += MListView_ItemClick;
-            mListView.ItemLongClick += MListView_ItemLongClick;
+            userBirdListView.ItemClick += MListView_ItemClick;
+            userBirdListView.ItemLongClick += MListView_ItemLongClick;
             btnClear.Click += BtnClear_Click;
             btnSubmit.Click += BtnSubmit_Click;
 
@@ -67,21 +67,10 @@ namespace ChristmasBirdCountApp
             //workingBirdList = BirdListFile.UpdateWorkingBirdListFromMaster(masterBirdList, workingBirdList);
 
             // Initialize ListView Adapter
-            mListView.Adapter = new row_adapter(this, workingBirdList);
+            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
 
             // Register Event Handlers
             btnAddBird.Click += AddBird_OnClick;
-
-            // USE TEST 'workingBirdList' ENTRIES FOR TESTING SEARCH
-            workingBirdList.Insert(0, new BirdCount() { Name = "Dove", Count = 0 });
-            workingBirdList.Insert(0, new BirdCount() { Name = "Bluejay", Count = 0 });
-            workingBirdList.Insert(0, new BirdCount() { Name = "Robin", Count = 0 });
-            workingBirdList.Insert(0, new BirdCount() { Name = "Bald Eagle", Count = 0 });
-            workingBirdList.Insert(0, new BirdCount() { Name = "Pidgeon", Count = 0 });
-            workingBirdList.Insert(0, new BirdCount() { Name = "Canadian Goose", Count = 0 });
-            workingBirdList.Insert(0, new BirdCount() { Name = "American Goose", Count = 0 });
-
-            // END TESTING
         }
 
         protected override void OnStop()
@@ -110,14 +99,14 @@ namespace ChristmasBirdCountApp
         {
             workingBirdList.Add(new BirdCount() { Name = e.birdName, Count = 0 });
 
-            mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, workingBirdList);
+            userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
+            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void BirdNameFilter_OnTextChanged(object sender, EventArgs e)
         {
             filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);
-            mListView.Adapter = new row_adapter(this, filteredBirdList);
+            userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
         }
 
         private void MListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
@@ -168,7 +157,7 @@ namespace ChristmasBirdCountApp
             totalCount = e.birdCount + addBirds;
 
             workingBirdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = totalCount });
-            mListView.Adapter = new row_adapter(this, workingBirdList);
+            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
@@ -185,29 +174,29 @@ namespace ChristmasBirdCountApp
             }
             
             workingBirdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = count });
-            mListView.Adapter = new row_adapter(this, workingBirdList);
+            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void PopDialog_OnDelete(object sender, OnDeleteEventArgs e)
         {
             workingBirdList.RemoveAt(e.id);
-            mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, workingBirdList);
+            userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
+            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
             workingBirdList.Clear();
-            mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, workingBirdList);
+            userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
+            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void MListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             workingBirdList[e.Position].Count++;
 
-            mListView = FindViewById<ListView>(Resource.Id.myListView);
-            mListView.Adapter = new row_adapter(this, workingBirdList);
+            userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
+            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
