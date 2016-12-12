@@ -22,14 +22,14 @@
             android:enabled="true"
             android:id="@+id/btnClear" />
         <Button
-            android:text="Add"
+            android:text="Add Bird"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:editable="false"
             android:enabled="true"
-            android:id="@+id/btnAdd" />
+            android:id="@+id/btnAddBirdMain" />
         <Button
             android:text="Submit Report"
             android:layout_height="match_parent"
@@ -43,7 +43,8 @@
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtname"
+        android:id="@+id/txtNameFilter"
+        android:hint="Enter a bird name to filter your list"
         android:typeface="sans" />
     <ListView
         android:layout_width="match_parent"
