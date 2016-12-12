@@ -1,6 +1,5 @@
 ﻿// (c) 2016 Geneva College Senior Software Project Team
 using System;
-using Android.Content;
 using MailKit.Net.Smtp;
 
 namespace ChristmasBirdCountApp.Email
