@@ -83,6 +83,7 @@ namespace ChristmasBirdCountApp.Email
             emailBodyText.AppendLine("Hours Walked: " + _hoursWalked.Text + "\n");
             emailBodyText.AppendLine("Miles Walked: " + _milesWalked.Text + "\n");
             emailBodyText.AppendLine("Hours Owling: " + _hoursOwling.Text + "\n");
+            emailBodyText.AppendLine("Total Number of Bird Species Seen: " + MainActivity.totalSpeciesSeen.ToString() + "\n");
             emailBodyText.AppendLine("Notes: " + _optionalNotes.Text + "\n");
             emailBodyText.AppendLine("--------------------------------------\n");
 

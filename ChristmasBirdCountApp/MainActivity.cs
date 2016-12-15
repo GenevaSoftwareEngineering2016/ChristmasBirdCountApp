@@ -21,6 +21,7 @@ namespace ChristmasBirdCountApp
         private EditText birdNameFilter;
 
         public static Stream FilePath { get; private set; }
+        public static int totalSpeciesSeen;     // The total number of various bird species seen (number of birds added to "workingBirdList")
         public int SelectedID = 0;
 
         protected override void OnCreate(Bundle bundle)
@@ -203,6 +204,9 @@ namespace ChristmasBirdCountApp
         {
             // Save Existing List of Birds to .csv File
             BirdListFile.CreateWorkingBirdListFile(masterBirdList, workingBirdList);
+
+            // Calculate the total number of different bird species seen
+            totalSpeciesSeen = workingBirdList.Count;
 
             // Start New Intent to Open New Screen for Submit Form
             var intent = new Intent(this, typeof(EmailFormActivity));
