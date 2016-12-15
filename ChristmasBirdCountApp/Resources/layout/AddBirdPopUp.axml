@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minWidth="300dp"
+    android:minWidth="400dp"
     android:minHeight="400dp">
     <TextView
         android:text="Tap on a bird to add it to your list:"
@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:typeface="sans"
         android:textColor="#FFF"
+        android:textSize="20dp"
         android:id="@+id/lblAddBirdInstructions" />
     <EditText
         android:imeOptions="actionDone"

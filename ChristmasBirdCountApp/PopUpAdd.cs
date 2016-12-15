@@ -1,3 +1,4 @@
+// (c) 2016 Geneva College Senior Software Project Team
 using System;
 using Android.App;
 using Android.OS;
@@ -34,7 +35,6 @@ namespace ChristmasBirdCountApp
             id = birdid;
             birdName = birdname;
             birdCount = birdcount;
-
         }
     }
 
@@ -46,7 +46,6 @@ namespace ChristmasBirdCountApp
         private string birdName;
         private int count;
         private int birdId;
-        //private string addCount;
 
         //broadcast events
         public event EventHandler<OnAddEventArgs> OnAdd;

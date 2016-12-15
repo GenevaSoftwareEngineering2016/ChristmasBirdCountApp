@@ -78,8 +78,8 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f050024
 			public const int btnClear = 2131034148;
 			
-			// aapt resource value: 0x7f05002f
-			public const int btnClearListing = 2131034159;
+			// aapt resource value: 0x7f05002e
+			public const int btnClearListing = 2131034158;
 			
 			// aapt resource value: 0x7f050005
 			public const int btnEditBird = 2131034117;
@@ -90,14 +90,17 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f050026
 			public const int btnSubmit = 2131034150;
 			
-			// aapt resource value: 0x7f05002e
-			public const int btnUpdateListing = 2131034158;
+			// aapt resource value: 0x7f05002d
+			public const int btnUpdateListing = 2131034157;
 			
 			// aapt resource value: 0x7f050000
 			public const int lblAddBirdInstructions = 2131034112;
 			
-			// aapt resource value: 0x7f05002a
-			public const int lblBirdName = 2131034154;
+			// aapt resource value: 0x7f050029
+			public const int lblBirdName = 2131034153;
+			
+			// aapt resource value: 0x7f05002b
+			public const int lblCountText = 2131034155;
 			
 			// aapt resource value: 0x7f050010
 			public const int lblHoursDriven = 2131034128;
@@ -126,14 +129,11 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f05000d
 			public const int lblRegion = 2131034125;
 			
-			// aapt resource value: 0x7f050030
-			public const int left = 2131034160;
+			// aapt resource value: 0x7f05002f
+			public const int left = 2131034159;
 			
-			// aapt resource value: 0x7f05002c
-			public const int linearLayoutBirdCount = 2131034156;
-			
-			// aapt resource value: 0x7f050029
-			public const int linearLayoutBirdName = 2131034153;
+			// aapt resource value: 0x7f05002a
+			public const int linearLayoutBirdCount = 2131034154;
 			
 			// aapt resource value: 0x7f050006
 			public const int linearLayoutEmailRecipient = 2131034118;
@@ -171,17 +171,14 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f050028
 			public const int myListView = 2131034152;
 			
-			// aapt resource value: 0x7f050031
-			public const int right = 2131034161;
+			// aapt resource value: 0x7f050030
+			public const int right = 2131034160;
 			
 			// aapt resource value: 0x7f050001
 			public const int txtAddBirdNameFilter = 2131034113;
 			
-			// aapt resource value: 0x7f05002d
-			public const int txtBirdCount = 2131034157;
-			
-			// aapt resource value: 0x7f05002b
-			public const int txtBirdName = 2131034155;
+			// aapt resource value: 0x7f05002c
+			public const int txtBirdCount = 2131034156;
 			
 			// aapt resource value: 0x7f050011
 			public const int txtHoursDriven = 2131034129;

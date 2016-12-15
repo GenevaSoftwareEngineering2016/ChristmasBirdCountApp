@@ -22,10 +22,6 @@ namespace ChristmasBirdCountApp
     // Custom event arguments for updating a bird
     public class OnUpdateEventArgs : EventArgs
     {
-        //private int mid;
-        //private string mBirdName;
-        //private string mBirdCount;
-
         public int id { get; set; }
         public string birdName { get; set; }
         public string birdCount { get; set; }
@@ -40,7 +36,7 @@ namespace ChristmasBirdCountApp
 
     class PopUp : DialogFragment
     {
-        private EditText txtBirdName;
+        private TextView lblBirdName;
         private EditText txtBirdCount;
         private Button btnClearListing;
         private Button btnUpdateListing;
@@ -65,10 +61,11 @@ namespace ChristmasBirdCountApp
 
             var view = inflater.Inflate(Resource.Layout.Pop, container, false);
 
-            //Set Edit texts
-            txtBirdName = view.FindViewById<EditText>(Resource.Id.txtBirdName);
-            txtBirdName.Text = birdName;
+            // Get the name of the bird and display it
+            lblBirdName = view.FindViewById<TextView>(Resource.Id.lblBirdName);
+            lblBirdName.Text = birdName;
 
+            //Set Edit text for bird count
             txtBirdCount = view.FindViewById<EditText>(Resource.Id.txtBirdCount);
             txtBirdCount.Text = count.ToString();
 
@@ -86,7 +83,7 @@ namespace ChristmasBirdCountApp
         private void BtnUpdateListing_Click(object sender, EventArgs e)
         {
             //calling the update event
-            OnUpdate.Invoke(this, new OnUpdateEventArgs(birdId, txtBirdName.Text, txtBirdCount.Text));
+            OnUpdate.Invoke(this, new OnUpdateEventArgs(birdId, lblBirdName.Text, txtBirdCount.Text));
             this.Dismiss();
         }
 

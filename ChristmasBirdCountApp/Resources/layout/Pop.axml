@@ -3,33 +3,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minWidth="300dp"
+    android:minWidth="400dp"
     android:minHeight="400dp">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
+    <TextView
+        android:text=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayoutBirdName">
-        <TextView
-            android:text="Bird Name:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:typeface="sans"
-            android:textColor="#FFF"
-            android:id="@+id/lblBirdName"
-            android:layout_weight="1" />
-        <EditText
-            android:imeOptions="actionDone"
-            android:singleLine="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtBirdName"
-            android:typeface="sans"
-            android:textColor="#FFF"
-            android:layout_weight="1" />
-    </LinearLayout>
+        android:typeface="sans"
+        android:textColor="#FFF"
+        android:id="@+id/lblBirdName"
+        android:textSize="20dp"
+        android:clickable="false"
+        android:editable="false" />
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -38,12 +23,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutBirdCount">
         <TextView
-            android:text="Bird Count:"
+            android:text="Seen:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:typeface="sans"
             android:textColor="#FFF"
-            android:id="@+id/lblBirdName"
+            android:id="@+id/lblCountText"
+            android:textSize="20dp"
             android:layout_weight="1" />
         <EditText
             android:inputType="number"

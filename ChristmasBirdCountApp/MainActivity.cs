@@ -22,6 +22,7 @@ namespace ChristmasBirdCountApp
 
         public static Stream FilePath { get; private set; }
         public static int totalSpeciesSeen;     // The total number of various bird species seen (number of birds added to "workingBirdList")
+        public static int totalBirdsSeen;       // The total number of all birds seen (across all species in "workingBirdList")
         public int SelectedID = 0;
 
         protected override void OnCreate(Bundle bundle)
@@ -207,6 +208,12 @@ namespace ChristmasBirdCountApp
 
             // Calculate the total number of different bird species seen
             totalSpeciesSeen = workingBirdList.Count;
+
+            // Calculate the total number of birds seen
+            foreach (var bird in workingBirdList)
+            {
+                totalBirdsSeen += bird.Count;
+            }
 
             // Start New Intent to Open New Screen for Submit Form
             var intent = new Intent(this, typeof(EmailFormActivity));
