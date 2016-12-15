@@ -64,12 +64,13 @@ namespace ChristmasBirdCountApp
 
             // Load Existing "Working" List of Birds from .csv File
             workingBirdList = BirdListFile.LoadWorkingBirdListFromFile();
+            filteredBirdList = workingBirdList;
 
             // Update the "Working" bird list from the "Master" bird list
             //workingBirdList = BirdListFile.UpdateWorkingBirdListFromMaster(masterBirdList, workingBirdList);
 
             // Initialize ListView Adapter
-            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
+            userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
 
             // Register Event Handlers
             btnAddBird.Click += AddBird_OnClick;
@@ -101,8 +102,10 @@ namespace ChristmasBirdCountApp
         {
             workingBirdList.Add(new BirdCount() { Name = e.birdName, Count = 0 });
 
+            filteredBirdList = workingBirdList;     // Update the filtered bird list
+
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
-            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
+            userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
         }
 
         private void BirdNameFilter_OnTextChanged(object sender, EventArgs e)
@@ -115,8 +118,8 @@ namespace ChristmasBirdCountApp
         {
             // Get selected bird info
             int id = e.Position;
-            string birdName = workingBirdList[id].Name;
-            int birdCount = workingBirdList[id].Count;
+            string birdName = filteredBirdList[id].Name;
+            int birdCount = filteredBirdList[id].Count;
 
             // Pull up the dialog
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
@@ -143,8 +146,24 @@ namespace ChristmasBirdCountApp
 
         private void PopAdd_OnAdd(object sender, OnAddEventArgs e)
         {
-            workingBirdList.RemoveAt(e.id);
-            int totalCount;
+            string birdName = filteredBirdList[e.id].Name;
+            int birdIndex = 0;
+
+            foreach (var bird in workingBirdList)
+            {
+                if (bird.Name == birdName)
+                {
+                    birdIndex = workingBirdList.IndexOf(bird);  // Get the index of the bird in the "workingBirdList," and remove the bird at that index.
+                }
+                else
+                {
+                    // The matching bird in the "workingBirdList" has not been found (yet).
+                }
+            }
+
+            //workingBirdList.RemoveAt(e.id);       // Cannot use "e.id" on "workingBirdList," because the user may be doing a filtered search
+            workingBirdList.RemoveAt(birdIndex);
+
             int addBirds;
             if (e.addNumber == "")
             {
@@ -156,15 +175,35 @@ namespace ChristmasBirdCountApp
             }
 
             //add count to existing bird count
-            totalCount = e.birdCount + addBirds;
+            var totalCount = e.birdCount + addBirds;
 
-            workingBirdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = totalCount });
-            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
+            workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = totalCount });
+
+            filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
+
+            userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
         }
 
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
         {
-            workingBirdList.RemoveAt(e.id);
+            string birdName = filteredBirdList[e.id].Name;
+            int birdIndex = 0;
+
+            foreach (var bird in workingBirdList)
+            {
+                if (bird.Name == birdName)
+                {
+                    birdIndex = workingBirdList.IndexOf(bird);  // Get the index of the bird in the "workingBirdList," and remove the bird at that index.
+                }
+                else
+                {
+                    // The matching bird in the "workingBirdList" has not been found (yet).
+                }
+            }
+
+            //workingBirdList.RemoveAt(e.id);       // Cannot use "e.id" on "workingBirdList," because the user may be doing a filtered search
+            workingBirdList.RemoveAt(birdIndex);
+
             int count = 0;
             if (e.birdCount == "")
             {
@@ -175,30 +214,77 @@ namespace ChristmasBirdCountApp
                 count = Int32.Parse(e.birdCount);
             }
             
-            workingBirdList.Insert(e.id, new BirdCount() { Name = e.birdName, Count = count });
-            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
+            workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = count });
+
+            filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
+
+            userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
         }
 
         private void PopDialog_OnDelete(object sender, OnDeleteEventArgs e)
         {
-            workingBirdList.RemoveAt(e.id);
+            string birdName = filteredBirdList[e.id].Name;
+            int birdIndex = 0;
+
+            foreach (var bird in workingBirdList)
+            {
+                if (bird.Name == birdName)
+                {
+                    birdIndex = workingBirdList.IndexOf(bird);  // Get the index of the bird in the "workingBirdList," and remove the bird at that index.
+                }
+                else
+                {
+                    // The matching bird in the "workingBirdList" has not been found (yet).
+                }
+            }
+
+            //workingBirdList.RemoveAt(e.id);       // Cannot use "e.id" on "workingBirdList," because the user may be doing a filtered search
+            workingBirdList.RemoveAt(birdIndex);
+
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
-            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
+
+            filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
+
+            userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
         }
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
             workingBirdList.Clear();
+
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
-            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
+
+            birdNameFilter.Text = "";       // Reset the bird name filter
+
+            filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
+
+            userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
         }
 
         private void MListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            workingBirdList[e.Position].Count++;
+            //workingBirdList[e.Position].Count++;    // Cannot use "e.id" on "workingBirdList," because the user may be doing a filtered search
+
+            string birdName = filteredBirdList[e.Position].Name;
+
+            foreach (var bird in workingBirdList)
+            {
+                if (bird.Name == birdName)
+                {
+                    int birdIndex = workingBirdList.IndexOf(bird);  // Get the index of the bird in the "workingBirdList," and increment the count for that bird.
+                    workingBirdList[birdIndex].Count++;
+                }
+                else
+                {
+                    // The matching bird in the "workingBirdList" has not been found (yet).
+                }
+            }
 
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
-            userBirdListView.Adapter = new row_adapter(this, workingBirdList);
+
+            filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
+
+            userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
