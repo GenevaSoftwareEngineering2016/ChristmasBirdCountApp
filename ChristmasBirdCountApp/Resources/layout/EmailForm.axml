@@ -36,7 +36,7 @@
                 android:id="@+id/txtRecipientEmail"
                 android:clickable="true"
                 android:editable="false"
-                android:hint="recipient@email.com"
+                android:hint="e.g. name@email.com"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Below: Collect Names of All Team/Party Members -->
@@ -65,7 +65,7 @@
                 android:id="@+id/txtPartyMembers"
                 android:clickable="true"
                 android:editable="true"
-                android:hint="Austin, Mason"
+                android:hint="e.g. Austin, Mason"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Below: Collect Region of Count Circle -->
@@ -96,7 +96,7 @@
                 android:id="@+id/txtRegion"
                 android:clickable="true"
                 android:editable="true"
-                android:hint="BF-0113"
+                android:hint="e.g. BF-0113"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Below: Collect the Number of Hours Driven and Miles Driven -->
