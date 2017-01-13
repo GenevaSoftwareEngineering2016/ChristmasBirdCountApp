@@ -252,6 +252,10 @@ namespace ChristmasBirdCountApp
         {
             workingBirdList.Clear();
 
+            // Also need to clear the variables for totalSpeciesSeen and totalBirdsSeen, so that all birds go back to having a 0 count.
+            totalSpeciesSeen = 0;
+            totalBirdsSeen = 0;
+
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
 
             birdNameFilter.Text = "";       // Reset the bird name filter
