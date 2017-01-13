@@ -36,6 +36,7 @@
                 android:id="@+id/txtRecipientEmail"
                 android:clickable="true"
                 android:editable="false"
+                android:hint="recipient@email.com"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Below: Collect Names of All Team/Party Members -->
@@ -64,6 +65,7 @@
                 android:id="@+id/txtPartyMembers"
                 android:clickable="true"
                 android:editable="true"
+                android:hint="Austin, Mason"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Below: Collect Region of Count Circle -->
@@ -94,6 +96,7 @@
                 android:id="@+id/txtRegion"
                 android:clickable="true"
                 android:editable="true"
+                android:hint="BF-0113"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Below: Collect the Number of Hours Driven and Miles Driven -->
@@ -124,6 +127,7 @@
                 android:id="@+id/txtHoursDriven"
                 android:clickable="true"
                 android:editable="false"
+                android:hint="0.0"
                 android:enabled="true" />
         </LinearLayout>
         <LinearLayout
@@ -153,6 +157,7 @@
                 android:id="@+id/txtMilesDriven"
                 android:clickable="true"
                 android:editable="false"
+                android:hint="0.0"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Below: Collect the Number of Hours Walked and Miles Walked -->
@@ -183,6 +188,7 @@
                 android:id="@+id/txtHoursWalked"
                 android:clickable="true"
                 android:editable="false"
+                android:hint="0.0"
                 android:enabled="true" />
         </LinearLayout>
         <LinearLayout
@@ -212,6 +218,7 @@
                 android:id="@+id/txtMilesWalked"
                 android:clickable="true"
                 android:editable="false"
+                android:hint="0.0"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Below: Collect the Number of Hours Spent Owling -->
@@ -242,6 +249,7 @@
                 android:id="@+id/txtHoursOwling"
                 android:clickable="true"
                 android:editable="false"
+                android:hint="0.0"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Below: Collect Any Additional Notes -->
@@ -270,6 +278,7 @@
                 android:id="@+id/txtNotes"
                 android:clickable="true"
                 android:editable="true"
+                android:hint="Enter optional notes here"
                 android:enabled="true" />
         </LinearLayout>
     <!-- Controls Below Allow User to Navigate Back to Main App Screen or To Submit (Send) Email Report -->

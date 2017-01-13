@@ -9,6 +9,7 @@
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="0"
         android:id="@+id/txtNumber" />
     <Button
         android:text="Add to Total Count"
