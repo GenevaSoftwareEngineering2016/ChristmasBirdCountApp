@@ -250,6 +250,19 @@ namespace ChristmasBirdCountApp
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
+
+            // Pull up the dialog
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+
+            ClearAllPopUp ClearAll = new ClearAllPopUp();
+            ClearAll.Show(transaction, "Dialog Fragment");
+
+            // Subscribe to events in PopUpAdd class
+            ClearAll.OnClear += ClearAll_OnClear;
+        }
+
+        private void ClearAll_OnClear(object sender, OnClearAllEventArgs e)
+        {
             workingBirdList.Clear();
 
             // Also need to clear the variables for totalSpeciesSeen and totalBirdsSeen, so that all birds go back to having a 0 count.
