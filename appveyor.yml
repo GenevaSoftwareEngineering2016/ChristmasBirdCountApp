@@ -6,14 +6,14 @@ before_build:
 build_script:
   - msbuild "/t:SignAndroidPackage" "/p:Configuration=Release" "/p:AndroidKeyStore=true" "/p:AndroidSigningKeyAlias=GCSeniorSoftwareAppSigningKey" "/p:AndroidSigningKeyPass=%keystore-password%" "/p:AndroidSigningKeyStore=GCSeniorSoftwareAppSigningKey.keystore" "/p:AndroidSigningStorePass=%keystore-password%" "ChristmasBirdCountApp\ChristmasBirdCountApp.csproj"
 artifacts:
-  - path: ChristmasBirdCountApp\bin\Release\GenevaCollege.ChristmasBirdCountApp.apk
+  - path: ChristmasBirdCountApp\bin\Release\GenevaCollege.ChristmasBirdCountApp-Signed.apk
 deploy:
   release: ChristmasBirdCountApp-v$(appveyor_build_version)
   description: "Updated Release of App APK - v%appveyor_build_version%"
   provider: GitHub
   auth_token:
     secure: cF7Yy0JPLt6aUzhr5YzBlfUtSpiWDWqqYFIcFnkcy/Ly0j0GHDLWiqNYv73GrA9l # Encrypted token from GitHub
-  artifact: ChristmasBirdCountApp\bin\Release\GenevaCollege.ChristmasBirdCountApp.apk # Upload APK from AppVeyor to GitHub Release
+  artifact: ChristmasBirdCountApp\bin\Release\GenevaCollege.ChristmasBirdCountApp-Signed.apk # Upload APK from AppVeyor to GitHub Release
   draft: false
   prerelease: false
   force_update: false
