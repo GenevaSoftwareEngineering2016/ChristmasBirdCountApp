@@ -1,8 +1,8 @@
 environment:
   keystore-password:
     secure: TswEC3Zar2KNBmud4z8z7Q== # Password for key AND keystore
-#before_build:
-  #- nuget restore
+before_build:
+  - nuget restore
 build_script:
   - msbuild "/t:SignAndroidPackage" "/p:Configuration=Release" "/p:AndroidKeyStore=true" "/p:AndroidSigningKeyAlias=GCSeniorSoftwareAppSigningKey" "/p:AndroidSigningKeyPass=%keystore-password%" "/p:AndroidSigningKeyStore=GCSeniorSoftwareAppSigningKey.keystore" "/p:AndroidSigningStorePass=%keystore-password%" "ChristmasBirdCountApp\ChristmasBirdCountApp.csproj"
 artifacts:
