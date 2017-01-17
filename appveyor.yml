@@ -1,4 +1,4 @@
- environment:
+environment:
   keystore-password:
     secure: TswEC3Zar2KNBmud4z8z7Q== # Password for key AND keystore
 before_build:
