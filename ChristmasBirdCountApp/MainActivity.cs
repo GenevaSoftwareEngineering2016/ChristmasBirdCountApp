@@ -17,6 +17,8 @@ namespace ChristmasBirdCountApp
         private List<BirdCount> workingBirdList;    // List of all birds with counts 0+; This list is submitted with email report to Compiler
         private List<BirdCount> filteredBirdList;
         private Button btnAddBird;
+        private Button btnClear;
+        private Button btnSubmit;
         private ListView userBirdListView;
         private EditText birdNameFilter;
 
@@ -32,8 +34,8 @@ namespace ChristmasBirdCountApp
             SetContentView(Resource.Layout.Main);
 
             // Initialize Button Variables
-            Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
-            Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
+            btnClear = FindViewById<Button>(Resource.Id.btnClear);
+            btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
             btnAddBird = FindViewById<Button>(Resource.Id.btnAddBirdMain);
 
             // Initialize Filter (Search) Box
@@ -74,6 +76,15 @@ namespace ChristmasBirdCountApp
 
             // Register Event Handlers
             btnAddBird.Click += AddBird_OnClick;
+
+            if (workingBirdList.Count == 0)
+            {
+                btnClear.Enabled = false;
+            }
+            else
+            {
+                btnClear.Enabled = true;
+            }
         }
 
         protected override void OnStop()
@@ -106,6 +117,16 @@ namespace ChristmasBirdCountApp
 
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
             userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
+
+            // Enable the "Clear" button if the list now has 1+ items in it.
+            if (workingBirdList.Count >= 1)
+            {
+                btnClear.Enabled = true;
+            }
+            else
+            {
+                btnClear.Enabled = false;
+            }
         }
 
         private void BirdNameFilter_OnTextChanged(object sender, EventArgs e)
@@ -161,7 +182,6 @@ namespace ChristmasBirdCountApp
                 }
             }
 
-            //workingBirdList.RemoveAt(e.id);       // Cannot use "e.id" on "workingBirdList," because the user may be doing a filtered search
             workingBirdList.RemoveAt(birdIndex);
 
             int addBirds;
@@ -246,11 +266,20 @@ namespace ChristmasBirdCountApp
             filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
 
             userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
+
+            // Disable the "Clear" button if the list now has no items in it.
+            if (workingBirdList.Count == 0)
+            {
+                btnClear.Enabled = false;
+            }
+            else
+            {
+                btnClear.Enabled = true;
+            }
         }
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
-
             // Pull up the dialog
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
 
@@ -272,6 +301,7 @@ namespace ChristmasBirdCountApp
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
 
             birdNameFilter.Text = "";       // Reset the bird name filter
+            btnClear.Enabled = false;       // Disable the "Clear" button because the list no longer has any items in it.
 
             filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
 
@@ -280,8 +310,6 @@ namespace ChristmasBirdCountApp
 
         private void MListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            //workingBirdList[e.Position].Count++;    // Cannot use "e.id" on "workingBirdList," because the user may be doing a filtered search
-
             string birdName = filteredBirdList[e.Position].Name;
 
             foreach (var bird in workingBirdList)

@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="AddBirdPopUp.cs" />
     <Compile Include="BirdCount.cs" />
+    <Compile Include="ClearAllPopUp.cs" />
     <Compile Include="Email\Decryptor.cs" />
     <Compile Include="Email\Email.cs" />
     <Compile Include="Email\EmailFormActivity.cs" />
@@ -117,6 +118,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\BulkAdd.axml" />
+    <AndroidResource Include="Resources\layout\ClearAllPopUp.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">

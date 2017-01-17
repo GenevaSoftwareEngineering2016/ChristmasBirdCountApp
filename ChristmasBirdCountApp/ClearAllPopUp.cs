@@ -1,13 +1,7 @@
+// (c) 2016 Geneva College Senior Software Project Team
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
 
@@ -20,7 +14,6 @@ namespace ChristmasBirdCountApp
 
     class ClearAllPopUp : DialogFragment
     {
-
         private Button btnCLearList;
         private Button btnCancel;
 
