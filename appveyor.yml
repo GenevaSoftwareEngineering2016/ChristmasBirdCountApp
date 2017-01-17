@@ -1,0 +1,22 @@
+environment:
+  keystore-password:
+    secure: TswEC3Zar2KNBmud4z8z7Q== # Password for key AND keystore
+before_build:
+  - nuget restore
+build_script:
+  - msbuild "/t:SignAndroidPackage" "/p:Configuration=Release" "/p:AndroidKeyStore=true" "/p:AndroidSigningKeyAlias=GCSeniorSoftwareAppSigningKey" "/p:AndroidSigningKeyPass=%keystore-password%" "/p:AndroidSigningKeyStore=GCSeniorSoftwareAppSigningKey.keystore" "/p:AndroidSigningStorePass=%keystore-password%" "ChristmasBirdCountApp\ChristmasBirdCountApp\ChristmasBirdCountApp.csproj"
+artifacts:
+  - path: ChristmasBirdCountApp\ChristmasBirdCountApp\bin\Release\GenevaCollege.ChristmasBirdCountApp.apk
+deploy:
+  release: ChristmasBirdCountApp-v$(appveyor_build_version)
+  description: "Updated Release of App APK - v%appveyor_build_version%"
+  provider: GitHub
+  auth_token:
+    secure: cF7Yy0JPLt6aUzhr5YzBlfUtSpiWDWqqYFIcFnkcy/Ly0j0GHDLWiqNYv73GrA9l # Encrypted token from GitHub
+  artifact: ChristmasBirdCountApp\ChristmasBirdCountApp\bin\Release\GenevaCollege.ChristmasBirdCountApp.apk # Upload APK from AppVeyor to GitHub Release
+  draft: false
+  prerelease: false
+  force_update: false
+  on:
+    branch: master # Release from master branch only
+    appveyor_repo_tag: false # Deploy on tag push only if TRUE
