@@ -341,6 +341,9 @@ namespace ChristmasBirdCountApp
             totalSpeciesSeen = workingBirdList.Count;
 
             // Calculate the total number of birds seen
+            // 1) Reset the 'totalBirdsSeen' variable to begin a fresh total count
+            totalBirdsSeen = 0;
+            // 2) Add up the counts for all birds currently in the 'workingBirdList'
             foreach (var bird in workingBirdList)
             {
                 totalBirdsSeen += bird.Count;
