@@ -6,11 +6,12 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 using Android.Content;
+using Android.Content.PM;
 using ChristmasBirdCountApp.Email;
 
 namespace ChristmasBirdCountApp
 {
-    [Activity(Label = "Bird Counter", MainLauncher = true, Icon = "@drawable/audubon_society2")]
+    [Activity(Label = "Bird Counter", MainLauncher = true, Icon = "@drawable/audubon_society2", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         private List<BirdCount> masterBirdList;     // Most up-to-date list of all birds; Used by search function to add birds to "workingBirdList"

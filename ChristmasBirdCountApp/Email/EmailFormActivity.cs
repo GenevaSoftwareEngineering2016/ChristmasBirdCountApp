@@ -3,12 +3,13 @@ using System;
 using System.Text;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
 
 namespace ChristmasBirdCountApp.Email
 {
-    [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2")]
+    [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
     public class EmailFormActivity : Activity
     {
         private EditText _recipientEmail;
