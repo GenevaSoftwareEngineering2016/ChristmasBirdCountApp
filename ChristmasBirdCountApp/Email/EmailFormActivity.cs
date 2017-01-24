@@ -9,7 +9,7 @@ using Android.Widget;
 
 namespace ChristmasBirdCountApp.Email
 {
-    [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2", Theme = "@style/CustomActionBarTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
     public class EmailFormActivity : Activity
     {
         private EditText _recipientEmail;
@@ -22,10 +22,28 @@ namespace ChristmasBirdCountApp.Email
         private EditText _partyMembers;
         private EditText _optionalNotes;
         private Button _sendButton;
+        private LinearLayout llClear;
+        private LinearLayout llAdd;
+        private LinearLayout llSubmit;
+        private TextView txtBirdLabel;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            ActionBar.SetCustomView(Resource.Layout.actionBar);
+            ActionBar.SetDisplayShowCustomEnabled(true);
+
+            llClear = FindViewById<LinearLayout>(Resource.Id.llClear);
+            llAdd = FindViewById<LinearLayout>(Resource.Id.llAdd);
+            llSubmit = FindViewById<LinearLayout>(Resource.Id.llSubmit);
+            txtBirdLabel = FindViewById<TextView>(Resource.Id.lblAdd);
+
+            txtBirdLabel.Text = "Return to List";
+
+            llClear.Visibility = Android.Views.ViewStates.Invisible;
+            llSubmit.Visibility = Android.Views.ViewStates.Invisible;
+
             SetContentView(Resource.Layout.EmailForm);
 
             // Register Fields and Buttons
@@ -47,7 +65,14 @@ namespace ChristmasBirdCountApp.Email
 
             // Register event handlers
             _sendButton.Click += SendButtonOnClick;
+            llAdd.Click += LlAdd_Click;
 
+        }
+
+        private void LlAdd_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
         }
 
         protected override void OnStop()
@@ -64,7 +89,7 @@ namespace ChristmasBirdCountApp.Email
             // By overriding the function of the device's "Back" button
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
-            SetContentView(Resource.Layout.Main);
+            //SetContentView(Resource.Layout.Main);
         }
 
         private void SendButtonOnClick(object sender, EventArgs e)
@@ -109,7 +134,7 @@ namespace ChristmasBirdCountApp.Email
             // Return to the Main App Screen
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
-            SetContentView(Resource.Layout.Main);
+            //SetContentView(Resource.Layout.Main);
         }
     }
 }

@@ -12,7 +12,11 @@
         android:typeface="sans"
         android:textColor="#FFF"
         android:textSize="20dp"
-        android:id="@+id/lblAddBirdInstructions" />
+        android:id="@+id/lblAddBirdInstructions" 
+        android:textStyle="bold"
+        android:background="#3B5998"
+        android:gravity="center_horizontal"
+        android:padding="5dp" />
     <EditText
         android:imeOptions="actionDone"
         android:singleLine="true"
@@ -21,7 +25,7 @@
         android:id="@+id/txtAddBirdNameFilter"
         android:typeface="sans"
         android:hint="Enter a bird name to filter list"
-        android:textColor="#FFF" />
+        android:textColor="#000"  />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

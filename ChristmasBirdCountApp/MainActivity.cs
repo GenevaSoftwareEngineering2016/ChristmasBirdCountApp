@@ -11,7 +11,7 @@ using ChristmasBirdCountApp.Email;
 
 namespace ChristmasBirdCountApp
 {
-    [Activity(Label = "Bird Counter", MainLauncher = true, Icon = "@drawable/audubon_society2", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Bird Counter", MainLauncher = true, Icon = "@drawable/whiteBird", Theme = "@style/CustomActionBarTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         private List<BirdCount> masterBirdList;     // Most up-to-date list of all birds; Used by search function to add birds to "workingBirdList"
@@ -20,6 +20,9 @@ namespace ChristmasBirdCountApp
         private Button btnAddBird;
         private Button btnClear;
         private Button btnSubmit;
+        LinearLayout llClear;
+        LinearLayout llAdd;
+        LinearLayout llSubmit;
         private ListView userBirdListView;
         private EditText birdNameFilter;
 
@@ -32,12 +35,19 @@ namespace ChristmasBirdCountApp
         {
             base.OnCreate(bundle);
 
+            ActionBar.SetCustomView(Resource.Layout.actionBar);
+            ActionBar.SetDisplayShowCustomEnabled(true);
+
             SetContentView(Resource.Layout.Main);
 
             // Initialize Button Variables
-            btnClear = FindViewById<Button>(Resource.Id.btnClear);
-            btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
-            btnAddBird = FindViewById<Button>(Resource.Id.btnAddBirdMain);
+            //Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
+            //Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
+            //btnAddBird = FindViewById<Button>(Resource.Id.btnAddBirdMain);
+
+            llClear = FindViewById<LinearLayout>(Resource.Id.llClear);
+            llAdd = FindViewById<LinearLayout>(Resource.Id.llAdd);
+            llSubmit = FindViewById<LinearLayout>(Resource.Id.llSubmit);
 
             // Initialize Filter (Search) Box
             birdNameFilter = FindViewById<EditText>(Resource.Id.txtNameFilter);
@@ -49,8 +59,10 @@ namespace ChristmasBirdCountApp
             birdNameFilter.TextChanged += BirdNameFilter_OnTextChanged;
             userBirdListView.ItemClick += MListView_ItemClick;
             userBirdListView.ItemLongClick += MListView_ItemLongClick;
-            btnClear.Click += BtnClear_Click;
-            btnSubmit.Click += BtnSubmit_Click;
+            //btnClear.Click += BtnClear_Click;
+            //btnSubmit.Click += BtnSubmit_Click;
+            llClear.Click += BtnClear_Click;
+            llSubmit.Click += BtnSubmit_Click;
 
             birdNameFilter.ClearFocus();    // Do not focus on text field for filter by default.
 
@@ -76,15 +88,21 @@ namespace ChristmasBirdCountApp
             userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
 
             // Register Event Handlers
-            btnAddBird.Click += AddBird_OnClick;
+            //btnAddBird.Click += AddBird_OnClick;
+            llAdd.Click += AddBird_OnClick;
 
             if (workingBirdList.Count == 0)
             {
-                btnClear.Enabled = false;
+                //btnClear.Enabled = false;
+                llClear.Enabled = false;
+                llClear.SetBackgroundColor(Android.Graphics.Color.LightGray);
             }
             else
             {
-                btnClear.Enabled = true;
+                //btnClear.Enabled = true;
+                llClear.Enabled = true;
+                llClear.SetBackgroundResource(Resource.Drawable.selector);
+
             }
         }
 
@@ -94,7 +112,9 @@ namespace ChristmasBirdCountApp
             BirdListFile.CreateWorkingBirdListFile(masterBirdList, workingBirdList);
 
             // Deregister Event Handlers
-            btnAddBird.Click -= AddBird_OnClick;
+            //btnAddBird.Click -= AddBird_OnClick;
+            llAdd.Click -= AddBird_OnClick;
+
             base.OnStop();
         }
 
@@ -120,13 +140,17 @@ namespace ChristmasBirdCountApp
             userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
 
             // Enable the "Clear" button if the list now has 1+ items in it.
-            if (workingBirdList.Count >= 1)
+            if (workingBirdList.Count == 0)
             {
-                btnClear.Enabled = true;
+                //btnClear.Enabled = false;
+                llClear.Enabled = false;
+                llClear.SetBackgroundColor(Android.Graphics.Color.LightGray);
             }
             else
             {
-                btnClear.Enabled = false;
+                //btnClear.Enabled = true;
+                llClear.Enabled = true;
+                llClear.SetBackgroundResource(Resource.Drawable.selector);
             }
         }
 
@@ -271,11 +295,15 @@ namespace ChristmasBirdCountApp
             // Disable the "Clear" button if the list now has no items in it.
             if (workingBirdList.Count == 0)
             {
-                btnClear.Enabled = false;
+                //btnClear.Enabled = false;
+                llClear.Enabled = false;
+                llClear.SetBackgroundColor(Android.Graphics.Color.LightGray);
             }
             else
             {
-                btnClear.Enabled = true;
+                //btnClear.Enabled = true;
+                llClear.Enabled = true;
+                llClear.SetBackgroundResource(Resource.Drawable.selector);
             }
         }
 
@@ -302,7 +330,9 @@ namespace ChristmasBirdCountApp
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
 
             birdNameFilter.Text = "";       // Reset the bird name filter
-            btnClear.Enabled = false;       // Disable the "Clear" button because the list no longer has any items in it.
+            //btnClear.Enabled = false;       // Disable the "Clear" button because the list no longer has any items in it.
+            llClear.Enabled = false;       // Disable the "Clear" button because the list no longer has any items in it.
+            llClear.SetBackgroundColor(Android.Graphics.Color.LightGray);
 
             filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
 
@@ -354,7 +384,7 @@ namespace ChristmasBirdCountApp
             var intent = new Intent(this, typeof(EmailFormActivity));
             StartActivity(intent);
 
-            SetContentView(Resource.Layout.EmailForm);
+            //SetContentView(Resource.Layout.EmailForm);
         }
     }
 }

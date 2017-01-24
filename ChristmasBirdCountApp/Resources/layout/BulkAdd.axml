@@ -4,21 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="400dp"
-    android:minHeight="400dp">
+    android:minHeight="250dp">
+    <TextView
+        android:text="Bulk Add/Options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:typeface="sans"
+        android:textColor="#FFF"
+        android:textSize="20dp"
+        android:clickable="false"
+        android:editable="false"
+        android:padding="5dp"
+        android:background="@drawable/selector"
+        android:layout_marginBottom="5dp" />
     <EditText
         android:inputType="number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="0"
-        android:id="@+id/txtNumber" />
+        android:layout_height="100dp"
+        android:id="@+id/txtNumber"
+        android:layout_marginTop="10dp"
+        android:textSize="75dp"
+        android:gravity="right"
+        android:hint="0" />
     <Button
         android:text="Add to Total Count"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnAddBirds" />
+        android:id="@+id/btnAddBirds"
+        android:layout_margin="5dp"
+        android:background="@drawable/selector"
+        android:textColor="#FFF" />
     <Button
         android:text="Edit Bird Listing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnEditBird" />
+        android:id="@+id/btnEditBird"
+        android:layout_margin="5dp"
+        android:background="@drawable/selector"
+        android:textColor="#FFF" />
 </LinearLayout>

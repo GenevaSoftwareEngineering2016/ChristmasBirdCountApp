@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="400dp"
-    android:minHeight="400dp">
+    android:minHeight="250dp">
     <TextView
         android:text="Are you sure you want to delete all birds from this list?"
         android:layout_width="match_parent"
@@ -14,23 +14,32 @@
         android:id="@+id/lblTitle"
         android:textSize="20dp"
         android:clickable="false"
-        android:editable="false" />
-        <LinearLayout
-              android:orientation="vertical"
-              android:minWidth="25px"
-              android:minHeight="25px"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/linearLayoutBirdCount">
-          <Button
-              android:text="Clear List"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/btnClearList" />
-          <Button
-              android:text="Cancel"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/btnCancel" />
-          </LinearLayout>
-  </LinearLayout>
+        android:editable="false"
+        android:padding="5dp"
+        android:background="@drawable/selector"
+        android:layout_marginBottom="75dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutBirdCount">
+        <Button
+            android:text="Clear List"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnClearList"
+            android:background="@drawable/selector"
+            android:textColor="#FFF"
+            android:layout_margin="5dp" />
+        <Button
+            android:text="Cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCancel"
+            android:background="@drawable/selector"
+            android:textColor="#FFF"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+</LinearLayout>

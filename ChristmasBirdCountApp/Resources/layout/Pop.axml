@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="400dp"
-    android:minHeight="400dp">
+    android:minHeight="250dp">
     <TextView
         android:text=""
         android:layout_width="match_parent"
@@ -14,7 +14,10 @@
         android:id="@+id/lblBirdName"
         android:textSize="20dp"
         android:clickable="false"
-        android:editable="false" />
+        android:editable="false"
+        android:padding="5dp"
+        android:background="@drawable/selector"
+        android:layout_marginBottom="5dp" />
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -22,34 +25,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutBirdCount">
-        <TextView
+      <!--<TextView
             android:text="Seen:"
-            android:layout_width="match_parent"
+            android:layout_width="132.5dp"
             android:layout_height="wrap_content"
             android:typeface="sans"
-            android:textColor="#FFF"
+            android:textColor="#000"
             android:id="@+id/lblCountText"
             android:textSize="20dp"
-            android:layout_weight="1" />
-        <EditText
-            android:inputType="number"
-            android:imeOptions="actionDone"
-            android:singleLine="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtBirdCount"
-            android:typeface="sans"
-            android:textColor="#FFF"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:padding="5dp" />-->
+      <EditText
+          android:inputType="number"
+          android:imeOptions="actionDone"
+          android:singleLine="true"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/txtBirdCount"
+          android:typeface="sans"
+          android:textColor="#000"
+          android:layout_weight="1"
+          android:textSize="75dp"
+          android:gravity="right" />
     </LinearLayout>
     <Button
         android:text="Update Listing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnUpdateListing" />
+        android:id="@+id/btnUpdateListing"
+        android:background="@drawable/selector"
+        android:textColor="#FFF"
+        android:layout_margin="5dp" />
     <Button
         android:text="Delete Listing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnClearListing" />
+        android:id="@+id/btnClearListing"
+        android:background="@drawable/selector"
+        android:textColor="#FFF"
+        android:layout_margin="5dp" />
 </LinearLayout>

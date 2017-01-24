@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
-    <LinearLayout
+    android:minHeight="25px"
+    android:background="#FFF">
+<!--<LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
@@ -38,14 +39,15 @@
             android:clickable="true"
             android:editable="false"
             android:enabled="true" />
-    </LinearLayout>
+    </LinearLayout>-->
     <EditText
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtNameFilter"
         android:hint="Enter a bird name to filter your list"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:textColor="#000" />
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

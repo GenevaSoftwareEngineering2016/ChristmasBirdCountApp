@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="#FFF">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -25,7 +26,8 @@
                 android:id="@+id/lblRecipientEmail"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
             <EditText
                 android:inputType="text|textEmailAddress"
                 android:imeOptions="actionDone"
@@ -37,7 +39,8 @@
                 android:clickable="true"
                 android:editable="false"
                 android:hint="e.g. name@email.com"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
         </LinearLayout>
     <!-- Below: Collect Names of All Team/Party Members -->
         <LinearLayout
@@ -56,7 +59,8 @@
                 android:id="@+id/lblPartyMembers"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
             <EditText
                 android:inputType="text|textMultiLine"
                 android:layout_width="match_parent"
@@ -66,7 +70,8 @@
                 android:clickable="true"
                 android:editable="true"
                 android:hint="e.g. Austin, Mason"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
         </LinearLayout>
     <!-- Below: Collect Region of Count Circle -->
         <LinearLayout
@@ -85,7 +90,8 @@
                 android:id="@+id/lblRegion"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true"
+                android:textColor="#000" />
             <EditText
                 android:inputType="text"
                 android:imeOptions="actionDone"
@@ -97,7 +103,8 @@
                 android:clickable="true"
                 android:editable="true"
                 android:hint="e.g. BF-0113"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
         </LinearLayout>
     <!-- Below: Collect the Number of Hours Driven and Miles Driven -->
         <LinearLayout
@@ -116,7 +123,8 @@
                 android:id="@+id/lblHoursDriven"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
             <EditText
                 android:inputType="number|numberDecimal"
                 android:imeOptions="actionDone"
@@ -128,7 +136,8 @@
                 android:clickable="true"
                 android:editable="false"
                 android:hint="0.0"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -146,7 +155,8 @@
                 android:id="@+id/lblMilesDriven"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
             <EditText
                 android:inputType="number|numberDecimal"
                 android:imeOptions="actionDone"
@@ -158,7 +168,8 @@
                 android:clickable="true"
                 android:editable="false"
                 android:hint="0.0"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
         </LinearLayout>
     <!-- Below: Collect the Number of Hours Walked and Miles Walked -->
         <LinearLayout
@@ -177,7 +188,8 @@
                 android:id="@+id/lblHoursWalked"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
             <EditText
                 android:inputType="number|numberDecimal"
                 android:imeOptions="actionDone"
@@ -189,7 +201,8 @@
                 android:clickable="true"
                 android:editable="false"
                 android:hint="0.0"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -207,7 +220,8 @@
                 android:id="@+id/lblMilesWalked"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
             <EditText
                 android:inputType="number|numberDecimal"
                 android:imeOptions="actionDone"
@@ -219,7 +233,8 @@
                 android:clickable="true"
                 android:editable="false"
                 android:hint="0.0"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
         </LinearLayout>
     <!-- Below: Collect the Number of Hours Spent Owling -->
         <LinearLayout
@@ -238,7 +253,8 @@
                 android:id="@+id/lblHoursOwling"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
             <EditText
                 android:inputType="number|numberDecimal"
                 android:imeOptions="actionDone"
@@ -250,7 +266,8 @@
                 android:clickable="true"
                 android:editable="false"
                 android:hint="0.0"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
         </LinearLayout>
     <!-- Below: Collect Any Additional Notes -->
         <LinearLayout
@@ -269,7 +286,8 @@
                 android:id="@+id/lblNotes"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
             <EditText
                 android:inputType="text|textMultiLine|textCapSentences|textAutoCorrect"
                 android:layout_width="match_parent"
@@ -279,7 +297,8 @@
                 android:clickable="true"
                 android:editable="true"
                 android:hint="Enter optional notes here"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#000" />
         </LinearLayout>
     <!-- Controls Below Allow User to Navigate Back to Main App Screen or To Submit (Send) Email Report -->
         <LinearLayout
@@ -297,7 +316,10 @@
                 android:id="@+id/btnSend"
                 android:clickable="true"
                 android:editable="false"
-                android:enabled="true" />
+                android:enabled="true" 
+                android:textColor="#FFF"
+                android:background="@drawable/selector"
+                android:layout_margin="5dp" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:weightSum="100"
+    android:background="@drawable/selector">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="33.33"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/llClear"
+        android:background="@drawable/selector"
+        android:weightSum="100"
+        android:clickable="true">
+        <ImageView
+            android:src="@drawable/whitetrashcan"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:padding="5dp"
+            android:id="@+id/ibClear"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="false" />
+        <TextView
+            android:text="Clear List"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:id="@+id/lblClear"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="33.33"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/llAdd"
+        android:background="@drawable/selector"
+        android:clickable="true">
+        <ImageView
+            android:src="@drawable/whitebird"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:id="@+id/imageView2"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="false" />
+        <TextView
+            android:text="Add Bird"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:id="@+id/lblAdd"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="33.33"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/llSubmit"
+        android:background="@drawable/selector"
+        android:clickable="true">
+        <ImageView
+            android:src="@drawable/whitereport"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:id="@+id/imageView3"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="false" />
+        <TextView
+            android:text="Submit Report"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:id="@+id/lblSubmit"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF" />
+    </LinearLayout>
+</LinearLayout>
