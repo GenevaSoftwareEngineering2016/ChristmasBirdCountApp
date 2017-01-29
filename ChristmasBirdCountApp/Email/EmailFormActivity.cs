@@ -22,6 +22,15 @@ namespace ChristmasBirdCountApp.Email
         private EditText _partyMembers;
         private EditText _optionalNotes;
         private Button _sendButton;
+        private ImageButton ibEmailClearField;
+        private ImageButton ibPartyClearField;
+        private ImageButton ibCountCircleClearField;
+        private ImageButton ibHDClearField;
+        private ImageButton ibMDClearField;
+        private ImageButton ibHWClearField;
+        private ImageButton ibMWClearField;
+        private ImageButton ibHOClearField;
+        private ImageButton ibNotesClearField;
         private LinearLayout llClear;
         private LinearLayout llAdd;
         private LinearLayout llSubmit;
@@ -46,7 +55,7 @@ namespace ChristmasBirdCountApp.Email
 
             SetContentView(Resource.Layout.EmailForm);
 
-            // Register Fields and Buttons
+            // Find Fields and Buttons
             _recipientEmail = FindViewById<EditText>(Resource.Id.txtRecipientEmail);
             _regionEntry = FindViewById<EditText>(Resource.Id.txtRegion);
             _hoursDriven = FindViewById<EditText>(Resource.Id.txtHoursDriven);
@@ -56,6 +65,19 @@ namespace ChristmasBirdCountApp.Email
             _hoursOwling = FindViewById<EditText>(Resource.Id.txtHoursOwling);
             _partyMembers = FindViewById<EditText>(Resource.Id.txtPartyMembers);
             _optionalNotes = FindViewById<EditText>(Resource.Id.txtNotes);
+
+            // Find Buttons that Clear Text Fields
+            ibEmailClearField = FindViewById<ImageButton>(Resource.Id.ibEmailClearField);
+            ibPartyClearField = FindViewById<ImageButton>(Resource.Id.ibPartyClearField);
+            ibCountCircleClearField = FindViewById<ImageButton>(Resource.Id.ibCountCircleClearField);
+            ibHDClearField = FindViewById<ImageButton>(Resource.Id.ibHDClearField);
+            ibMDClearField = FindViewById<ImageButton>(Resource.Id.ibMDClearField);
+            ibHWClearField = FindViewById<ImageButton>(Resource.Id.ibHWClearField);
+            ibMWClearField = FindViewById<ImageButton>(Resource.Id.ibMWClearField);
+            ibHOClearField = FindViewById<ImageButton>(Resource.Id.ibHOClearField);
+            ibNotesClearField = FindViewById<ImageButton>(Resource.Id.ibNotesClearField);
+
+            // Find the Button that Submits/Sends Emails
             _sendButton = FindViewById<Button>(Resource.Id.btnSend);
         }
 
@@ -64,23 +86,44 @@ namespace ChristmasBirdCountApp.Email
             base.OnStart();
 
             // Register event handlers
-            _sendButton.Click += SendButtonOnClick;
-            llAdd.Click += LlAdd_Click;
+            _sendButton.Click += SendButton_OnClick;
+            llAdd.Click += LlAdd_OnClick;
 
-        }
-
-        private void LlAdd_Click(object sender, EventArgs e)
-        {
-            var intent = new Intent(this, typeof(MainActivity));
-            StartActivity(intent);
+            // Register Event Handlers for Buttons that Clear Text Fields
+            //ibEmailClearField;
+            //ibPartyClearField;
+            //ibCountCircleClearField;
+            //ibHDClearField;
+            //ibMDClearField;
+            //ibHWClearField;
+            //ibMWClearField;
+            //ibHOClearField;
+            //ibNotesClearField;
         }
 
         protected override void OnStop()
         {
             // Deregister event handlers
-            _sendButton.Click -= SendButtonOnClick;
+            _sendButton.Click -= SendButton_OnClick;
+
+            // Deregister Event Handlers for Buttons that Clear Text Fields
+            //ibEmailClearField;
+            //ibPartyClearField;
+            //ibCountCircleClearField;
+            //ibHDClearField;
+            //ibMDClearField;
+            //ibHWClearField;
+            //ibMWClearField;
+            //ibHOClearField;
+            //ibNotesClearField;
 
             base.OnStop();
+        }
+
+        private void LlAdd_OnClick(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
         }
 
         public override void OnBackPressed()
@@ -92,7 +135,12 @@ namespace ChristmasBirdCountApp.Email
             //SetContentView(Resource.Layout.Main);
         }
 
-        private void SendButtonOnClick(object sender, EventArgs e)
+        private void ClearField_OnClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SendButton_OnClick(object sender, EventArgs e)
         {
             bool emailSent = false;
             DateTime currentDateTime = DateTime.Now;

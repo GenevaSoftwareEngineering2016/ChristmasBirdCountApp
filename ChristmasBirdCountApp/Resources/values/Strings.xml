@@ -2,4 +2,5 @@
 <resources>
   <string name="ApplicationName">ChristmasBirdCountApp</string>
   <string name="ClearFilterIconDescription">Clicking this "X" icon clears the bird name filter.</string>
+  <string name="ClearFieldIconDescription">Clicking this "X" icon clears the field.</string>
 </resources>
