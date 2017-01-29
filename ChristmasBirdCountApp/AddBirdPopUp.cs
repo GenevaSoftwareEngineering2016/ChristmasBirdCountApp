@@ -16,7 +16,6 @@ namespace ChristmasBirdCountApp
         public OnTapEventArgs(string birdname) : base()
         {
             birdName = birdname;
-
         }
     }
 
@@ -27,6 +26,7 @@ namespace ChristmasBirdCountApp
         private List<BirdCount> wrkBirdList;
         private List<BirdCount> filteredMstrBirdList;
         private EditText addBirdNameFilter;
+        private ImageButton addBirdClearFilter;
 
         //broadcast events
         public event EventHandler<OnTapEventArgs> OnTap;
@@ -50,8 +50,11 @@ namespace ChristmasBirdCountApp
 
             addBirdListView.Adapter = new row_adapter(this.Activity, filteredMstrBirdList);
 
+            addBirdClearFilter = view.FindViewById<ImageButton>(Resource.Id.ibAddBirdClearFilter);
+
             addBirdListView.ItemClick += AddBirdListView_ItemClick;
             addBirdNameFilter.TextChanged += AddBirdNameFilter_OnTextChanged;
+            addBirdClearFilter.Click += IBAddBirdClearFilter_OnClick;
 
             return view;
         }
@@ -60,6 +63,11 @@ namespace ChristmasBirdCountApp
         {
             filteredMstrBirdList = Search.FilterBirdCountList(addBirdNameFilter.Text, mstrBirdList);    // Always compare filter requests to the 'Master' list, but use the 'filtered Master' for displaying view to user.
             addBirdListView.Adapter = new row_adapter(this.Activity, filteredMstrBirdList);
+        }
+
+        private void IBAddBirdClearFilter_OnClick(object sender, EventArgs e)
+        {
+            addBirdNameFilter.Text = "";
         }
 
         private void AddBirdListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="ApplicationName">ChristmasBirdCountApp</string>
+  <string name="ClearFilterIconDescription">Clicking this "X" icon clears the bird name filter.</string>
 </resources>

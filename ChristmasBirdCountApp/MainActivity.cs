@@ -20,6 +20,7 @@ namespace ChristmasBirdCountApp
         private Button btnAddBird;
         private Button btnClear;
         private Button btnSubmit;
+        private ImageButton ibClearFilter;
         LinearLayout llClear;
         LinearLayout llAdd;
         LinearLayout llSubmit;
@@ -44,10 +45,12 @@ namespace ChristmasBirdCountApp
             //Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
             //Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
             //btnAddBird = FindViewById<Button>(Resource.Id.btnAddBirdMain);
+            ibClearFilter = FindViewById<ImageButton>(Resource.Id.ibClearFilter);
 
             llClear = FindViewById<LinearLayout>(Resource.Id.llClear);
             llAdd = FindViewById<LinearLayout>(Resource.Id.llAdd);
             llSubmit = FindViewById<LinearLayout>(Resource.Id.llSubmit);
+            
 
             // Initialize Filter (Search) Box
             birdNameFilter = FindViewById<EditText>(Resource.Id.txtNameFilter);
@@ -89,6 +92,7 @@ namespace ChristmasBirdCountApp
 
             // Register Event Handlers
             //btnAddBird.Click += AddBird_OnClick;
+            ibClearFilter.Click += IBClearFilter_OnClick;
             llAdd.Click += AddBird_OnClick;
 
             if (workingBirdList.Count == 0)
@@ -113,6 +117,7 @@ namespace ChristmasBirdCountApp
 
             // Deregister Event Handlers
             //btnAddBird.Click -= AddBird_OnClick;
+            ibClearFilter.Click -= IBClearFilter_OnClick;
             llAdd.Click -= AddBird_OnClick;
 
             base.OnStop();
@@ -307,7 +312,7 @@ namespace ChristmasBirdCountApp
             }
         }
 
-        private void BtnClear_Click(object sender, System.EventArgs e)
+        private void BtnClear_Click(object sender, EventArgs e)
         {
             // Pull up the dialog
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
@@ -337,6 +342,11 @@ namespace ChristmasBirdCountApp
             filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
 
             userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
+        }
+
+        private void IBClearFilter_OnClick(object sender, EventArgs e)
+        {
+            birdNameFilter.Text = "";
         }
 
         private void MListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

@@ -67,7 +67,7 @@ namespace ChristmasBirdCountApp
             // Set Edit texts
             txtNumber = view.FindViewById<EditText>(Resource.Id.txtNumber);
 
-            //Adding birds
+            // Adding birds
             btnAddBirds = view.FindViewById<Button>(Resource.Id.btnAddBirds);
             btnAddBirds.Click += BtnAddBirds_Click;
 
