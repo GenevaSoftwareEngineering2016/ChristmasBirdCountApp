@@ -13,7 +13,7 @@ namespace ChristmasBirdCountApp.Email
     public class EmailFormActivity : Activity
     {
         private EditText _recipientEmail;
-        private EditText _regionEntry;
+        private EditText _countCircleCode;
         private EditText _hoursDriven;
         private EditText _milesDriven;
         private EditText _hoursWalked;
@@ -22,19 +22,19 @@ namespace ChristmasBirdCountApp.Email
         private EditText _partyMembers;
         private EditText _optionalNotes;
         private Button _sendButton;
-        private ImageButton ibEmailClearField;
-        private ImageButton ibPartyClearField;
-        private ImageButton ibCountCircleClearField;
-        private ImageButton ibHDClearField;
-        private ImageButton ibMDClearField;
-        private ImageButton ibHWClearField;
-        private ImageButton ibMWClearField;
-        private ImageButton ibHOClearField;
-        private ImageButton ibNotesClearField;
-        private LinearLayout llClear;
-        private LinearLayout llAdd;
-        private LinearLayout llSubmit;
-        private TextView txtBirdLabel;
+        private ImageButton _ibEmailClearField;
+        private ImageButton _ibPartyClearField;
+        private ImageButton _ibCountCircleClearField;
+        private ImageButton _ibHDClearField;
+        private ImageButton _ibMDClearField;
+        private ImageButton _ibHWClearField;
+        private ImageButton _ibMWClearField;
+        private ImageButton _ibHOClearField;
+        private ImageButton _ibNotesClearField;
+        private LinearLayout _llClear;
+        private LinearLayout _llAdd;
+        private LinearLayout _llSubmit;
+        private TextView _txtBirdLabel;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,21 +43,21 @@ namespace ChristmasBirdCountApp.Email
             ActionBar.SetCustomView(Resource.Layout.actionBar);
             ActionBar.SetDisplayShowCustomEnabled(true);
 
-            llClear = FindViewById<LinearLayout>(Resource.Id.llClear);
-            llAdd = FindViewById<LinearLayout>(Resource.Id.llAdd);
-            llSubmit = FindViewById<LinearLayout>(Resource.Id.llSubmit);
-            txtBirdLabel = FindViewById<TextView>(Resource.Id.lblAdd);
+            _llClear = FindViewById<LinearLayout>(Resource.Id.llClear);
+            _llAdd = FindViewById<LinearLayout>(Resource.Id.llAdd);
+            _llSubmit = FindViewById<LinearLayout>(Resource.Id.llSubmit);
+            _txtBirdLabel = FindViewById<TextView>(Resource.Id.lblAdd);
 
-            txtBirdLabel.Text = "Return to List";
+            _txtBirdLabel.Text = "Return to List";
 
-            llClear.Visibility = Android.Views.ViewStates.Invisible;
-            llSubmit.Visibility = Android.Views.ViewStates.Invisible;
+            _llClear.Visibility = Android.Views.ViewStates.Invisible;
+            _llSubmit.Visibility = Android.Views.ViewStates.Invisible;
 
             SetContentView(Resource.Layout.EmailForm);
 
             // Find Fields and Buttons
             _recipientEmail = FindViewById<EditText>(Resource.Id.txtRecipientEmail);
-            _regionEntry = FindViewById<EditText>(Resource.Id.txtRegion);
+            _countCircleCode = FindViewById<EditText>(Resource.Id.txtRegion);
             _hoursDriven = FindViewById<EditText>(Resource.Id.txtHoursDriven);
             _milesDriven = FindViewById<EditText>(Resource.Id.txtMilesDriven);
             _hoursWalked = FindViewById<EditText>(Resource.Id.txtHoursWalked);
@@ -67,15 +67,15 @@ namespace ChristmasBirdCountApp.Email
             _optionalNotes = FindViewById<EditText>(Resource.Id.txtNotes);
 
             // Find Buttons that Clear Text Fields
-            ibEmailClearField = FindViewById<ImageButton>(Resource.Id.ibEmailClearField);
-            ibPartyClearField = FindViewById<ImageButton>(Resource.Id.ibPartyClearField);
-            ibCountCircleClearField = FindViewById<ImageButton>(Resource.Id.ibCountCircleClearField);
-            ibHDClearField = FindViewById<ImageButton>(Resource.Id.ibHDClearField);
-            ibMDClearField = FindViewById<ImageButton>(Resource.Id.ibMDClearField);
-            ibHWClearField = FindViewById<ImageButton>(Resource.Id.ibHWClearField);
-            ibMWClearField = FindViewById<ImageButton>(Resource.Id.ibMWClearField);
-            ibHOClearField = FindViewById<ImageButton>(Resource.Id.ibHOClearField);
-            ibNotesClearField = FindViewById<ImageButton>(Resource.Id.ibNotesClearField);
+            _ibEmailClearField = FindViewById<ImageButton>(Resource.Id.ibEmailClearField);
+            _ibPartyClearField = FindViewById<ImageButton>(Resource.Id.ibPartyClearField);
+            _ibCountCircleClearField = FindViewById<ImageButton>(Resource.Id.ibCountCircleClearField);
+            _ibHDClearField = FindViewById<ImageButton>(Resource.Id.ibHDClearField);
+            _ibMDClearField = FindViewById<ImageButton>(Resource.Id.ibMDClearField);
+            _ibHWClearField = FindViewById<ImageButton>(Resource.Id.ibHWClearField);
+            _ibMWClearField = FindViewById<ImageButton>(Resource.Id.ibMWClearField);
+            _ibHOClearField = FindViewById<ImageButton>(Resource.Id.ibHOClearField);
+            _ibNotesClearField = FindViewById<ImageButton>(Resource.Id.ibNotesClearField);
 
             // Find the Button that Submits/Sends Emails
             _sendButton = FindViewById<Button>(Resource.Id.btnSend);
@@ -87,18 +87,18 @@ namespace ChristmasBirdCountApp.Email
 
             // Register event handlers
             _sendButton.Click += SendButton_OnClick;
-            llAdd.Click += LlAdd_OnClick;
+            _llAdd.Click += LlAdd_OnClick;
 
             // Register Event Handlers for Buttons that Clear Text Fields
-            //ibEmailClearField;
-            //ibPartyClearField;
-            //ibCountCircleClearField;
-            //ibHDClearField;
-            //ibMDClearField;
-            //ibHWClearField;
-            //ibMWClearField;
-            //ibHOClearField;
-            //ibNotesClearField;
+            _ibEmailClearField.Click += ClearEmailField_OnClick;
+            _ibPartyClearField.Click += ClearPartyField_OnClick;
+            _ibCountCircleClearField.Click += ClearCountCircleField_OnClick;
+            _ibHDClearField.Click += ClearHoursDrivenField_OnClick;
+            _ibMDClearField.Click += ClearMilesDrivenField_OnClick;
+            _ibHWClearField.Click += ClearHoursWalkedField_OnClick;
+            _ibMWClearField.Click += ClearMilesWalkedField_OnClick;
+            _ibHOClearField.Click += ClearHoursOwlingField_OnClick;
+            _ibNotesClearField.Click += ClearNotesField_OnClick;
         }
 
         protected override void OnStop()
@@ -107,17 +107,62 @@ namespace ChristmasBirdCountApp.Email
             _sendButton.Click -= SendButton_OnClick;
 
             // Deregister Event Handlers for Buttons that Clear Text Fields
-            //ibEmailClearField;
-            //ibPartyClearField;
-            //ibCountCircleClearField;
-            //ibHDClearField;
-            //ibMDClearField;
-            //ibHWClearField;
-            //ibMWClearField;
-            //ibHOClearField;
-            //ibNotesClearField;
+            _ibEmailClearField.Click -= ClearEmailField_OnClick;
+            _ibPartyClearField.Click -= ClearPartyField_OnClick;
+            _ibCountCircleClearField.Click -= ClearCountCircleField_OnClick;
+            _ibHDClearField.Click -= ClearHoursDrivenField_OnClick;
+            _ibMDClearField.Click -= ClearMilesDrivenField_OnClick;
+            _ibHWClearField.Click -= ClearHoursWalkedField_OnClick;
+            _ibMWClearField.Click -= ClearMilesWalkedField_OnClick;
+            _ibHOClearField.Click -= ClearHoursOwlingField_OnClick;
+            _ibNotesClearField.Click -= ClearNotesField_OnClick;
 
             base.OnStop();
+        }
+
+        private void ClearEmailField_OnClick(object sender, EventArgs e)
+        {
+            _recipientEmail.Text = "";
+        }
+
+        private void ClearPartyField_OnClick(object sender, EventArgs e)
+        {
+            _partyMembers.Text = "";
+        }
+
+        private void ClearCountCircleField_OnClick(object sender, EventArgs e)
+        {
+            _countCircleCode.Text = "";
+        }
+
+        private void ClearHoursDrivenField_OnClick(object sender, EventArgs e)
+        {
+            _hoursDriven.Text = "";
+        }
+
+        private void ClearMilesDrivenField_OnClick(object sender, EventArgs e)
+        {
+            _milesDriven.Text = "";
+        }
+
+        private void ClearHoursWalkedField_OnClick(object sender, EventArgs e)
+        {
+            _hoursWalked.Text = "";
+        }
+
+        private void ClearMilesWalkedField_OnClick(object sender, EventArgs e)
+        {
+            _milesWalked.Text = "";
+        }
+
+        private void ClearHoursOwlingField_OnClick(object sender, EventArgs e)
+        {
+            _hoursOwling.Text = "";
+        }
+
+        private void ClearNotesField_OnClick(object sender, EventArgs e)
+        {
+            _optionalNotes.Text = "";
         }
 
         private void LlAdd_OnClick(object sender, EventArgs e)
@@ -149,7 +194,7 @@ namespace ChristmasBirdCountApp.Email
             StringBuilder emailBodyText = new StringBuilder();
             emailBodyText.AppendLine("Christmas Bird Count Results\n");
             emailBodyText.AppendLine(currentDateTime + "\n");
-            emailBodyText.AppendLine("Region: " + _regionEntry.Text + "\n");
+            emailBodyText.AppendLine("Region: " + _countCircleCode.Text + "\n");
             emailBodyText.AppendLine("--------------------------------------\n");
             emailBodyText.AppendLine("Party Members: " + _partyMembers.Text + "\n");
             emailBodyText.AppendLine("Hours Driven: " + _hoursDriven.Text + "\n");
@@ -165,7 +210,7 @@ namespace ChristmasBirdCountApp.Email
             // Create and Send the Email Message
             Email emailToSend = new Email();
 
-            emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _regionEntry.Text, emailBodyText);
+            emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _countCircleCode.Text, emailBodyText);
 
             // Send the Email - We Are Adding an Attachment
             emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);
