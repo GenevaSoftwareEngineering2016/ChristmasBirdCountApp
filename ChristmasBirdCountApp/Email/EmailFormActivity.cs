@@ -17,6 +17,10 @@ namespace ChristmasBirdCountApp.Email
         private EditText _partySize;
         private EditText _countCircleCode;
         private RadioGroup _rgCountType;
+        private Spinner _startTime1;
+        private Spinner _endTime1;
+        private Spinner _startTime2;
+        private Spinner _endTime2;
         private EditText _hoursDriven;
         private EditText _milesDriven;
         private EditText _hoursWalked;
@@ -29,6 +33,10 @@ namespace ChristmasBirdCountApp.Email
         private ImageButton _ibPartySizeClearField;
         private ImageButton _ibCountCircleClearField;
         private ImageButton _ibCountTypeClearField;
+        private ImageButton _ibStartTime1ClearField;
+        private ImageButton _ibEndTime1ClearField;
+        private ImageButton _ibStartTime2ClearField;
+        private ImageButton _ibEndTime2ClearField;
         private ImageButton _ibHDClearField;
         private ImageButton _ibMDClearField;
         private ImageButton _ibHWClearField;
@@ -65,6 +73,10 @@ namespace ChristmasBirdCountApp.Email
             _partySize = FindViewById<EditText>(Resource.Id.txtPartySize);
             _countCircleCode = FindViewById<EditText>(Resource.Id.txtCountCircle);
             _rgCountType = FindViewById<RadioGroup>(Resource.Id.radiogroupCountType);
+            _startTime1 = FindViewById<Spinner>(Resource.Id.spinnerStartTime1);
+            _endTime1 = FindViewById<Spinner>(Resource.Id.spinnerEndTime1);
+            _startTime2 = FindViewById<Spinner>(Resource.Id.spinnerStartTime2);
+            _endTime2 = FindViewById<Spinner>(Resource.Id.spinnerEndTime2);
             _hoursDriven = FindViewById<EditText>(Resource.Id.txtHoursDriven);
             _milesDriven = FindViewById<EditText>(Resource.Id.txtMilesDriven);
             _hoursWalked = FindViewById<EditText>(Resource.Id.txtHoursWalked);
@@ -78,6 +90,10 @@ namespace ChristmasBirdCountApp.Email
             _ibPartySizeClearField = FindViewById<ImageButton>(Resource.Id.ibPartySizeClearField);
             _ibCountCircleClearField = FindViewById<ImageButton>(Resource.Id.ibCountCircleClearField);
             _ibCountTypeClearField = FindViewById<ImageButton>(Resource.Id.ibCountTypeClearField);
+            _ibStartTime1ClearField = FindViewById<ImageButton>(Resource.Id.ibStart1ClearField);
+            _ibEndTime1ClearField = FindViewById<ImageButton>(Resource.Id.ibEnd1ClearField);
+            _ibStartTime2ClearField = FindViewById<ImageButton>(Resource.Id.ibStart2ClearField);
+            _ibEndTime2ClearField = FindViewById<ImageButton>(Resource.Id.ibEnd2ClearField);
             _ibHDClearField = FindViewById<ImageButton>(Resource.Id.ibHDClearField);
             _ibMDClearField = FindViewById<ImageButton>(Resource.Id.ibMDClearField);
             _ibHWClearField = FindViewById<ImageButton>(Resource.Id.ibHWClearField);
@@ -87,6 +103,15 @@ namespace ChristmasBirdCountApp.Email
 
             // Find the Button that Submits/Sends Emails
             _sendButton = FindViewById<Button>(Resource.Id.btnSend);
+
+            // Set Up Time Selection Spinners Using Spinner Adapter and Strings.xml Resource
+            var timeSpinnerAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.time_options_array, Android.Resource.Layout.SimpleSpinnerItem);
+            timeSpinnerAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+
+            _startTime1.Adapter = timeSpinnerAdapter;
+            _endTime1.Adapter = timeSpinnerAdapter;
+            _startTime2.Adapter = timeSpinnerAdapter;
+            _endTime2.Adapter = timeSpinnerAdapter;
         }
 
         protected override void OnStart()
@@ -103,6 +128,10 @@ namespace ChristmasBirdCountApp.Email
             _ibPartySizeClearField.Click += ClearPartySizeField_OnClick;
             _ibCountCircleClearField.Click += ClearCountCircleField_OnClick;
             _ibCountTypeClearField.Click += ClearCountTypeRadio_OnClick;
+            _ibStartTime1ClearField.Click += ClearStartTime1_OnClick;
+            _ibEndTime1ClearField.Click += ClearEndTime1_OnClick;
+            _ibStartTime2ClearField.Click += ClearStartTime2_OnClick;
+            _ibEndTime2ClearField.Click += ClearEndTime2_OnClick;
             _ibHDClearField.Click += ClearHoursDrivenField_OnClick;
             _ibMDClearField.Click += ClearMilesDrivenField_OnClick;
             _ibHWClearField.Click += ClearHoursWalkedField_OnClick;
@@ -122,6 +151,10 @@ namespace ChristmasBirdCountApp.Email
             _ibPartySizeClearField.Click -= ClearPartySizeField_OnClick;
             _ibCountCircleClearField.Click -= ClearCountCircleField_OnClick;
             _ibCountTypeClearField.Click -= ClearCountTypeRadio_OnClick;
+            _ibStartTime1ClearField.Click -= ClearStartTime1_OnClick;
+            _ibEndTime1ClearField.Click -= ClearEndTime1_OnClick;
+            _ibStartTime2ClearField.Click -= ClearStartTime2_OnClick;
+            _ibEndTime2ClearField.Click -= ClearEndTime2_OnClick;
             _ibHDClearField.Click -= ClearHoursDrivenField_OnClick;
             _ibMDClearField.Click -= ClearMilesDrivenField_OnClick;
             _ibHWClearField.Click -= ClearHoursWalkedField_OnClick;
@@ -155,6 +188,26 @@ namespace ChristmasBirdCountApp.Email
         private void ClearCountTypeRadio_OnClick(object sender, EventArgs e)
         {
             _rgCountType.ClearCheck();
+        }
+
+        private void ClearStartTime1_OnClick(object sender, EventArgs e)
+        {
+            _startTime1.SetSelection(0);
+        }
+
+        private void ClearEndTime1_OnClick(object sender, EventArgs e)
+        {
+            _endTime1.SetSelection(0);
+        }
+
+        private void ClearStartTime2_OnClick(object sender, EventArgs e)
+        {
+            _startTime2.SetSelection(0);
+        }
+
+        private void ClearEndTime2_OnClick(object sender, EventArgs e)
+        {
+            _endTime2.SetSelection(0);
         }
 
         private void ClearHoursDrivenField_OnClick(object sender, EventArgs e)
