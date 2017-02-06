@@ -17,8 +17,6 @@ namespace ChristmasBirdCountApp.Email
         private EditText _partySize;
         private EditText _countCircleCode;
         private RadioGroup _rgCountType;
-        private RadioButton _rbField;
-        private RadioButton _rbFeeder;
         private EditText _hoursDriven;
         private EditText _milesDriven;
         private EditText _hoursWalked;
@@ -67,8 +65,6 @@ namespace ChristmasBirdCountApp.Email
             _partySize = FindViewById<EditText>(Resource.Id.txtPartySize);
             _countCircleCode = FindViewById<EditText>(Resource.Id.txtCountCircle);
             _rgCountType = FindViewById<RadioGroup>(Resource.Id.radiogroupCountType);
-            _rbField = FindViewById<RadioButton>(Resource.Id.radioFieldType);
-            _rbFeeder = FindViewById<RadioButton>(Resource.Id.radioFeederType);
             _hoursDriven = FindViewById<EditText>(Resource.Id.txtHoursDriven);
             _milesDriven = FindViewById<EditText>(Resource.Id.txtMilesDriven);
             _hoursWalked = FindViewById<EditText>(Resource.Id.txtHoursWalked);
@@ -158,8 +154,7 @@ namespace ChristmasBirdCountApp.Email
 
         private void ClearCountTypeRadio_OnClick(object sender, EventArgs e)
         {
-            _rbField.Checked = false;
-            _rbFeeder.Checked = false;
+            _rgCountType.ClearCheck();
         }
 
         private void ClearHoursDrivenField_OnClick(object sender, EventArgs e)
