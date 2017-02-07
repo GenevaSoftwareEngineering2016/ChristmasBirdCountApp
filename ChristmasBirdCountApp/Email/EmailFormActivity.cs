@@ -105,13 +105,17 @@ namespace ChristmasBirdCountApp.Email
             _sendButton = FindViewById<Button>(Resource.Id.btnSend);
 
             // Set Up Time Selection Spinners Using Spinner Adapter and Strings.xml Resource
-            var timeSpinnerAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.time_options_array, Android.Resource.Layout.SimpleSpinnerItem);
+            var timeSpinnerAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.times_array, Android.Resource.Layout.SimpleSpinnerItem);
             timeSpinnerAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+
+            // Set Up Time Selection Spinner for Optional Times (Start and End Times 2)
+            var optionalTimeSpinnerAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.time_optional_array, Android.Resource.Layout.SimpleSpinnerItem);
+            optionalTimeSpinnerAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
 
             _startTime1.Adapter = timeSpinnerAdapter;
             _endTime1.Adapter = timeSpinnerAdapter;
-            _startTime2.Adapter = timeSpinnerAdapter;
-            _endTime2.Adapter = timeSpinnerAdapter;
+            _startTime2.Adapter = optionalTimeSpinnerAdapter;   // The second start time is optional (users may not have taken a break)
+            _endTime2.Adapter = optionalTimeSpinnerAdapter;     // The second end time is optional (users may not have taken a break)
         }
 
         protected override void OnStart()
@@ -270,15 +274,18 @@ namespace ChristmasBirdCountApp.Email
             emailBodyText.AppendLine("--------------------------------------\n");
             emailBodyText.AppendLine("Party Members: " + _partyMembers.Text + "\n");
             emailBodyText.AppendLine("Number in Party: " + _partySize.Text + "\n");
-            emailBodyText.AppendLine("Hours Driven: " + _hoursDriven.Text + "\n");
+            emailBodyText.AppendLine("Start Time 1: " + _startTime1.SelectedItem.ToString());
+            emailBodyText.AppendLine("End Time 1: " + _endTime1.SelectedItem.ToString() + "\n");
+            emailBodyText.AppendLine("Start Time 2: " + _startTime2.SelectedItem.ToString());
+            emailBodyText.AppendLine("End Time 2: " + _endTime2.SelectedItem.ToString() + "\n");
+            emailBodyText.AppendLine("Hours Driven: " + _hoursDriven.Text);
             emailBodyText.AppendLine("Miles Driven: " + _milesDriven.Text + "\n");
-            emailBodyText.AppendLine("Hours Walked: " + _hoursWalked.Text + "\n");
+            emailBodyText.AppendLine("Hours Walked: " + _hoursWalked.Text);
             emailBodyText.AppendLine("Miles Walked: " + _milesWalked.Text + "\n");
             emailBodyText.AppendLine("Hours Owling: " + _hoursOwling.Text + "\n");
             emailBodyText.AppendLine("Total Number of Bird Species Seen: " + MainActivity.totalSpeciesSeen.ToString() + "\n");
             emailBodyText.AppendLine("Total Number of All Birds Seen: " + MainActivity.totalBirdsSeen.ToString() + "\n");
-            emailBodyText.AppendLine("Notes: " + _optionalNotes.Text + "\n");
-            emailBodyText.AppendLine("--------------------------------------\n");
+            emailBodyText.AppendLine("Notes: " + _optionalNotes.Text);
 
             // Create and Send the Email Message
             Email emailToSend = new Email();

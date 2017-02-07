@@ -31,8 +31,11 @@ namespace ChristmasBirdCountApp
 		public partial class Array
 		{
 			
+			// aapt resource value: 0x7f050001
+			public const int time_optional_array = 2131034113;
+			
 			// aapt resource value: 0x7f050000
-			public const int time_options_array = 2131034112;
+			public const int times_array = 2131034112;
 			
 			static Array()
 			{
