@@ -17,9 +17,9 @@ namespace ChristmasBirdCountApp
         private List<BirdCount> masterBirdList;     // Most up-to-date list of all birds; Used by search function to add birds to "workingBirdList"
         private List<BirdCount> workingBirdList;    // List of all birds with counts 0+; This list is submitted with email report to Compiler
         private List<BirdCount> filteredBirdList;
-        private Button btnAddBird;
-        private Button btnClear;
-        private Button btnSubmit;
+        //private Button btnAddBird;
+        //private Button btnClear;
+        //private Button btnSubmit;
         private ImageButton ibClearFilter;
         LinearLayout llClear;
         LinearLayout llAdd;
