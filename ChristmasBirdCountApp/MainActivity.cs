@@ -137,7 +137,7 @@ namespace ChristmasBirdCountApp
 
         private void AddBirdPopDialog_OnTap(object sender, OnTapEventArgs e)
         {
-            workingBirdList.Add(new BirdCount() { Name = e.birdName, Count = 0 });
+            workingBirdList.Add(new BirdCount() { Name = e.birdName, Count = 0, InList = true});
 
             filteredBirdList = workingBirdList;     // Update the filtered bird list
 
@@ -227,7 +227,7 @@ namespace ChristmasBirdCountApp
             //add count to existing bird count
             var totalCount = e.birdCount + addBirds;
 
-            workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = totalCount });
+            workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = totalCount, InList = true});
 
             filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
 
@@ -264,7 +264,7 @@ namespace ChristmasBirdCountApp
                 count = Int32.Parse(e.birdCount);
             }
             
-            workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = count });
+            workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = count, InList = true});
 
             filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
 

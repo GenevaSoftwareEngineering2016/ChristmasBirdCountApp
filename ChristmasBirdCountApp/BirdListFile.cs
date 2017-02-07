@@ -30,7 +30,7 @@ namespace ChristmasBirdCountApp
 
             for (int i = 0; i < finalBirdList.Count; i++)
             {
-                csvOutput[i] = new string[] { finalBirdList[i].Name, finalBirdList[i].Count.ToString() };
+                csvOutput[i] = new string[] { finalBirdList[i].Name, finalBirdList[i].Count.ToString(), finalBirdList[i].InList.ToString() };
             }
 
             int listLength = csvOutput.Length;
@@ -81,13 +81,13 @@ namespace ChristmasBirdCountApp
                             var birdCountItem = line.Split(',');
                             if (birdCountItem[0] != "" && birdCountItem[0] != null)
                             {
-                                // Only add birds to list if their count is > 0 because we do not want to display all birds on screen
-                                // We only want to display birds on screen that have been added (i.e. have a count > 0)
-                                if (Convert.ToInt32(birdCountItem[1]) > 0)
+                                // Only add birds to list if they were added to the list because we do not want to display all birds on screen
+                                // We only want to display birds on screen that have been added (i.e. InList == TRUE)
+                                if (Convert.ToBoolean(birdCountItem[2]))
                                 {
-                                    loadedBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]) });
+                                    loadedBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]), InList = Convert.ToBoolean(birdCountItem[2])});
                                 }
-                                else { /* Skip over this bird, becuase the user had not "added" it to the list (i.e. count = 0) */ }
+                                else { /* Skip over this bird, becuase the user had not "added" it to the list (i.e. InList == FALSE) */ }
                             }
                             else { }
                         }
@@ -128,7 +128,7 @@ namespace ChristmasBirdCountApp
                             var birdCountItem = line.Split(',');
                             if (birdCountItem[0] != "" && birdCountItem[0] != null)
                             {
-                                loadedMasterBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]) });
+                                loadedMasterBirdList.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]), InList = false});  // InList = false defaults all birds to not be included in 'Working' list
                             }
                             else { }
                         }
@@ -161,6 +161,7 @@ namespace ChristmasBirdCountApp
                     if (workingBird.Name == updatedBird.Name)
                     {
                         updatedBird.Count = workingBird.Count;
+                        updatedBird.InList = workingBird.InList;
                         break;
                     }
                     else { /* Have not yet found a matching bird in the "updatedWorkingBirdList" */ }

@@ -5,12 +5,6 @@ namespace ChristmasBirdCountApp
     {
         public string Name { get; set; }
         public int Count { get; set; }
-
-        // Explicit Constructor
-        //public BirdCount(string name, int count)
-        //{
-        //    Name = name;
-        //    Count = count;
-        //}
+        public bool InList { get; set; }
     }
 }
