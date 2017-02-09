@@ -265,6 +265,20 @@ namespace ChristmasBirdCountApp.Email
             DateTime currentDateTime = DateTime.Now;
             RadioButton selectedCountType = FindViewById<RadioButton>(_rgCountType.CheckedRadioButtonId); // Get the value of the currently selected radio button
 
+            // Check to ensure that user entered an email address for the recipient of the report (i.e. the Compiler)
+            if (string.IsNullOrEmpty(_recipientEmail.Text))
+            {
+                Toast.MakeText(this, "You must enter a recipient email address.", ToastLength.Short).Show();
+                return;
+            }
+
+            // Check to ensure that user selected a count type
+            if (selectedCountType == null)
+            {
+                Toast.MakeText(this, "You must choose a count type.", ToastLength.Short).Show();
+                return;
+            }
+
             // Create the Body of the Email Message
             StringBuilder emailBodyText = new StringBuilder();
             emailBodyText.AppendLine("Christmas Bird Count Results\n");

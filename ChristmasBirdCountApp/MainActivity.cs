@@ -5,6 +5,7 @@ using Android.OS;
 using System.Collections.Generic;
 using System;
 using System.IO;
+using System.Linq;
 using Android.Content;
 using Android.Content.PM;
 using ChristmasBirdCountApp.Email;
@@ -378,8 +379,8 @@ namespace ChristmasBirdCountApp
             // Save Existing List of Birds to .csv File
             BirdListFile.CreateWorkingBirdListFile(masterBirdList, workingBirdList);
 
-            // Calculate the total number of different bird species seen
-            totalSpeciesSeen = workingBirdList.Count;
+            // Calculate the total number of different bird species seen, but only birds in the list with Count >= 1
+            totalSpeciesSeen = workingBirdList.Count(bird => bird.Count >= 1);
 
             // Calculate the total number of birds seen
             // 1) Reset the 'totalBirdsSeen' variable to begin a fresh total count
