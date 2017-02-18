@@ -220,13 +220,18 @@ namespace ChristmasBirdCountApp
             workingBirdList.RemoveAt(birdIndex);
 
             int addBirds;
-            if (e.addNumber == "")
+            if (string.IsNullOrEmpty(e.addNumber))
             {
                 addBirds = 0;
             }
             else
             {
-                addBirds = Int32.Parse(e.addNumber);
+                // Check that number entered is a valid 32-bit Int.  IF value parses to Int32, addBirds is set to the value.  IF NOT, the user gets an error message.
+                if (!Int32.TryParse(e.addNumber, out addBirds))
+                {
+                    string alert = "Invalid number.  Check value entered.";
+                    Toast.MakeText(this, alert, ToastLength.Short).Show();
+                }
             }
 
             // Add count to existing bird count
@@ -242,6 +247,7 @@ namespace ChristmasBirdCountApp
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
         {
             string birdName = filteredBirdList[e.id].Name;
+            int birdCountBeforeUpdate = filteredBirdList[e.id].Count;
             int birdIndex = 0;
 
             foreach (var bird in workingBirdList)
@@ -256,17 +262,22 @@ namespace ChristmasBirdCountApp
                 }
             }
 
-            //workingBirdList.RemoveAt(e.id);       // Cannot use "e.id" on "workingBirdList," because the user may be doing a filtered search
             workingBirdList.RemoveAt(birdIndex);
 
-            int count = 0;
-            if (e.birdCount == "")
+            int count;
+            if (string.IsNullOrEmpty(e.birdCount))
             {
                 count = 0;
             }
             else
             {
-                count = Int32.Parse(e.birdCount);
+                // Check that 'count' number entered is a valid 32-bit Int.  IF value parses to Int32, 'count' is set to the value.  IF NOT, the user gets an error message.
+                if (!Int32.TryParse(e.birdCount, out count))
+                {
+                    count = birdCountBeforeUpdate;       // Use the last valid count, since we cannot use the updated count provided by the user.
+                    string alert = "Invalid number.  Check value entered.";
+                    Toast.MakeText(this, alert, ToastLength.Short).Show();
+                }
             }
             
             workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = count, InList = true});
