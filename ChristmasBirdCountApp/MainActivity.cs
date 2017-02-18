@@ -138,9 +138,13 @@ namespace ChristmasBirdCountApp
 
         private void AddBirdPopDialog_OnTap(object sender, OnTapEventArgs e)
         {
-            workingBirdList.Add(new BirdCount() { Name = e.birdName, Count = 0, InList = true});
+            // Create new bird object and add it to the working list
+            BirdCount newBird = new BirdCount(e.birdName, 0, true);
+            workingBirdList.Add(newBird);
 
-            filteredBirdList = workingBirdList;     // Update the filtered bird list
+            // Clear the search filter and return the user to the (filtered, but no filter applied) working bird list
+            birdNameFilter.Text = "";
+            filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);    // Update the filtered bird list; IF filter was not cleared, list would still be filtered after bird is added.
 
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
             userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
@@ -225,7 +229,7 @@ namespace ChristmasBirdCountApp
                 addBirds = Int32.Parse(e.addNumber);
             }
 
-            //add count to existing bird count
+            // Add count to existing bird count
             var totalCount = e.birdCount + addBirds;
 
             workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = totalCount, InList = true});
