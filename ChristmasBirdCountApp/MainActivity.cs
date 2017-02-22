@@ -242,6 +242,16 @@ namespace ChristmasBirdCountApp
                         string alert = "Invalid number.  Check value entered.  Value may be too large.";
                         Toast.MakeText(this, alert, ToastLength.Short).Show();
                     }
+
+                    // We need to see if the current count + the number to add exceeds the value that can be stored in an Int32.
+                    Int64 valueToCheck = Convert.ToInt64(countBeforeAdd) + Convert.ToInt64(addBirds);
+
+                    if (valueToCheck > Int32.MaxValue)  // If the number is larger than what a bird's 'Count' can hold, we give an error and exit.
+                    {
+                        string alert = "Value would exceed maximum count.  Cannot add to count.";
+                        Toast.MakeText(this, alert, ToastLength.Short).Show();
+                        addBirds = 0;   // Change number to add to zero (0), because we cannot add to the bird's count anyways
+                    }
                 }
 
                 // Add count to existing bird count
