@@ -438,10 +438,39 @@ namespace ChristmasBirdCountApp
             }
 
             // Start New Intent to Open New Screen for Submit Form
-            var intent = new Intent(this, typeof(EmailFormActivity));
-            StartActivity(intent);
+            // Check with user to see what type of count report needs to be made.
+            // Options are Field, Feeder, and Count Week
+            // Open the correct report form for the count type selected by the user.
 
-            //SetContentView(Resource.Layout.EmailForm);
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            ChooseCountTypePopUp countTypePopUp = new ChooseCountTypePopUp();
+            countTypePopUp.Show(transaction, "Dialog Fragment");
+
+            // Subscribe to events in ChooseCountTypePopUp class
+            countTypePopUp.OnFieldCount += Submit_OnFieldCount;
+            countTypePopUp.OnFeederCount += Submit_OnFeederCount;
+            countTypePopUp.OnCountWeekCount += Submit_OnCountWeekCount;
+        }
+
+        private void Submit_OnFieldCount(object sender, OnFieldCountEventArgs e)
+        {
+            // Open the Field count type submission form
+            var intent = new Intent(this, typeof(FieldEmailFormActivity));
+            StartActivity(intent);
+        }
+
+        private void Submit_OnFeederCount(object sender, OnFeederCountEventArgs e)
+        {
+            // Open the Feeder count type submission form
+            var intent = new Intent(this, typeof(FeederEmailFormActivity));
+            StartActivity(intent);
+        }
+
+        private void Submit_OnCountWeekCount(object sender, OnCountWeekCountEventArgs e)
+        {
+            // Open the Count Week count type submission form
+            var intent = new Intent(this, typeof(CountWeekEmailFormActivity));
+            StartActivity(intent);
         }
     }
 }

@@ -84,7 +84,9 @@
   <ItemGroup>
     <Compile Include="AddBirdPopUp.cs" />
     <Compile Include="BirdCount.cs" />
+    <Compile Include="ChooseCountTypePopUp.cs" />
     <Compile Include="ClearAllPopUp.cs" />
+    <Compile Include="Email\CountWeekEmailFormActivity.cs" />
     <Compile Include="Email\Decryptor.cs" />
     <Compile Include="Email\Email.cs" />
     <Compile Include="Email\EmailFormActivity.cs" />
@@ -94,6 +96,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmailResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Email\FeederEmailFormActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PopUp.cs" />
     <Compile Include="PopUpAdd.cs" />
@@ -122,6 +125,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\actionBar.axml" />
+    <AndroidResource Include="Resources\layout\ChooseCountTypePopUp.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">

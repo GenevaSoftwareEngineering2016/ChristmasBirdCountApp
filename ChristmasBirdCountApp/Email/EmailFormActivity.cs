@@ -10,7 +10,7 @@ using Android.Widget;
 namespace ChristmasBirdCountApp.Email
 {
     [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2", Theme = "@style/CustomActionBarTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
-    public class EmailFormActivity : Activity
+    public class FieldEmailFormActivity : Activity
     {
         private EditText _recipientEmail;
         private EditText _partyMembers;
