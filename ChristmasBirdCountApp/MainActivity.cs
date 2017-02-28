@@ -138,9 +138,13 @@ namespace ChristmasBirdCountApp
 
         private void AddBirdPopDialog_OnTap(object sender, OnTapEventArgs e)
         {
-            workingBirdList.Add(new BirdCount() { Name = e.birdName, Count = 0, InList = true});
+            // Create new bird object and add it to the working list
+            BirdCount newBird = new BirdCount(e.birdName, 0, true);
+            workingBirdList.Add(newBird);
 
-            filteredBirdList = workingBirdList;     // Update the filtered bird list
+            // Clear the search filter and return the user to the (filtered, but no filter applied) working bird list
+            birdNameFilter.Text = "";
+            filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);    // Update the filtered bird list; IF filter was not cleared, list would still be filtered after bird is added.
 
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
             userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
@@ -199,45 +203,72 @@ namespace ChristmasBirdCountApp
         private void PopAdd_OnAdd(object sender, OnAddEventArgs e)
         {
             string birdName = filteredBirdList[e.id].Name;
+            int countBeforeAdd = filteredBirdList[e.id].Count;
             int birdIndex = 0;
 
-            foreach (var bird in workingBirdList)
+            // If the bird's count is already at the maximum value, we cannot increment or add to the count; Display an error message
+            if (countBeforeAdd == Int32.MaxValue)
             {
-                if (bird.Name == birdName)
-                {
-                    birdIndex = workingBirdList.IndexOf(bird);  // Get the index of the bird in the "workingBirdList," and remove the bird at that index.
-                }
-                else
-                {
-                    // The matching bird in the "workingBirdList" has not been found (yet).
-                }
-            }
-
-            workingBirdList.RemoveAt(birdIndex);
-
-            int addBirds;
-            if (e.addNumber == "")
-            {
-                addBirds = 0;
+                string alert = "Maximum count already reached.  Cannot add to count.";
+                Toast.MakeText(this, alert, ToastLength.Short).Show();
+                // END execution of this function, because we cannot add to the bird's count anyways
             }
             else
             {
-                addBirds = Int32.Parse(e.addNumber);
+                foreach (var bird in workingBirdList)
+                {
+                    if (bird.Name == birdName)
+                    {
+                        birdIndex = workingBirdList.IndexOf(bird);  // Get the index of the bird in the "workingBirdList," and remove the bird at that index.
+                    }
+                    else
+                    {
+                        // The matching bird in the "workingBirdList" has not been found (yet).
+                    }
+                }
+
+                workingBirdList.RemoveAt(birdIndex);
+
+                int addBirds;
+                if (string.IsNullOrEmpty(e.addNumber))
+                {
+                    addBirds = 0;
+                }
+                else
+                {
+                    // Check that number entered is a valid 32-bit Int.  IF value parses to Int32, addBirds is set to the value.  IF NOT, the user gets an error message.
+                    if (!Int32.TryParse(e.addNumber, out addBirds))
+                    {
+                        string alert = "Invalid number.  Check value entered.  Value may be too large.";
+                        Toast.MakeText(this, alert, ToastLength.Short).Show();
+                    }
+
+                    // We need to see if the current count + the number to add exceeds the value that can be stored in an Int32.
+                    Int64 valueToCheck = Convert.ToInt64(countBeforeAdd) + Convert.ToInt64(addBirds);
+
+                    if (valueToCheck > Int32.MaxValue)  // If the number is larger than what a bird's 'Count' can hold, we give an error and exit.
+                    {
+                        string alert = "Value would exceed maximum count.  Cannot add to count.";
+                        Toast.MakeText(this, alert, ToastLength.Short).Show();
+                        addBirds = 0;   // Change number to add to zero (0), because we cannot add to the bird's count anyways
+                    }
+                }
+
+                // Add count to existing bird count
+                var totalCount = e.birdCount + addBirds;
+
+                workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = totalCount, InList = true });
+
+                filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
+
+                userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
             }
-
-            //add count to existing bird count
-            var totalCount = e.birdCount + addBirds;
-
-            workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = totalCount, InList = true});
-
-            filteredBirdList = Search.FilterBirdCountList(birdNameFilter.Text, workingBirdList);  // Update the filtered bird list
-
-            userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
         }
 
         private void PopDialog_OnUpdate(object sender, OnUpdateEventArgs e)
         {
             string birdName = filteredBirdList[e.id].Name;
+            int birdCountBeforeUpdate = filteredBirdList[e.id].Count;
             int birdIndex = 0;
 
             foreach (var bird in workingBirdList)
@@ -252,17 +283,22 @@ namespace ChristmasBirdCountApp
                 }
             }
 
-            //workingBirdList.RemoveAt(e.id);       // Cannot use "e.id" on "workingBirdList," because the user may be doing a filtered search
             workingBirdList.RemoveAt(birdIndex);
 
-            int count = 0;
-            if (e.birdCount == "")
+            int count;
+            if (string.IsNullOrEmpty(e.birdCount))
             {
                 count = 0;
             }
             else
             {
-                count = Int32.Parse(e.birdCount);
+                // Check that 'count' number entered is a valid 32-bit Int.  IF value parses to Int32, 'count' is set to the value.  IF NOT, the user gets an error message.
+                if (!Int32.TryParse(e.birdCount, out count))
+                {
+                    count = birdCountBeforeUpdate;       // Use the last valid count, since we cannot use the updated count provided by the user.
+                    string alert = "Invalid number.  Check value entered.  Value may be too large.";
+                    Toast.MakeText(this, alert, ToastLength.Short).Show();
+                }
             }
             
             workingBirdList.Insert(birdIndex, new BirdCount() { Name = e.birdName, Count = count, InList = true});
@@ -359,7 +395,17 @@ namespace ChristmasBirdCountApp
                 if (bird.Name == birdName)
                 {
                     int birdIndex = workingBirdList.IndexOf(bird);  // Get the index of the bird in the "workingBirdList," and increment the count for that bird.
-                    workingBirdList[birdIndex].Count++;
+
+                    // If the bird's count is already at the maximum value, we cannot increment or add to the count; Display an error message
+                    if (workingBirdList[birdIndex].Count == Int32.MaxValue)
+                    {
+                        string alert = "Maximum count already reached.  Cannot increment count.";
+                        Toast.MakeText(this, alert, ToastLength.Short).Show();
+                    }
+                    else
+                    {
+                        workingBirdList[birdIndex].Count++;
+                    }
                 }
                 else
                 {
