@@ -31,6 +31,9 @@ namespace ChristmasBirdCountApp
 		public partial class Array
 		{
 			
+			// aapt resource value: 0x7f050002
+			public const int state_array = 2131034114;
+			
 			// aapt resource value: 0x7f050001
 			public const int time_optional_array = 2131034113;
 			
@@ -112,8 +115,8 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f070017
 			public const int btnClearList = 2131165207;
 			
-			// aapt resource value: 0x7f07005f
-			public const int btnClearListing = 2131165279;
+			// aapt resource value: 0x7f07007b
+			public const int btnClearListing = 2131165307;
 			
 			// aapt resource value: 0x7f070015
 			public const int btnCountWeekCount = 2131165205;
@@ -127,65 +130,86 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f070013
 			public const int btnFieldCount = 2131165203;
 			
-			// aapt resource value: 0x7f070058
-			public const int btnSend = 2131165272;
+			// aapt resource value: 0x7f070022
+			public const int btnSend = 2131165218;
 			
-			// aapt resource value: 0x7f07005e
-			public const int btnUpdateListing = 2131165278;
+			// aapt resource value: 0x7f07007a
+			public const int btnUpdateListing = 2131165306;
 			
 			// aapt resource value: 0x7f07000c
 			public const int ibAddBirdClearFilter = 2131165196;
 			
+			// aapt resource value: 0x7f070038
+			public const int ibCityClearField = 2131165240;
+			
 			// aapt resource value: 0x7f070001
 			public const int ibClear = 2131165185;
 			
-			// aapt resource value: 0x7f07005a
-			public const int ibClearFilter = 2131165274;
+			// aapt resource value: 0x7f070076
+			public const int ibClearFilter = 2131165302;
 			
-			// aapt resource value: 0x7f070028
-			public const int ibCountCircleClearField = 2131165224;
-			
-			// aapt resource value: 0x7f07002e
-			public const int ibCountTypeClearField = 2131165230;
+			// aapt resource value: 0x7f070050
+			public const int ibCountCircleClearField = 2131165264;
 			
 			// aapt resource value: 0x7f07001c
 			public const int ibEmailClearField = 2131165212;
 			
-			// aapt resource value: 0x7f070036
-			public const int ibEnd1ClearField = 2131165238;
+			// aapt resource value: 0x7f070058
+			public const int ibEnd1ClearField = 2131165272;
 			
-			// aapt resource value: 0x7f07003e
-			public const int ibEnd2ClearField = 2131165246;
+			// aapt resource value: 0x7f070060
+			public const int ibEnd2ClearField = 2131165280;
 			
-			// aapt resource value: 0x7f070042
-			public const int ibHDClearField = 2131165250;
+			// aapt resource value: 0x7f070064
+			public const int ibHDClearField = 2131165284;
 			
-			// aapt resource value: 0x7f070052
-			public const int ibHOClearField = 2131165266;
+			// aapt resource value: 0x7f070074
+			public const int ibHOClearField = 2131165300;
 			
-			// aapt resource value: 0x7f07004a
-			public const int ibHWClearField = 2131165258;
+			// aapt resource value: 0x7f07006c
+			public const int ibHWClearField = 2131165292;
 			
-			// aapt resource value: 0x7f070046
-			public const int ibMDClearField = 2131165254;
+			// aapt resource value: 0x7f070044
+			public const int ibHoursObservingClearField = 2131165252;
 			
-			// aapt resource value: 0x7f07004e
-			public const int ibMWClearField = 2131165262;
+			// aapt resource value: 0x7f070068
+			public const int ibMDClearField = 2131165288;
 			
-			// aapt resource value: 0x7f070056
-			public const int ibNotesClearField = 2131165270;
+			// aapt resource value: 0x7f070070
+			public const int ibMWClearField = 2131165296;
 			
 			// aapt resource value: 0x7f070020
-			public const int ibPartyClearField = 2131165216;
+			public const int ibNotesClearField = 2131165216;
 			
-			// aapt resource value: 0x7f070024
-			public const int ibPartySizeClearField = 2131165220;
+			// aapt resource value: 0x7f070026
+			public const int ibObserverClearField = 2131165222;
 			
-			// aapt resource value: 0x7f070032
-			public const int ibStart1ClearField = 2131165234;
+			// aapt resource value: 0x7f07002e
+			public const int ibObserverEmailClearField = 2131165230;
 			
-			// aapt resource value: 0x7f07003a
-			public const int ibStart2ClearField = 2131165242;
+			// aapt resource value: 0x7f070048
+			public const int ibPartyClearField = 2131165256;
+			
+			// aapt resource value: 0x7f07004c
+			public const int ibPartySizeClearField = 2131165260;
+			
+			// aapt resource value: 0x7f07002a
+			public const int ibPhoneNumberClearField = 2131165226;
+			
+			// aapt resource value: 0x7f070054
+			public const int ibStart1ClearField = 2131165268;
+			
+			// aapt resource value: 0x7f07005c
+			public const int ibStart2ClearField = 2131165276;
+			
+			// aapt resource value: 0x7f07003c
+			public const int ibStateClearField = 2131165244;
+			
+			// aapt resource value: 0x7f070034
+			public const int ibStreetClearField = 2131165236;
+			
+			// aapt resource value: 0x7f070040
+			public const int ibZIPCodeClearField = 2131165248;
 			
 			// aapt resource value: 0x7f070004
 			public const int imageView2 = 2131165188;
@@ -199,56 +223,77 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f070009
 			public const int lblAddBirdInstructions = 2131165193;
 			
-			// aapt resource value: 0x7f07005c
-			public const int lblBirdName = 2131165276;
+			// aapt resource value: 0x7f070078
+			public const int lblBirdName = 2131165304;
+			
+			// aapt resource value: 0x7f070036
+			public const int lblCity = 2131165238;
 			
 			// aapt resource value: 0x7f070002
 			public const int lblClear = 2131165186;
 			
-			// aapt resource value: 0x7f070026
-			public const int lblCountCircle = 2131165222;
+			// aapt resource value: 0x7f07004e
+			public const int lblCountCircle = 2131165262;
 			
-			// aapt resource value: 0x7f07002a
-			public const int lblCountType = 2131165226;
+			// aapt resource value: 0x7f070056
+			public const int lblEnd1 = 2131165270;
 			
-			// aapt resource value: 0x7f070034
-			public const int lblEnd1 = 2131165236;
+			// aapt resource value: 0x7f07005e
+			public const int lblEnd2 = 2131165278;
 			
-			// aapt resource value: 0x7f07003c
-			public const int lblEnd2 = 2131165244;
+			// aapt resource value: 0x7f070030
+			public const int lblFeederLocation = 2131165232;
 			
-			// aapt resource value: 0x7f070040
-			public const int lblHoursDriven = 2131165248;
+			// aapt resource value: 0x7f070062
+			public const int lblHoursDriven = 2131165282;
 			
-			// aapt resource value: 0x7f070050
-			public const int lblHoursOwling = 2131165264;
+			// aapt resource value: 0x7f070042
+			public const int lblHoursObserving = 2131165250;
 			
-			// aapt resource value: 0x7f070048
-			public const int lblHoursWalked = 2131165256;
+			// aapt resource value: 0x7f070072
+			public const int lblHoursOwling = 2131165298;
 			
-			// aapt resource value: 0x7f070044
-			public const int lblMilesDriven = 2131165252;
+			// aapt resource value: 0x7f07006a
+			public const int lblHoursWalked = 2131165290;
 			
-			// aapt resource value: 0x7f07004c
-			public const int lblMilesWalked = 2131165260;
+			// aapt resource value: 0x7f070066
+			public const int lblMilesDriven = 2131165286;
 			
-			// aapt resource value: 0x7f070054
-			public const int lblNotes = 2131165268;
+			// aapt resource value: 0x7f07006e
+			public const int lblMilesWalked = 2131165294;
 			
 			// aapt resource value: 0x7f07001e
-			public const int lblPartyMembers = 2131165214;
+			public const int lblNotes = 2131165214;
 			
-			// aapt resource value: 0x7f070022
-			public const int lblPartySize = 2131165218;
+			// aapt resource value: 0x7f070024
+			public const int lblObserver = 2131165220;
+			
+			// aapt resource value: 0x7f07002c
+			public const int lblObserverEmail = 2131165228;
+			
+			// aapt resource value: 0x7f070046
+			public const int lblPartyMembers = 2131165254;
+			
+			// aapt resource value: 0x7f07004a
+			public const int lblPartySize = 2131165258;
+			
+			// aapt resource value: 0x7f070028
+			public const int lblPhoneNumber = 2131165224;
 			
 			// aapt resource value: 0x7f07001a
 			public const int lblRecipientEmail = 2131165210;
 			
-			// aapt resource value: 0x7f070030
-			public const int lblStart1 = 2131165232;
+			// aapt resource value: 0x7f070052
+			public const int lblStart1 = 2131165266;
 			
-			// aapt resource value: 0x7f070038
-			public const int lblStart2 = 2131165240;
+			// aapt resource value: 0x7f07005a
+			public const int lblStart2 = 2131165274;
+			
+			// aapt resource value: 0x7f07003a
+			public const int lblState = 2131165242;
+			
+			// aapt resource value: 0x7f070032
+			public const int lblStreet = 2131165234;
 			
 			// aapt resource value: 0x7f070008
 			public const int lblSubmit = 2131165192;
@@ -256,8 +301,11 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f070011
 			public const int lblTitle = 2131165201;
 			
-			// aapt resource value: 0x7f070060
-			public const int left = 2131165280;
+			// aapt resource value: 0x7f07003e
+			public const int lblZIPCode = 2131165246;
+			
+			// aapt resource value: 0x7f07007c
+			public const int left = 2131165308;
 			
 			// aapt resource value: 0x7f07000a
 			public const int linearLayoutAddBirdFilter = 2131165194;
@@ -265,53 +313,77 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f070012
 			public const int linearLayoutBirdCount = 2131165202;
 			
-			// aapt resource value: 0x7f070025
-			public const int linearLayoutCountCircle = 2131165221;
+			// aapt resource value: 0x7f070035
+			public const int linearLayoutCity = 2131165237;
 			
-			// aapt resource value: 0x7f070029
-			public const int linearLayoutCountType = 2131165225;
+			// aapt resource value: 0x7f07004d
+			public const int linearLayoutCountCircle = 2131165261;
 			
 			// aapt resource value: 0x7f070019
 			public const int linearLayoutEmailRecipient = 2131165209;
 			
-			// aapt resource value: 0x7f070033
-			public const int linearLayoutEnd1 = 2131165235;
+			// aapt resource value: 0x7f070055
+			public const int linearLayoutEnd1 = 2131165269;
 			
-			// aapt resource value: 0x7f07003b
-			public const int linearLayoutEnd2 = 2131165243;
-			
-			// aapt resource value: 0x7f07003f
-			public const int linearLayoutHoursDriven = 2131165247;
-			
-			// aapt resource value: 0x7f07004f
-			public const int linearLayoutHoursOwling = 2131165263;
-			
-			// aapt resource value: 0x7f070047
-			public const int linearLayoutHoursWalked = 2131165255;
-			
-			// aapt resource value: 0x7f070043
-			public const int linearLayoutMilesDriven = 2131165251;
-			
-			// aapt resource value: 0x7f07004b
-			public const int linearLayoutMilesWalked = 2131165259;
-			
-			// aapt resource value: 0x7f070057
-			public const int linearLayoutNavigateSubmitPage = 2131165271;
-			
-			// aapt resource value: 0x7f070053
-			public const int linearLayoutNotes = 2131165267;
-			
-			// aapt resource value: 0x7f07001d
-			public const int linearLayoutPartyMembers = 2131165213;
-			
-			// aapt resource value: 0x7f070021
-			public const int linearLayoutPartySize = 2131165217;
+			// aapt resource value: 0x7f07005d
+			public const int linearLayoutEnd2 = 2131165277;
 			
 			// aapt resource value: 0x7f07002f
-			public const int linearLayoutStart1 = 2131165231;
+			public const int linearLayoutFeederLocation = 2131165231;
 			
-			// aapt resource value: 0x7f070037
-			public const int linearLayoutStartEnd2 = 2131165239;
+			// aapt resource value: 0x7f070023
+			public const int linearLayoutFeederObserver = 2131165219;
+			
+			// aapt resource value: 0x7f070061
+			public const int linearLayoutHoursDriven = 2131165281;
+			
+			// aapt resource value: 0x7f070041
+			public const int linearLayoutHoursObserving = 2131165249;
+			
+			// aapt resource value: 0x7f070071
+			public const int linearLayoutHoursOwling = 2131165297;
+			
+			// aapt resource value: 0x7f070069
+			public const int linearLayoutHoursWalked = 2131165289;
+			
+			// aapt resource value: 0x7f070065
+			public const int linearLayoutMilesDriven = 2131165285;
+			
+			// aapt resource value: 0x7f07006d
+			public const int linearLayoutMilesWalked = 2131165293;
+			
+			// aapt resource value: 0x7f070021
+			public const int linearLayoutNavigateSubmitPage = 2131165217;
+			
+			// aapt resource value: 0x7f07001d
+			public const int linearLayoutNotes = 2131165213;
+			
+			// aapt resource value: 0x7f07002b
+			public const int linearLayoutObserverEmail = 2131165227;
+			
+			// aapt resource value: 0x7f070027
+			public const int linearLayoutObserverPhone = 2131165223;
+			
+			// aapt resource value: 0x7f070045
+			public const int linearLayoutPartyMembers = 2131165253;
+			
+			// aapt resource value: 0x7f070049
+			public const int linearLayoutPartySize = 2131165257;
+			
+			// aapt resource value: 0x7f070051
+			public const int linearLayoutStart1 = 2131165265;
+			
+			// aapt resource value: 0x7f070059
+			public const int linearLayoutStartEnd2 = 2131165273;
+			
+			// aapt resource value: 0x7f070039
+			public const int linearLayoutState = 2131165241;
+			
+			// aapt resource value: 0x7f070031
+			public const int linearLayoutStreet = 2131165233;
+			
+			// aapt resource value: 0x7f07003d
+			public const int linearLayoutZIPCode = 2131165245;
 			
 			// aapt resource value: 0x7f070003
 			public const int llAdd = 2131165187;
@@ -322,74 +394,89 @@ namespace ChristmasBirdCountApp
 			// aapt resource value: 0x7f070006
 			public const int llSubmit = 2131165190;
 			
+			// aapt resource value: 0x7f070077
+			public const int myListView = 2131165303;
+			
+			// aapt resource value: 0x7f07007d
+			public const int right = 2131165309;
+			
+			// aapt resource value: 0x7f070057
+			public const int spinnerEndTime1 = 2131165271;
+			
+			// aapt resource value: 0x7f07005f
+			public const int spinnerEndTime2 = 2131165279;
+			
+			// aapt resource value: 0x7f070053
+			public const int spinnerStartTime1 = 2131165267;
+			
 			// aapt resource value: 0x7f07005b
-			public const int myListView = 2131165275;
+			public const int spinnerStartTime2 = 2131165275;
 			
-			// aapt resource value: 0x7f07002d
-			public const int radioFeederType = 2131165229;
-			
-			// aapt resource value: 0x7f07002c
-			public const int radioFieldType = 2131165228;
-			
-			// aapt resource value: 0x7f07002b
-			public const int radiogroupCountType = 2131165227;
-			
-			// aapt resource value: 0x7f070061
-			public const int right = 2131165281;
-			
-			// aapt resource value: 0x7f070035
-			public const int spinnerEndTime1 = 2131165237;
-			
-			// aapt resource value: 0x7f07003d
-			public const int spinnerEndTime2 = 2131165245;
-			
-			// aapt resource value: 0x7f070031
-			public const int spinnerStartTime1 = 2131165233;
-			
-			// aapt resource value: 0x7f070039
-			public const int spinnerStartTime2 = 2131165241;
+			// aapt resource value: 0x7f07003b
+			public const int spinnerState = 2131165243;
 			
 			// aapt resource value: 0x7f07000b
 			public const int txtAddBirdNameFilter = 2131165195;
 			
-			// aapt resource value: 0x7f07005d
-			public const int txtBirdCount = 2131165277;
+			// aapt resource value: 0x7f070079
+			public const int txtBirdCount = 2131165305;
 			
-			// aapt resource value: 0x7f070027
-			public const int txtCountCircle = 2131165223;
+			// aapt resource value: 0x7f070037
+			public const int txtCity = 2131165239;
 			
-			// aapt resource value: 0x7f070041
-			public const int txtHoursDriven = 2131165249;
+			// aapt resource value: 0x7f07004f
+			public const int txtCountCircle = 2131165263;
 			
-			// aapt resource value: 0x7f070051
-			public const int txtHoursOwling = 2131165265;
+			// aapt resource value: 0x7f070063
+			public const int txtHoursDriven = 2131165283;
 			
-			// aapt resource value: 0x7f070049
-			public const int txtHoursWalked = 2131165257;
+			// aapt resource value: 0x7f070043
+			public const int txtHoursObserving = 2131165251;
 			
-			// aapt resource value: 0x7f070045
-			public const int txtMilesDriven = 2131165253;
+			// aapt resource value: 0x7f070073
+			public const int txtHoursOwling = 2131165299;
 			
-			// aapt resource value: 0x7f07004d
-			public const int txtMilesWalked = 2131165261;
+			// aapt resource value: 0x7f07006b
+			public const int txtHoursWalked = 2131165291;
 			
-			// aapt resource value: 0x7f070059
-			public const int txtNameFilter = 2131165273;
+			// aapt resource value: 0x7f070067
+			public const int txtMilesDriven = 2131165287;
 			
-			// aapt resource value: 0x7f070055
-			public const int txtNotes = 2131165269;
+			// aapt resource value: 0x7f07006f
+			public const int txtMilesWalked = 2131165295;
+			
+			// aapt resource value: 0x7f070075
+			public const int txtNameFilter = 2131165301;
+			
+			// aapt resource value: 0x7f07001f
+			public const int txtNotes = 2131165215;
 			
 			// aapt resource value: 0x7f07000e
 			public const int txtNumber = 2131165198;
 			
-			// aapt resource value: 0x7f07001f
-			public const int txtPartyMembers = 2131165215;
+			// aapt resource value: 0x7f070025
+			public const int txtObserver = 2131165221;
 			
-			// aapt resource value: 0x7f070023
-			public const int txtPartySize = 2131165219;
+			// aapt resource value: 0x7f07002d
+			public const int txtObserverEmail = 2131165229;
+			
+			// aapt resource value: 0x7f070047
+			public const int txtPartyMembers = 2131165255;
+			
+			// aapt resource value: 0x7f07004b
+			public const int txtPartySize = 2131165259;
+			
+			// aapt resource value: 0x7f070029
+			public const int txtPhoneNumber = 2131165225;
 			
 			// aapt resource value: 0x7f07001b
 			public const int txtRecipientEmail = 2131165211;
+			
+			// aapt resource value: 0x7f070033
+			public const int txtStreet = 2131165235;
+			
+			// aapt resource value: 0x7f07003f
+			public const int txtZIPCode = 2131165247;
 			
 			static Id()
 			{
@@ -420,16 +507,22 @@ namespace ChristmasBirdCountApp
 			public const int ClearAllPopUp = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int EmailForm = 2130903045;
+			public const int CountWeekEmailForm = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Main = 2130903046;
+			public const int FeederEmailForm = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int Pop = 2130903047;
+			public const int FieldEmailForm = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int row = 2130903048;
+			public const int Main = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int Pop = 2130903049;
+			
+			// aapt resource value: 0x7f03000a
+			public const int row = 2130903050;
 			
 			static Layout()
 			{
@@ -452,6 +545,9 @@ namespace ChristmasBirdCountApp
 			
 			// aapt resource value: 0x7f040001
 			public const int ClearFilterIconDescription = 2130968577;
+			
+			// aapt resource value: 0x7f040004
+			public const int state_selection = 2130968580;
 			
 			// aapt resource value: 0x7f040003
 			public const int time_selection = 2130968579;

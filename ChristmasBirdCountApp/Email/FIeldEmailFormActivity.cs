@@ -16,7 +16,6 @@ namespace ChristmasBirdCountApp.Email
         private EditText _partyMembers;
         private EditText _partySize;
         private EditText _countCircleCode;
-        private RadioGroup _rgCountType;
         private Spinner _startTime1;
         private Spinner _endTime1;
         private Spinner _startTime2;
@@ -32,7 +31,6 @@ namespace ChristmasBirdCountApp.Email
         private ImageButton _ibPartyClearField;
         private ImageButton _ibPartySizeClearField;
         private ImageButton _ibCountCircleClearField;
-        private ImageButton _ibCountTypeClearField;
         private ImageButton _ibStartTime1ClearField;
         private ImageButton _ibEndTime1ClearField;
         private ImageButton _ibStartTime2ClearField;
@@ -65,14 +63,13 @@ namespace ChristmasBirdCountApp.Email
             _llClear.Visibility = Android.Views.ViewStates.Invisible;
             _llSubmit.Visibility = Android.Views.ViewStates.Invisible;
 
-            SetContentView(Resource.Layout.EmailForm);
+            SetContentView(Resource.Layout.FieldEmailForm);
 
             // Find Fields and Buttons
             _recipientEmail = FindViewById<EditText>(Resource.Id.txtRecipientEmail);
             _partyMembers = FindViewById<EditText>(Resource.Id.txtPartyMembers);
             _partySize = FindViewById<EditText>(Resource.Id.txtPartySize);
             _countCircleCode = FindViewById<EditText>(Resource.Id.txtCountCircle);
-            _rgCountType = FindViewById<RadioGroup>(Resource.Id.radiogroupCountType);
             _startTime1 = FindViewById<Spinner>(Resource.Id.spinnerStartTime1);
             _endTime1 = FindViewById<Spinner>(Resource.Id.spinnerEndTime1);
             _startTime2 = FindViewById<Spinner>(Resource.Id.spinnerStartTime2);
@@ -89,7 +86,6 @@ namespace ChristmasBirdCountApp.Email
             _ibPartyClearField = FindViewById<ImageButton>(Resource.Id.ibPartyClearField);
             _ibPartySizeClearField = FindViewById<ImageButton>(Resource.Id.ibPartySizeClearField);
             _ibCountCircleClearField = FindViewById<ImageButton>(Resource.Id.ibCountCircleClearField);
-            _ibCountTypeClearField = FindViewById<ImageButton>(Resource.Id.ibCountTypeClearField);
             _ibStartTime1ClearField = FindViewById<ImageButton>(Resource.Id.ibStart1ClearField);
             _ibEndTime1ClearField = FindViewById<ImageButton>(Resource.Id.ibEnd1ClearField);
             _ibStartTime2ClearField = FindViewById<ImageButton>(Resource.Id.ibStart2ClearField);
@@ -131,7 +127,6 @@ namespace ChristmasBirdCountApp.Email
             _ibPartyClearField.Click += ClearPartyField_OnClick;
             _ibPartySizeClearField.Click += ClearPartySizeField_OnClick;
             _ibCountCircleClearField.Click += ClearCountCircleField_OnClick;
-            _ibCountTypeClearField.Click += ClearCountTypeRadio_OnClick;
             _ibStartTime1ClearField.Click += ClearStartTime1_OnClick;
             _ibEndTime1ClearField.Click += ClearEndTime1_OnClick;
             _ibStartTime2ClearField.Click += ClearStartTime2_OnClick;
@@ -154,7 +149,6 @@ namespace ChristmasBirdCountApp.Email
             _ibPartyClearField.Click -= ClearPartyField_OnClick;
             _ibPartySizeClearField.Click -= ClearPartySizeField_OnClick;
             _ibCountCircleClearField.Click -= ClearCountCircleField_OnClick;
-            _ibCountTypeClearField.Click -= ClearCountTypeRadio_OnClick;
             _ibStartTime1ClearField.Click -= ClearStartTime1_OnClick;
             _ibEndTime1ClearField.Click -= ClearEndTime1_OnClick;
             _ibStartTime2ClearField.Click -= ClearStartTime2_OnClick;
@@ -187,11 +181,6 @@ namespace ChristmasBirdCountApp.Email
         private void ClearCountCircleField_OnClick(object sender, EventArgs e)
         {
             _countCircleCode.Text = "";
-        }
-
-        private void ClearCountTypeRadio_OnClick(object sender, EventArgs e)
-        {
-            _rgCountType.ClearCheck();
         }
 
         private void ClearStartTime1_OnClick(object sender, EventArgs e)
@@ -263,7 +252,6 @@ namespace ChristmasBirdCountApp.Email
         {
             bool emailSent = false;
             DateTime currentDateTime = DateTime.Now;
-            RadioButton selectedCountType = FindViewById<RadioButton>(_rgCountType.CheckedRadioButtonId); // Get the value of the currently selected radio button
 
             // Check to ensure that user entered an email address for the recipient of the report (i.e. the Compiler)
             if (string.IsNullOrEmpty(_recipientEmail.Text))
@@ -272,19 +260,12 @@ namespace ChristmasBirdCountApp.Email
                 return;
             }
 
-            // Check to ensure that user selected a count type
-            if (selectedCountType == null)
-            {
-                Toast.MakeText(this, "You must choose a count type.", ToastLength.Short).Show();
-                return;
-            }
-
             // Create the Body of the Email Message
             StringBuilder emailBodyText = new StringBuilder();
             emailBodyText.AppendLine("Christmas Bird Count Results\n");
             emailBodyText.AppendLine(currentDateTime + "\n");
             emailBodyText.AppendLine("Count Circle: " + _countCircleCode.Text + "\n");
-            emailBodyText.AppendLine("Count Type: " + selectedCountType.Text);
+            emailBodyText.AppendLine("Count Type: Field");
             emailBodyText.AppendLine("--------------------------------------\n");
             emailBodyText.AppendLine("Party Members: " + _partyMembers.Text + "\n");
             emailBodyText.AppendLine("Number in Party: " + _partySize.Text + "\n");
@@ -304,7 +285,7 @@ namespace ChristmasBirdCountApp.Email
             // Create and Send the Email Message
             Email emailToSend = new Email();
 
-            emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _countCircleCode.Text + " " + selectedCountType.Text, emailBodyText);
+            emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _countCircleCode.Text + " Field", emailBodyText);
 
             // Send the Email - We Are Adding an Attachment
             emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);

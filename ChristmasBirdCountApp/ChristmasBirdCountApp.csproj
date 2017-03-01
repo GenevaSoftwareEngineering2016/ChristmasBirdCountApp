@@ -89,7 +89,7 @@
     <Compile Include="Email\CountWeekEmailFormActivity.cs" />
     <Compile Include="Email\Decryptor.cs" />
     <Compile Include="Email\Email.cs" />
-    <Compile Include="Email\EmailFormActivity.cs" />
+    <Compile Include="Email\FieldEmailFormActivity.cs" />
     <Compile Include="BirdListFile.cs" />
     <Compile Include="Email\EmailResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -116,7 +116,9 @@
     <AndroidResource Include="Resources\layout\Pop.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\EmailForm.axml" />
+    <AndroidResource Include="Resources\layout\FieldEmailForm.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\AddBirdPopUp.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -126,6 +128,12 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\actionBar.axml" />
     <AndroidResource Include="Resources\layout\ChooseCountTypePopUp.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FeederEmailForm.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CountWeekEmailForm.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
