@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutObserverPhone">
             <TextView
-                android:text="Phone #:"
+                android:text="Observer Phone #:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

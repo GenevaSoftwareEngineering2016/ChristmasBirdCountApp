@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutCounterPhone">
             <TextView
-                android:text="Phone #:"
+                android:text="Counter Phone #:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
