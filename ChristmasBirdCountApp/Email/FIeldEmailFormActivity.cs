@@ -12,10 +12,20 @@ namespace ChristmasBirdCountApp.Email
     [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2", Theme = "@style/CustomActionBarTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
     public class FieldEmailFormActivity : Activity
     {
+        // Text Fields and UI Objects
         private EditText _recipientEmail;
         private EditText _partyMembers;
         private EditText _partySize;
         private EditText _countCircleCode;
+
+        private EditText _teamLeaderName;
+        private EditText _teamLeaderPhone;
+        private EditText _teamLeaderEmail;
+        private EditText _teamLeaderStreet;
+        private EditText _teamLeaderCity;
+        private Spinner _teamLeaderState;
+        private EditText _teamLeaderZIP;
+
         private Spinner _startTime1;
         private Spinner _endTime1;
         private Spinner _startTime2;
@@ -27,10 +37,21 @@ namespace ChristmasBirdCountApp.Email
         private EditText _hoursOwling;
         private EditText _optionalNotes;
         private Button _sendButton;
+
+        // ImageButtons for Clearing/Resetting Fields
         private ImageButton _ibEmailClearField;
         private ImageButton _ibPartyClearField;
         private ImageButton _ibPartySizeClearField;
         private ImageButton _ibCountCircleClearField;
+
+        private ImageButton _ibTeamLeaderNameClearField;
+        private ImageButton _ibTeamLeaderPhoneClearField;
+        private ImageButton _ibTeamLeaderEmailClearField;
+        private ImageButton _ibTeamLeaderStreetClearField;
+        private ImageButton _ibTeamLeaderCityClearField;
+        private ImageButton _ibTeamLeaderStateClearField;
+        private ImageButton _ibTeamLeaderZIPClearField;
+
         private ImageButton _ibStartTime1ClearField;
         private ImageButton _ibEndTime1ClearField;
         private ImageButton _ibStartTime2ClearField;
@@ -41,6 +62,7 @@ namespace ChristmasBirdCountApp.Email
         private ImageButton _ibMWClearField;
         private ImageButton _ibHOClearField;
         private ImageButton _ibNotesClearField;
+
         private LinearLayout _llClear;
         private LinearLayout _llAdd;
         private LinearLayout _llSubmit;
@@ -70,6 +92,15 @@ namespace ChristmasBirdCountApp.Email
             _partyMembers = FindViewById<EditText>(Resource.Id.txtPartyMembers);
             _partySize = FindViewById<EditText>(Resource.Id.txtPartySize);
             _countCircleCode = FindViewById<EditText>(Resource.Id.txtCountCircle);
+
+            _teamLeaderName = FindViewById<EditText>(Resource.Id.txtTeamLeaderName);
+            _teamLeaderPhone = FindViewById<EditText>(Resource.Id.txtTeamLeaderPhone);
+            _teamLeaderEmail = FindViewById<EditText>(Resource.Id.txtTeamLeaderEmail);
+            _teamLeaderStreet = FindViewById<EditText>(Resource.Id.txtStreet);
+            _teamLeaderCity = FindViewById<EditText>(Resource.Id.txtCity);
+            _teamLeaderState = FindViewById<Spinner>(Resource.Id.spinnerState);
+            _teamLeaderZIP = FindViewById<EditText>(Resource.Id.txtZIPCode);
+
             _startTime1 = FindViewById<Spinner>(Resource.Id.spinnerStartTime1);
             _endTime1 = FindViewById<Spinner>(Resource.Id.spinnerEndTime1);
             _startTime2 = FindViewById<Spinner>(Resource.Id.spinnerStartTime2);
@@ -86,6 +117,15 @@ namespace ChristmasBirdCountApp.Email
             _ibPartyClearField = FindViewById<ImageButton>(Resource.Id.ibPartyClearField);
             _ibPartySizeClearField = FindViewById<ImageButton>(Resource.Id.ibPartySizeClearField);
             _ibCountCircleClearField = FindViewById<ImageButton>(Resource.Id.ibCountCircleClearField);
+
+            _ibTeamLeaderNameClearField = FindViewById<ImageButton>(Resource.Id.ibTeamLeaderNameClearField);
+            _ibTeamLeaderPhoneClearField = FindViewById<ImageButton>(Resource.Id.ibTeamLeaderPhoneClearField);
+            _ibTeamLeaderEmailClearField = FindViewById<ImageButton>(Resource.Id.ibTeamLeaderEmailClearField);
+            _ibTeamLeaderStreetClearField = FindViewById<ImageButton>(Resource.Id.ibStreetClearField);
+            _ibTeamLeaderCityClearField = FindViewById<ImageButton>(Resource.Id.ibCityClearField);
+            _ibTeamLeaderStateClearField = FindViewById<ImageButton>(Resource.Id.ibStateClearField);
+            _ibTeamLeaderZIPClearField = FindViewById<ImageButton>(Resource.Id.ibZIPCodeClearField);
+
             _ibStartTime1ClearField = FindViewById<ImageButton>(Resource.Id.ibStart1ClearField);
             _ibEndTime1ClearField = FindViewById<ImageButton>(Resource.Id.ibEnd1ClearField);
             _ibStartTime2ClearField = FindViewById<ImageButton>(Resource.Id.ibStart2ClearField);
@@ -108,10 +148,15 @@ namespace ChristmasBirdCountApp.Email
             var optionalTimeSpinnerAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.time_optional_array, Android.Resource.Layout.SimpleSpinnerItem);
             optionalTimeSpinnerAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
 
+            // Set Up State Selection Spinner Using Spinner Adapter and Strings.xml Resource
+            var stateSpinnerAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.state_array, Android.Resource.Layout.SimpleSpinnerItem);
+            stateSpinnerAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+
             _startTime1.Adapter = timeSpinnerAdapter;
             _endTime1.Adapter = timeSpinnerAdapter;
             _startTime2.Adapter = optionalTimeSpinnerAdapter;   // The second start time is optional (users may not have taken a break)
             _endTime2.Adapter = optionalTimeSpinnerAdapter;     // The second end time is optional (users may not have taken a break)
+            _teamLeaderState.Adapter = stateSpinnerAdapter;
         }
 
         protected override void OnStart()
@@ -127,6 +172,15 @@ namespace ChristmasBirdCountApp.Email
             _ibPartyClearField.Click += ClearPartyField_OnClick;
             _ibPartySizeClearField.Click += ClearPartySizeField_OnClick;
             _ibCountCircleClearField.Click += ClearCountCircleField_OnClick;
+
+            _ibTeamLeaderNameClearField.Click += ClearTeamLeaderName_OnClick;
+            _ibTeamLeaderPhoneClearField.Click += ClearTeamLeaderPhone_OnClick;
+            _ibTeamLeaderEmailClearField.Click += ClearTeamLeaderEmail_OnClick;
+            _ibTeamLeaderStreetClearField.Click += ClearTeamLeaderStreet_OnClick;
+            _ibTeamLeaderCityClearField.Click += ClearTeamLeaderCity_OnClick;
+            _ibTeamLeaderStateClearField.Click += ClearTeamLeaderState_OnClick;
+            _ibTeamLeaderZIPClearField.Click += ClearTeamLeaderZIP_OnClick;
+
             _ibStartTime1ClearField.Click += ClearStartTime1_OnClick;
             _ibEndTime1ClearField.Click += ClearEndTime1_OnClick;
             _ibStartTime2ClearField.Click += ClearStartTime2_OnClick;
@@ -149,6 +203,15 @@ namespace ChristmasBirdCountApp.Email
             _ibPartyClearField.Click -= ClearPartyField_OnClick;
             _ibPartySizeClearField.Click -= ClearPartySizeField_OnClick;
             _ibCountCircleClearField.Click -= ClearCountCircleField_OnClick;
+
+            _ibTeamLeaderNameClearField.Click -= ClearTeamLeaderName_OnClick;
+            _ibTeamLeaderPhoneClearField.Click -= ClearTeamLeaderPhone_OnClick;
+            _ibTeamLeaderEmailClearField.Click -= ClearTeamLeaderEmail_OnClick;
+            _ibTeamLeaderStreetClearField.Click -= ClearTeamLeaderStreet_OnClick;
+            _ibTeamLeaderCityClearField.Click -= ClearTeamLeaderCity_OnClick;
+            _ibTeamLeaderStateClearField.Click -= ClearTeamLeaderState_OnClick;
+            _ibTeamLeaderZIPClearField.Click -= ClearTeamLeaderZIP_OnClick;
+
             _ibStartTime1ClearField.Click -= ClearStartTime1_OnClick;
             _ibEndTime1ClearField.Click -= ClearEndTime1_OnClick;
             _ibStartTime2ClearField.Click -= ClearStartTime2_OnClick;
@@ -181,6 +244,41 @@ namespace ChristmasBirdCountApp.Email
         private void ClearCountCircleField_OnClick(object sender, EventArgs e)
         {
             _countCircleCode.Text = "";
+        }
+
+        private void ClearTeamLeaderName_OnClick(object sender, EventArgs e)
+        {
+            _teamLeaderName.Text = "";
+        }
+
+        private void ClearTeamLeaderPhone_OnClick(object sender, EventArgs e)
+        {
+            _teamLeaderPhone.Text = "";
+        }
+
+        private void ClearTeamLeaderEmail_OnClick(object sender, EventArgs e)
+        {
+            _teamLeaderEmail.Text = "";
+        }
+
+        private void ClearTeamLeaderStreet_OnClick(object sender, EventArgs e)
+        {
+            _teamLeaderStreet.Text = "";
+        }
+
+        private void ClearTeamLeaderCity_OnClick(object sender, EventArgs e)
+        {
+            _teamLeaderCity.Text = "";
+        }
+
+        private void ClearTeamLeaderState_OnClick(object sender, EventArgs e)
+        {
+            _teamLeaderState.SetSelection(0);
+        }
+
+        private void ClearTeamLeaderZIP_OnClick(object sender, EventArgs e)
+        {
+            _teamLeaderZIP.Text = "";
         }
 
         private void ClearStartTime1_OnClick(object sender, EventArgs e)
@@ -269,6 +367,16 @@ namespace ChristmasBirdCountApp.Email
             emailBodyText.AppendLine("--------------------------------------\n");
             emailBodyText.AppendLine("Party Members: " + _partyMembers.Text + "\n");
             emailBodyText.AppendLine("Number in Party: " + _partySize.Text + "\n");
+
+            emailBodyText.AppendLine("\n\n");
+            emailBodyText.AppendLine("Team Leader: " + _teamLeaderName.Text + "\n");
+            emailBodyText.AppendLine("Phone: " + _teamLeaderPhone.Text + "\n");
+            emailBodyText.AppendLine("Email: " + _teamLeaderEmail.Text + "\n");
+            emailBodyText.AppendLine("Address:" + "\n");
+            emailBodyText.AppendLine(_teamLeaderStreet.Text + "\n");
+            emailBodyText.AppendLine(_teamLeaderCity.Text + _teamLeaderState.SelectedItem.ToString() + _teamLeaderZIP.Text + "\n");
+            emailBodyText.AppendLine("\n\n");
+
             emailBodyText.AppendLine("Start Time 1: " + _startTime1.SelectedItem.ToString());
             emailBodyText.AppendLine("End Time 1: " + _endTime1.SelectedItem.ToString() + "\n");
             emailBodyText.AppendLine("Start Time 2: " + _startTime2.SelectedItem.ToString());
