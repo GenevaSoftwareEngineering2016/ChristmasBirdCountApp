@@ -236,7 +236,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutTeamLeaderPhone">
             <TextView
-                android:text="Team Leader Phone #:"
+                android:text="Leader Phone #:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -280,7 +280,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutTeamLeaderEmail">
             <TextView
-                android:text="Team Leader Email:"
+                android:text="Leader Email:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -324,7 +324,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutTeamLeadAddress">
             <TextView
-                android:text="Team Leader Mailing Address:"
+                android:text="Leader Mailing Address:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -21,10 +21,10 @@ namespace ChristmasBirdCountApp.Email
         private EditText _teamLeaderName;
         private EditText _teamLeaderPhone;
         private EditText _teamLeaderEmail;
-        private EditText _teamLeaderStreet;
-        private EditText _teamLeaderCity;
-        private Spinner _teamLeaderState;
-        private EditText _teamLeaderZIP;
+        private EditText _street;
+        private EditText _city;
+        private Spinner _state;
+        private EditText _zip;
 
         private Spinner _startTime1;
         private Spinner _endTime1;
@@ -47,10 +47,10 @@ namespace ChristmasBirdCountApp.Email
         private ImageButton _ibTeamLeaderNameClearField;
         private ImageButton _ibTeamLeaderPhoneClearField;
         private ImageButton _ibTeamLeaderEmailClearField;
-        private ImageButton _ibTeamLeaderStreetClearField;
-        private ImageButton _ibTeamLeaderCityClearField;
-        private ImageButton _ibTeamLeaderStateClearField;
-        private ImageButton _ibTeamLeaderZIPClearField;
+        private ImageButton _ibStreetClearField;
+        private ImageButton _ibCityClearField;
+        private ImageButton _ibStateClearField;
+        private ImageButton _ibZipClearField;
 
         private ImageButton _ibStartTime1ClearField;
         private ImageButton _ibEndTime1ClearField;
@@ -96,10 +96,10 @@ namespace ChristmasBirdCountApp.Email
             _teamLeaderName = FindViewById<EditText>(Resource.Id.txtTeamLeaderName);
             _teamLeaderPhone = FindViewById<EditText>(Resource.Id.txtTeamLeaderPhone);
             _teamLeaderEmail = FindViewById<EditText>(Resource.Id.txtTeamLeaderEmail);
-            _teamLeaderStreet = FindViewById<EditText>(Resource.Id.txtStreet);
-            _teamLeaderCity = FindViewById<EditText>(Resource.Id.txtCity);
-            _teamLeaderState = FindViewById<Spinner>(Resource.Id.spinnerState);
-            _teamLeaderZIP = FindViewById<EditText>(Resource.Id.txtZIPCode);
+            _street = FindViewById<EditText>(Resource.Id.txtStreet);
+            _city = FindViewById<EditText>(Resource.Id.txtCity);
+            _state = FindViewById<Spinner>(Resource.Id.spinnerState);
+            _zip = FindViewById<EditText>(Resource.Id.txtZIPCode);
 
             _startTime1 = FindViewById<Spinner>(Resource.Id.spinnerStartTime1);
             _endTime1 = FindViewById<Spinner>(Resource.Id.spinnerEndTime1);
@@ -121,10 +121,10 @@ namespace ChristmasBirdCountApp.Email
             _ibTeamLeaderNameClearField = FindViewById<ImageButton>(Resource.Id.ibTeamLeaderNameClearField);
             _ibTeamLeaderPhoneClearField = FindViewById<ImageButton>(Resource.Id.ibTeamLeaderPhoneClearField);
             _ibTeamLeaderEmailClearField = FindViewById<ImageButton>(Resource.Id.ibTeamLeaderEmailClearField);
-            _ibTeamLeaderStreetClearField = FindViewById<ImageButton>(Resource.Id.ibStreetClearField);
-            _ibTeamLeaderCityClearField = FindViewById<ImageButton>(Resource.Id.ibCityClearField);
-            _ibTeamLeaderStateClearField = FindViewById<ImageButton>(Resource.Id.ibStateClearField);
-            _ibTeamLeaderZIPClearField = FindViewById<ImageButton>(Resource.Id.ibZIPCodeClearField);
+            _ibStreetClearField = FindViewById<ImageButton>(Resource.Id.ibStreetClearField);
+            _ibCityClearField = FindViewById<ImageButton>(Resource.Id.ibCityClearField);
+            _ibStateClearField = FindViewById<ImageButton>(Resource.Id.ibStateClearField);
+            _ibZipClearField = FindViewById<ImageButton>(Resource.Id.ibZIPCodeClearField);
 
             _ibStartTime1ClearField = FindViewById<ImageButton>(Resource.Id.ibStart1ClearField);
             _ibEndTime1ClearField = FindViewById<ImageButton>(Resource.Id.ibEnd1ClearField);
@@ -156,7 +156,7 @@ namespace ChristmasBirdCountApp.Email
             _endTime1.Adapter = timeSpinnerAdapter;
             _startTime2.Adapter = optionalTimeSpinnerAdapter;   // The second start time is optional (users may not have taken a break)
             _endTime2.Adapter = optionalTimeSpinnerAdapter;     // The second end time is optional (users may not have taken a break)
-            _teamLeaderState.Adapter = stateSpinnerAdapter;
+            _state.Adapter = stateSpinnerAdapter;
         }
 
         protected override void OnStart()
@@ -176,10 +176,10 @@ namespace ChristmasBirdCountApp.Email
             _ibTeamLeaderNameClearField.Click += ClearTeamLeaderName_OnClick;
             _ibTeamLeaderPhoneClearField.Click += ClearTeamLeaderPhone_OnClick;
             _ibTeamLeaderEmailClearField.Click += ClearTeamLeaderEmail_OnClick;
-            _ibTeamLeaderStreetClearField.Click += ClearTeamLeaderStreet_OnClick;
-            _ibTeamLeaderCityClearField.Click += ClearTeamLeaderCity_OnClick;
-            _ibTeamLeaderStateClearField.Click += ClearTeamLeaderState_OnClick;
-            _ibTeamLeaderZIPClearField.Click += ClearTeamLeaderZIP_OnClick;
+            _ibStreetClearField.Click += ClearStreet_OnClick;
+            _ibCityClearField.Click += ClearCity_OnClick;
+            _ibStateClearField.Click += ClearState_OnClick;
+            _ibZipClearField.Click += ClearZip_OnClick;
 
             _ibStartTime1ClearField.Click += ClearStartTime1_OnClick;
             _ibEndTime1ClearField.Click += ClearEndTime1_OnClick;
@@ -207,10 +207,10 @@ namespace ChristmasBirdCountApp.Email
             _ibTeamLeaderNameClearField.Click -= ClearTeamLeaderName_OnClick;
             _ibTeamLeaderPhoneClearField.Click -= ClearTeamLeaderPhone_OnClick;
             _ibTeamLeaderEmailClearField.Click -= ClearTeamLeaderEmail_OnClick;
-            _ibTeamLeaderStreetClearField.Click -= ClearTeamLeaderStreet_OnClick;
-            _ibTeamLeaderCityClearField.Click -= ClearTeamLeaderCity_OnClick;
-            _ibTeamLeaderStateClearField.Click -= ClearTeamLeaderState_OnClick;
-            _ibTeamLeaderZIPClearField.Click -= ClearTeamLeaderZIP_OnClick;
+            _ibStreetClearField.Click -= ClearStreet_OnClick;
+            _ibCityClearField.Click -= ClearCity_OnClick;
+            _ibStateClearField.Click -= ClearState_OnClick;
+            _ibZipClearField.Click -= ClearZip_OnClick;
 
             _ibStartTime1ClearField.Click -= ClearStartTime1_OnClick;
             _ibEndTime1ClearField.Click -= ClearEndTime1_OnClick;
@@ -261,24 +261,24 @@ namespace ChristmasBirdCountApp.Email
             _teamLeaderEmail.Text = "";
         }
 
-        private void ClearTeamLeaderStreet_OnClick(object sender, EventArgs e)
+        private void ClearStreet_OnClick(object sender, EventArgs e)
         {
-            _teamLeaderStreet.Text = "";
+            _street.Text = "";
         }
 
-        private void ClearTeamLeaderCity_OnClick(object sender, EventArgs e)
+        private void ClearCity_OnClick(object sender, EventArgs e)
         {
-            _teamLeaderCity.Text = "";
+            _city.Text = "";
         }
 
-        private void ClearTeamLeaderState_OnClick(object sender, EventArgs e)
+        private void ClearState_OnClick(object sender, EventArgs e)
         {
-            _teamLeaderState.SetSelection(0);
+            _state.SetSelection(0);
         }
 
-        private void ClearTeamLeaderZIP_OnClick(object sender, EventArgs e)
+        private void ClearZip_OnClick(object sender, EventArgs e)
         {
-            _teamLeaderZIP.Text = "";
+            _zip.Text = "";
         }
 
         private void ClearStartTime1_OnClick(object sender, EventArgs e)
@@ -343,7 +343,6 @@ namespace ChristmasBirdCountApp.Email
             // By overriding the function of the device's "Back" button
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
-            //SetContentView(Resource.Layout.Main);
         }
 
         private void SendButton_OnClick(object sender, EventArgs e)
@@ -368,14 +367,14 @@ namespace ChristmasBirdCountApp.Email
             emailBodyText.AppendLine("Party Members: " + _partyMembers.Text + "\n");
             emailBodyText.AppendLine("Number in Party: " + _partySize.Text + "\n");
 
-            emailBodyText.AppendLine("\n\n");
+            emailBodyText.AppendLine("\n");
             emailBodyText.AppendLine("Team Leader: " + _teamLeaderName.Text + "\n");
             emailBodyText.AppendLine("Phone: " + _teamLeaderPhone.Text + "\n");
             emailBodyText.AppendLine("Email: " + _teamLeaderEmail.Text + "\n");
             emailBodyText.AppendLine("Address:" + "\n");
-            emailBodyText.AppendLine(_teamLeaderStreet.Text + "\n");
-            emailBodyText.AppendLine(_teamLeaderCity.Text + _teamLeaderState.SelectedItem.ToString() + _teamLeaderZIP.Text + "\n");
-            emailBodyText.AppendLine("\n\n");
+            emailBodyText.AppendLine(_street.Text + "\n");
+            emailBodyText.AppendLine(_city.Text + ", " + _state.SelectedItem.ToString() + " " + _zip.Text + "\n");
+            emailBodyText.AppendLine("\n");
 
             emailBodyText.AppendLine("Start Time 1: " + _startTime1.SelectedItem.ToString());
             emailBodyText.AppendLine("End Time 1: " + _endTime1.SelectedItem.ToString() + "\n");
@@ -386,6 +385,7 @@ namespace ChristmasBirdCountApp.Email
             emailBodyText.AppendLine("Hours Walked: " + _hoursWalked.Text);
             emailBodyText.AppendLine("Miles Walked: " + _milesWalked.Text + "\n");
             emailBodyText.AppendLine("Hours Owling: " + _hoursOwling.Text + "\n");
+
             emailBodyText.AppendLine("Total Number of Bird Species Seen: " + MainActivity.totalSpeciesSeen.ToString() + "\n");
             emailBodyText.AppendLine("Total Number of All Birds Seen: " + MainActivity.totalBirdsSeen.ToString() + "\n");
             emailBodyText.AppendLine("Notes: " + _optionalNotes.Text);
@@ -410,7 +410,6 @@ namespace ChristmasBirdCountApp.Email
             // Return to the Main App Screen
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
-            //SetContentView(Resource.Layout.Main);
         }
     }
 }

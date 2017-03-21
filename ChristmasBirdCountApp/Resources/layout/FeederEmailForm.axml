@@ -53,6 +53,50 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/ClearFieldIconDescription" />
         </LinearLayout>
+      <!-- Below: Collect Region of Count Circle -->
+      <LinearLayout
+          android:orientation="horizontal"
+          android:minWidth="25px"
+          android:minHeight="25px"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/linearLayoutCountCircle">
+        <TextView
+            android:text="Count Circle Code:"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:id="@+id/lblCountCircle"
+            android:clickable="false"
+            android:editable="false"
+            android:enabled="true"
+            android:textColor="#000" />
+        <EditText
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:id="@+id/txtCountCircle"
+            android:clickable="true"
+            android:editable="true"
+            android:hint="e.g. BF-0113"
+            android:enabled="true"
+            android:textColor="#000" />
+        <ImageButton
+            android:id="@+id/ibCountCircleClearField"
+            android:background="#80ffffff"
+            android:padding="2dp"
+            android:layout_width="wrap_content"
+            android:layout_margin="2dp"
+            android:src="@android:drawable/ic_delete"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/ClearFieldIconDescription" />
+      </LinearLayout>
     <!-- Below: Collect Name of Feeder Observer -->
         <LinearLayout
             android:orientation="horizontal"
@@ -79,14 +123,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="16dp"
-                android:id="@+id/txtObserver"
+                android:id="@+id/txtObserverName"
                 android:clickable="true"
                 android:editable="true"
                 android:hint="Joel"
                 android:enabled="true"
                 android:textColor="#000" />
             <ImageButton
-                android:id="@+id/ibObserverClearField"
+                android:id="@+id/ibObserverNameClearField"
                 android:background="#80ffffff"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
@@ -110,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="16dp"
-                android:id="@+id/lblPhoneNumber"
+                android:id="@+id/lblObserverPhone"
                 android:clickable="false"
                 android:editable="false"
                 android:enabled="true"
@@ -123,14 +167,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="16dp"
-                android:id="@+id/txtPhoneNumber"
+                android:id="@+id/txtObserverPhone"
                 android:clickable="true"
                 android:editable="false"
                 android:hint="123-456-7890"
                 android:enabled="true"
                 android:textColor="#000" />
             <ImageButton
-                android:id="@+id/ibPhoneNumberClearField"
+                android:id="@+id/ibObserverPhoneClearField"
                 android:background="#80ffffff"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
