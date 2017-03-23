@@ -52,7 +52,6 @@ namespace ChristmasBirdCountApp
             llAdd = FindViewById<LinearLayout>(Resource.Id.llAdd);
             llSubmit = FindViewById<LinearLayout>(Resource.Id.llSubmit);
             
-
             // Initialize Filter (Search) Box
             birdNameFilter = FindViewById<EditText>(Resource.Id.txtNameFilter);
 

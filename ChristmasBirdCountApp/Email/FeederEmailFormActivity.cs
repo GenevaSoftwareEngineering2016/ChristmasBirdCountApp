@@ -41,7 +41,6 @@ namespace ChristmasBirdCountApp.Email
         private ImageButton _ibNotesClearField;
 
         private LinearLayout _llClear;
-        private LinearLayout _llAdd;
         private LinearLayout _llSubmit;
         private TextView _txtBirdLabel;
 
@@ -53,16 +52,15 @@ namespace ChristmasBirdCountApp.Email
             ActionBar.SetDisplayShowCustomEnabled(true);
 
             _llClear = FindViewById<LinearLayout>(Resource.Id.llClear);
-            _llAdd = FindViewById<LinearLayout>(Resource.Id.llAdd);
             _llSubmit = FindViewById<LinearLayout>(Resource.Id.llSubmit);
             _txtBirdLabel = FindViewById<TextView>(Resource.Id.lblAdd);
-
-            _txtBirdLabel.Text = "Return to List";
 
             _llClear.Visibility = Android.Views.ViewStates.Invisible;
             _llSubmit.Visibility = Android.Views.ViewStates.Invisible;
 
-            SetContentView(Resource.Layout.FieldEmailForm);
+            _txtBirdLabel.Text = "Return to List";
+
+            SetContentView(Resource.Layout.FeederEmailForm);        // Display the Feeder Count Type Form
 
             // Find Fields and Buttons
             _recipientEmail = FindViewById<EditText>(Resource.Id.txtRecipientEmail);
@@ -110,7 +108,6 @@ namespace ChristmasBirdCountApp.Email
 
             // Register event handlers
             _sendButton.Click += SendButton_OnClick;
-            _llAdd.Click += LlAdd_OnClick;
 
             // Register Event Handlers for Buttons that Clear Text Fields
             _ibEmailClearField.Click += ClearEmailField_OnClick;
@@ -204,12 +201,6 @@ namespace ChristmasBirdCountApp.Email
         private void ClearNotesField_OnClick(object sender, EventArgs e)
         {
             _optionalNotes.Text = "";
-        }
-
-        private void LlAdd_OnClick(object sender, EventArgs e)
-        {
-            var intent = new Intent(this, typeof(MainActivity));
-            StartActivity(intent);
         }
 
         public override void OnBackPressed()
