@@ -12,7 +12,7 @@ using ChristmasBirdCountApp.Email;
 
 namespace ChristmasBirdCountApp
 {
-    [Activity(Label = "Bird Counter", MainLauncher = true, Icon = "@drawable/whiteBird", Theme = "@style/CustomActionBarTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Bird Counter", MainLauncher = true, Icon = "@drawable/tealBird", Theme = "@style/CustomActionBarTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         private List<BirdCount> masterBirdList;     // Most up-to-date list of all birds; Used by search function to add birds to "workingBirdList"

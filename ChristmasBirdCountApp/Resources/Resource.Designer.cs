@@ -79,13 +79,16 @@ namespace ChristmasBirdCountApp
 			public const int selector = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int whiteBird = 2130837508;
+			public const int tealBird = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int WhiteReport = 2130837509;
+			public const int whiteBird = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int whiteTrashCan = 2130837510;
+			public const int WhiteReport = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int whiteTrashCan = 2130837511;
 			
 			static Drawable()
 			{
