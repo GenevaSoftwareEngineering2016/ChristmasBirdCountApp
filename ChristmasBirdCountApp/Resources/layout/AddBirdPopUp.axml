@@ -12,20 +12,36 @@
         android:typeface="sans"
         android:textColor="#FFF"
         android:textSize="20dp"
-        android:id="@+id/lblAddBirdInstructions" 
+        android:id="@+id/lblAddBirdInstructions"
         android:textStyle="bold"
         android:background="#3B5998"
         android:gravity="center_horizontal"
         android:padding="5dp" />
-    <EditText
-        android:imeOptions="actionDone"
-        android:singleLine="true"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtAddBirdNameFilter"
-        android:typeface="sans"
-        android:hint="Enter a bird name to filter list"
-        android:textColor="#000"  />
+        android:orientation="horizontal"
+        android:id="@+id/linearLayoutAddBirdFilter">
+      <EditText
+            android:inputType="text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/txtAddBirdNameFilter"
+            android:hint="Enter a bird name to filter your list"
+            android:typeface="sans"
+            android:textColor="#000"
+            android:layout_marginRight="0.0dp" />
+        <ImageButton
+            android:id="@+id/ibAddBirdClearFilter"
+            android:background="#80ffffff"
+            android:padding="2dp"
+            android:layout_width="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@android:drawable/ic_delete"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/ClearFilterIconDescription" />
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

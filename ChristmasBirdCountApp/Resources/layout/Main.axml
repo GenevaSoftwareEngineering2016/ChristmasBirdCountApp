@@ -6,48 +6,29 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:background="#FFF">
-<!--<LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayoutMainScreen">
-        <Button
-            android:text="Clear All"
-            android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <EditText
+            android:inputType="text"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true"
-            android:id="@+id/btnClear" />
-        <Button
-            android:text="Add Bird"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true"
-            android:id="@+id/btnAddBirdMain" />
-        <Button
-            android:text="Submit Report"
-            android:layout_height="match_parent"
+            android:id="@+id/txtNameFilter"
+            android:hint="Enter a bird name to filter your list"
+            android:typeface="sans"
+            android:textColor="#000" />
+        <ImageButton
+            android:id="@+id/ibClearFilter"
+            android:background="#80ffffff"
+            android:padding="2dp"
             android:layout_width="wrap_content"
-            android:id="@+id/btnSubmit"
-            android:clickable="true"
-            android:editable="false"
-            android:enabled="true" />
-    </LinearLayout>-->
-    <EditText
-        android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtNameFilter"
-        android:hint="Enter a bird name to filter your list"
-        android:typeface="sans"
-        android:textColor="#000" />
+            android:layout_margin="2dp"
+            android:src="@android:drawable/ic_delete"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/ClearFilterIconDescription" />
+    </LinearLayout>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

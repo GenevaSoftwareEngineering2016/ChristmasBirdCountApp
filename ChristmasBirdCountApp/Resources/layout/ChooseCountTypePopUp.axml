@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="400dp"
+    android:minHeight="250dp">
+    <TextView
+        android:text="Please select the type of count report you are submitting:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:typeface="sans"
+        android:textColor="#FFF"
+        android:id="@+id/lblTitle"
+        android:textSize="20dp"
+        android:clickable="false"
+        android:editable="false"
+        android:padding="5dp"
+        android:background="@drawable/selector"
+        android:layout_marginBottom="75dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutBirdCount">
+        <Button
+            android:text="Field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnFieldCount"
+            android:background="@drawable/selector"
+            android:textColor="#FFF"
+            android:layout_margin="5dp" />
+        <Button
+            android:text="Feeder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnFeederCount"
+            android:background="@drawable/selector"
+            android:textColor="#FFF"
+            android:layout_margin="5dp" />
+        <Button
+            android:text="Count Week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCountWeekCount"
+            android:background="@drawable/selector"
+            android:textColor="#FFF"
+            android:layout_margin="5dp" />
+        <Button
+            android:text="Cancel Submission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCancelSubmit"
+            android:background="@drawable/selector"
+            android:textColor="#FFF"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+</LinearLayout>

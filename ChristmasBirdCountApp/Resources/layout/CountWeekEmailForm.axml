@@ -23,10 +23,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textSize="16dp"
                 android:id="@+id/lblRecipientEmail"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#000" />
             <EditText
                 android:inputType="text|textEmailAddress"
@@ -35,59 +36,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textSize="16dp"
                 android:id="@+id/txtRecipientEmail"
                 android:clickable="true"
                 android:editable="false"
-                android:hint="e.g. name@email.com"
-                android:enabled="true" 
+                android:hint="name@email.com"
+                android:enabled="true"
                 android:textColor="#000" />
+            <ImageButton
+                android:id="@+id/ibEmailClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
         </LinearLayout>
-    <!-- Below: Collect Names of All Team/Party Members -->
+      <!-- Below: Collect Region of Count Circle -->
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayoutPartyMembers">
-            <TextView
-                android:text="Party Members:"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/lblPartyMembers"
-                android:clickable="false"
-                android:editable="false"
-                android:enabled="true" 
-                android:textColor="#000" />
-            <EditText
-                android:inputType="text|textMultiLine"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/txtPartyMembers"
-                android:clickable="true"
-                android:editable="true"
-                android:hint="e.g. Austin, Mason"
-                android:enabled="true" 
-                android:textColor="#000" />
-        </LinearLayout>
-    <!-- Below: Collect Region of Count Circle -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayoutRegion">
+            android:id="@+id/linearLayoutCountCircle">
             <TextView
                 android:text="Count Circle Code:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/lblRegion"
+                android:textSize="16dp"
+                android:id="@+id/lblCountCircle"
                 android:clickable="false"
                 android:editable="false"
                 android:enabled="true"
@@ -99,175 +80,341 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/txtRegion"
+                android:textSize="16dp"
+                android:id="@+id/txtCountCircle"
                 android:clickable="true"
                 android:editable="true"
                 android:hint="e.g. BF-0113"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#000" />
+            <ImageButton
+                android:id="@+id/ibCountCircleClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
         </LinearLayout>
-    <!-- Below: Collect the Number of Hours Driven and Miles Driven -->
+    <!-- Below: Collect Name of Counter -->
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayoutHoursDriven">
+            android:id="@+id/linearLayoutCounter">
             <TextView
-                android:text="Hours Driven:"
+                android:text="Counter:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/lblHoursDriven"
+                android:textSize="16dp"
+                android:id="@+id/lblCounter"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#000" />
             <EditText
-                android:inputType="number|numberDecimal"
-                android:imeOptions="actionDone"
-                android:singleLine="true"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/txtHoursDriven"
+                android:textSize="16dp"
+                android:id="@+id/txtCounterName"
                 android:clickable="true"
-                android:editable="false"
-                android:hint="0.0"
-                android:enabled="true" 
+                android:editable="true"
+                android:hint="Joel"
+                android:enabled="true"
                 android:textColor="#000" />
+            <ImageButton
+                android:id="@+id/ibCounterNameClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
         </LinearLayout>
+    <!-- Below: Collect the Counter's Phone Number -->
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayoutMilesDriven">
+            android:id="@+id/linearLayoutCounterPhone">
             <TextView
-                android:text="Miles Driven:"
+                android:text="Counter Phone #:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/lblMilesDriven"
+                android:textSize="16dp"
+                android:id="@+id/lblCounterPhone"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#000" />
             <EditText
-                android:inputType="number|numberDecimal"
+                android:inputType="text"
                 android:imeOptions="actionDone"
                 android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/txtMilesDriven"
+                android:textSize="16dp"
+                android:id="@+id/txtCounterPhone"
                 android:clickable="true"
                 android:editable="false"
-                android:hint="0.0"
-                android:enabled="true" 
+                android:hint="123-456-7890"
+                android:enabled="true"
                 android:textColor="#000" />
+            <ImageButton
+                android:id="@+id/ibCounterPhoneClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
         </LinearLayout>
-    <!-- Below: Collect the Number of Hours Walked and Miles Walked -->
+    <!-- Below: Collect Counter's Email Address -->
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayoutHoursWalked">
+            android:id="@+id/linearLayoutCounterEmail">
             <TextView
-                android:text="Hours Walked:"
+                android:text="Counter Email:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/lblHoursWalked"
+                android:textSize="16dp"
+                android:id="@+id/lblCounterEmail"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#000" />
             <EditText
-                android:inputType="number|numberDecimal"
+                android:inputType="text|textEmailAddress"
                 android:imeOptions="actionDone"
                 android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/txtHoursWalked"
+                android:textSize="16dp"
+                android:id="@+id/txtCounterEmail"
                 android:clickable="true"
-                android:editable="false"
-                android:hint="0.0"
-                android:enabled="true" 
+                android:editable="true"
+                android:hint="name@email.com"
+                android:enabled="true"
                 android:textColor="#000" />
+            <ImageButton
+                android:id="@+id/ibCounterEmailClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
         </LinearLayout>
+    <!-- Below: Collect the Count Week Counter's Address/Location -->
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayoutMilesWalked">
+            android:id="@+id/linearLayoutCounterAddress">
             <TextView
-                android:text="Miles Walked:"
+                android:text="Mailing Address of Counter:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/lblMilesWalked"
+                android:textSize="16dp"
+                android:id="@+id/lblCounterAddress"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" 
-                android:textColor="#000" />
-            <EditText
-                android:inputType="number|numberDecimal"
-                android:imeOptions="actionDone"
-                android:singleLine="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/txtMilesWalked"
-                android:clickable="true"
-                android:editable="false"
-                android:hint="0.0"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#000" />
         </LinearLayout>
-    <!-- Below: Collect the Number of Hours Spent Owling -->
+    <!-- Collect Street -->
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayoutHoursOwling">
+            android:id="@+id/linearLayoutStreet">
             <TextView
-                android:text="Hours Owling:"
+                android:text="Street:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/lblHoursOwling"
+                android:textSize="16dp"
+                android:id="@+id/lblStreet"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#000" />
             <EditText
-                android:inputType="number|numberDecimal"
+                android:inputType="text"
                 android:imeOptions="actionDone"
                 android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/txtHoursOwling"
+                android:textSize="16dp"
+                android:id="@+id/txtStreet"
+                android:clickable="true"
+                android:editable="true"
+                android:hint="123 Birding Way"
+                android:enabled="true"
+                android:textColor="#000" />
+            <ImageButton
+                android:id="@+id/ibStreetClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
+        </LinearLayout>
+    <!-- Collect City -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutCity">
+            <TextView
+                android:text="City:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16dp"
+                android:id="@+id/lblCity"
+                android:clickable="false"
+                android:editable="false"
+                android:enabled="true"
+                android:textColor="#000" />
+            <EditText
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16dp"
+                android:id="@+id/txtCity"
+                android:clickable="true"
+                android:editable="true"
+                android:hint="Beaver Falls"
+                android:enabled="true"
+                android:textColor="#000" />
+            <ImageButton
+                android:id="@+id/ibCityClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
+        </LinearLayout>
+    <!-- Collect State -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutState">
+            <TextView
+                android:text="State:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16dp"
+                android:id="@+id/lblState"
+                android:clickable="false"
+                android:editable="false"
+                android:enabled="true"
+                android:textColor="#000" />
+            <Spinner
+                android:id="@+id/spinnerState"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/state_selection" />
+            <ImageButton
+                android:id="@+id/ibStateClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
+        </LinearLayout>
+    <!-- Collect ZIP Code -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutZIPCode">
+            <TextView
+                android:text="ZIP Code:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16dp"
+                android:id="@+id/lblZIPCode"
+                android:clickable="false"
+                android:editable="false"
+                android:enabled="true"
+                android:textColor="#000" />
+            <EditText
+                android:inputType="number"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16dp"
+                android:id="@+id/txtZIPCode"
                 android:clickable="true"
                 android:editable="false"
-                android:hint="0.0"
-                android:enabled="true" 
+                android:hint="15010"
+                android:enabled="true"
                 android:textColor="#000" />
+            <ImageButton
+                android:id="@+id/ibZIPCodeClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
         </LinearLayout>
     <!-- Below: Collect Any Additional Notes -->
         <LinearLayout
@@ -283,24 +430,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textSize="16dp"
                 android:id="@+id/lblNotes"
                 android:clickable="false"
                 android:editable="false"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#000" />
             <EditText
                 android:inputType="text|textMultiLine|textCapSentences|textAutoCorrect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textSize="16dp"
                 android:id="@+id/txtNotes"
                 android:clickable="true"
                 android:editable="true"
                 android:hint="Enter optional notes here"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#000" />
+            <ImageButton
+                android:id="@+id/ibNotesClearField"
+                android:background="#80ffffff"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="2dp"
+                android:src="@android:drawable/ic_delete"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ClearFieldIconDescription" />
         </LinearLayout>
-    <!-- Controls Below Allow User to Navigate Back to Main App Screen or To Submit (Send) Email Report -->
+    <!-- Control Below Allows User to Submit (Send) Email Report -->
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
@@ -313,10 +471,11 @@
                 android:layout_width="152.5dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textSize="18dp"
                 android:id="@+id/btnSend"
                 android:clickable="true"
                 android:editable="false"
-                android:enabled="true" 
+                android:enabled="true"
                 android:textColor="#FFF"
                 android:background="@drawable/selector"
                 android:layout_margin="5dp" />

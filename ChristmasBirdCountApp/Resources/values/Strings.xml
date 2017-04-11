@@ -1,4 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="ApplicationName">ChristmasBirdCountApp</string>
+  <string name="ClearFilterIconDescription">Clicking this "X" icon clears the bird name filter.</string>
+  <string name="ClearFieldIconDescription">Clicking this "X" icon clears the field.</string>
+  <string name="time_selection">Select a time</string>
+  <string-array name="times_array">
+    <item>12:00 AM</item>
+    <item>12:15 AM</item>
+    <item>12:30 AM</item>
+    <item>12:45 AM</item>
+    <item>01:00 AM</item>
+    <item>01:15 AM</item>
+    <item>01:30 AM</item>
+    <item>01:45 AM</item>
+    <item>02:00 AM</item>
+    <item>02:15 AM</item>
+    <item>02:30 AM</item>
+    <item>02:45 AM</item>
+    <item>03:00 AM</item>
+    <item>03:15 AM</item>
+    <item>03:30 AM</item>
+    <item>03:45 AM</item>
+    <item>04:00 AM</item>
+    <item>04:15 AM</item>
+    <item>04:30 AM</item>
+    <item>04:45 AM</item>
+    <item>05:00 AM</item>
+    <item>05:15 AM</item>
+    <item>05:30 AM</item>
+    <item>05:45 AM</item>
+    <item>06:00 AM</item>
+    <item>06:15 AM</item>
+    <item>06:30 AM</item>
+    <item>06:45 AM</item>
+    <item>07:00 AM</item>
+    <item>07:15 AM</item>
+    <item>07:30 AM</item>
+    <item>07:45 AM</item>
+    <item>08:00 AM</item>
+    <item>08:15 AM</item>
+    <item>08:30 AM</item>
+    <item>08:45 AM</item>
+    <item>09:00 AM</item>
+    <item>09:15 AM</item>
+    <item>09:30 AM</item>
+    <item>09:45 AM</item>
+    <item>10:00 AM</item>
+    <item>10:15 AM</item>
+    <item>10:30 AM</item>
+    <item>10:45 AM</item>
+    <item>11:00 AM</item>
+    <item>11:15 AM</item>
+    <item>11:30 AM</item>
+    <item>11:45 AM</item>
+    <item>12:00 PM</item>
+    <item>12:15 PM</item>
+    <item>12:30 PM</item>
+    <item>12:45 PM</item>
+    <item>01:00 PM</item>
+    <item>01:15 PM</item>
+    <item>01:30 PM</item>
+    <item>01:45 PM</item>
+    <item>02:00 PM</item>
+    <item>02:15 PM</item>
+    <item>02:30 PM</item>
+    <item>02:45 PM</item>
+    <item>03:00 PM</item>
+    <item>03:15 PM</item>
+    <item>03:30 PM</item>
+    <item>03:45 PM</item>
+    <item>04:00 PM</item>
+    <item>04:15 PM</item>
+    <item>04:30 PM</item>
+    <item>04:45 PM</item>
+    <item>05:00 PM</item>
+    <item>05:15 PM</item>
+    <item>05:30 PM</item>
+    <item>05:45 PM</item>
+    <item>06:00 PM</item>
+    <item>06:15 PM</item>
+    <item>06:30 PM</item>
+    <item>06:45 PM</item>
+    <item>07:00 PM</item>
+    <item>07:15 PM</item>
+    <item>07:30 PM</item>
+    <item>07:45 PM</item>
+    <item>08:00 PM</item>
+    <item>08:15 PM</item>
+    <item>08:30 PM</item>
+    <item>08:45 PM</item>
+    <item>09:00 PM</item>
+    <item>09:15 PM</item>
+    <item>09:30 PM</item>
+    <item>09:45 PM</item>
+    <item>10:00 PM</item>
+    <item>10:15 PM</item>
+    <item>10:30 PM</item>
+    <item>10:45 PM</item>
+    <item>11:00 PM</item>
+    <item>11:15 PM</item>
+    <item>11:30 PM</item>
+    <item>11:45 PM</item>
+  </string-array>
+  <string-array name="time_optional_array">
+    <item>N/A</item>
+    <item>12:00 AM</item>
+    <item>12:15 AM</item>
+    <item>12:30 AM</item>
+    <item>12:45 AM</item>
+    <item>01:00 AM</item>
+    <item>01:15 AM</item>
+    <item>01:30 AM</item>
+    <item>01:45 AM</item>
+    <item>02:00 AM</item>
+    <item>02:15 AM</item>
+    <item>02:30 AM</item>
+    <item>02:45 AM</item>
+    <item>03:00 AM</item>
+    <item>03:15 AM</item>
+    <item>03:30 AM</item>
+    <item>03:45 AM</item>
+    <item>04:00 AM</item>
+    <item>04:15 AM</item>
+    <item>04:30 AM</item>
+    <item>04:45 AM</item>
+    <item>05:00 AM</item>
+    <item>05:15 AM</item>
+    <item>05:30 AM</item>
+    <item>05:45 AM</item>
+    <item>06:00 AM</item>
+    <item>06:15 AM</item>
+    <item>06:30 AM</item>
+    <item>06:45 AM</item>
+    <item>07:00 AM</item>
+    <item>07:15 AM</item>
+    <item>07:30 AM</item>
+    <item>07:45 AM</item>
+    <item>08:00 AM</item>
+    <item>08:15 AM</item>
+    <item>08:30 AM</item>
+    <item>08:45 AM</item>
+    <item>09:00 AM</item>
+    <item>09:15 AM</item>
+    <item>09:30 AM</item>
+    <item>09:45 AM</item>
+    <item>10:00 AM</item>
+    <item>10:15 AM</item>
+    <item>10:30 AM</item>
+    <item>10:45 AM</item>
+    <item>11:00 AM</item>
+    <item>11:15 AM</item>
+    <item>11:30 AM</item>
+    <item>11:45 AM</item>
+    <item>12:00 PM</item>
+    <item>12:15 PM</item>
+    <item>12:30 PM</item>
+    <item>12:45 PM</item>
+    <item>01:00 PM</item>
+    <item>01:15 PM</item>
+    <item>01:30 PM</item>
+    <item>01:45 PM</item>
+    <item>02:00 PM</item>
+    <item>02:15 PM</item>
+    <item>02:30 PM</item>
+    <item>02:45 PM</item>
+    <item>03:00 PM</item>
+    <item>03:15 PM</item>
+    <item>03:30 PM</item>
+    <item>03:45 PM</item>
+    <item>04:00 PM</item>
+    <item>04:15 PM</item>
+    <item>04:30 PM</item>
+    <item>04:45 PM</item>
+    <item>05:00 PM</item>
+    <item>05:15 PM</item>
+    <item>05:30 PM</item>
+    <item>05:45 PM</item>
+    <item>06:00 PM</item>
+    <item>06:15 PM</item>
+    <item>06:30 PM</item>
+    <item>06:45 PM</item>
+    <item>07:00 PM</item>
+    <item>07:15 PM</item>
+    <item>07:30 PM</item>
+    <item>07:45 PM</item>
+    <item>08:00 PM</item>
+    <item>08:15 PM</item>
+    <item>08:30 PM</item>
+    <item>08:45 PM</item>
+    <item>09:00 PM</item>
+    <item>09:15 PM</item>
+    <item>09:30 PM</item>
+    <item>09:45 PM</item>
+    <item>10:00 PM</item>
+    <item>10:15 PM</item>
+    <item>10:30 PM</item>
+    <item>10:45 PM</item>
+    <item>11:00 PM</item>
+    <item>11:15 PM</item>
+    <item>11:30 PM</item>
+    <item>11:45 PM</item>
+  </string-array>
+  <string name="state_selection">Select a state</string>
+  <string-array name="state_array">
+	<item>Alabama</item>
+	<item>Alaska</item>
+	<item>Arizona</item>
+	<item>Arkansas</item>
+	<item>California</item>
+	<item>Colorado</item>
+	<item>Connecticut</item>
+	<item>Delaware</item>
+	<item>District of Columbia</item>
+	<item>Florida</item>
+	<item>Georgia</item>
+	<item>Hawaii</item>
+	<item>Idaho</item>
+	<item>Illinois</item>
+	<item>Indiana</item>
+	<item>Iowa</item>
+	<item>Kansas</item>
+	<item>Kentucky</item>
+	<item>Louisiana</item>
+	<item>Maine</item>
+	<item>Maryland</item>
+	<item>Massachusetts</item>
+	<item>Michigan</item>
+	<item>Minnesota</item>
+	<item>Mississippi</item>
+	<item>Missouri</item>
+	<item>Montana</item>
+	<item>Nebraska</item>
+	<item>Nevada</item>
+	<item>New Hampshire</item>
+	<item>New Jersey</item>
+	<item>New Mexico</item>
+	<item>New York</item>
+	<item>North Carolina</item>
+	<item>North Dakota</item>
+	<item>Ohio</item>
+	<item>Oklahoma</item>
+	<item>Oregon</item>
+	<item>Pennsylvania</item>
+	<item>Rhode Island</item>
+	<item>South Carolina</item>
+	<item>South Dakota</item>
+	<item>Tennessee</item>
+	<item>Texas</item>
+	<item>Utah</item>
+	<item>Vermont</item>
+	<item>Virginia</item>
+	<item>Washington</item>
+	<item>West Virginia</item>
+	<item>Wisconsin</item>
+	<item>Wyoming</item>
+  </string-array>
 </resources>
