@@ -9,7 +9,7 @@ using Android.Widget;
 
 namespace ChristmasBirdCountApp.Email
 {
-    [Activity(Label = "Bird Counter", Icon = "@drawable/audubon_society2", Theme = "@style/CustomActionBarTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Birdubon", Icon = "@drawable/audubon_society2", Theme = "@style/CustomActionBarTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
     public class FieldEmailFormActivity : Activity
     {
         // Text Fields and UI Objects
