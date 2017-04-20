@@ -6,6 +6,7 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
+using ChristmasBirdCountApp.Azure;
 
 namespace ChristmasBirdCountApp.Email
 {
@@ -263,13 +264,21 @@ namespace ChristmasBirdCountApp.Email
             // Send the Email - We Are Adding an Attachment
             emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);
 
-            if (emailSent)
+            // Submit the Data to Azure
+            AzureDataPOSTer dataPOSTer = new AzureDataPOSTer(this.ApplicationContext);
+            bool dataSentToAzure = dataPOSTer.PerformPostAgainstAzureFunctionApi();
+
+            if (emailSent && dataSentToAzure)
             {
-                Toast.MakeText(this, "Email sent!", ToastLength.Short).Show();
+                Toast.MakeText(this, "Report submitted!", ToastLength.Short).Show();
+            }
+            else if (!emailSent)
+            {
+                Toast.MakeText(this, "Unable to send email.", ToastLength.Short).Show();
             }
             else
             {
-                Toast.MakeText(this, "Unable to send email.", ToastLength.Short).Show();
+                Toast.MakeText(this, "Unable to send data to Azure API.", ToastLength.Short).Show();
             }
 
             // Return to the Main App Screen
