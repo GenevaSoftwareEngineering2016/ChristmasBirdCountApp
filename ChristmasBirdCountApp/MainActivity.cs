@@ -454,21 +454,21 @@ namespace ChristmasBirdCountApp
         private void Submit_OnFieldCount(object sender, OnFieldCountEventArgs e)
         {
             // Open the Field count type submission form
-            var intent = new Intent(this, typeof(FieldEmailFormActivity));
+            var intent = new Intent(this, typeof(FieldFormActivity));
             StartActivity(intent);
         }
 
         private void Submit_OnFeederCount(object sender, OnFeederCountEventArgs e)
         {
             // Open the Feeder count type submission form
-            var intent = new Intent(this, typeof(FeederEmailFormActivity));
+            var intent = new Intent(this, typeof(FeederFormActivity));
             StartActivity(intent);
         }
 
         private void Submit_OnCountWeekCount(object sender, OnCountWeekCountEventArgs e)
         {
             // Open the Count Week count type submission form
-            var intent = new Intent(this, typeof(CountWeekEmailFormActivity));
+            var intent = new Intent(this, typeof(CountWeekFormActivity));
             StartActivity(intent);
         }
     }

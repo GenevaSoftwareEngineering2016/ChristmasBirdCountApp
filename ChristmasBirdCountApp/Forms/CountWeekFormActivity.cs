@@ -10,7 +10,7 @@ using Android.Widget;
 namespace ChristmasBirdCountApp.Email
 {
     [Activity(Label = "Birdubon", Icon = "@drawable/audubon_society2", Theme = "@style/CustomActionBarTheme", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden, ScreenOrientation = ScreenOrientation.Portrait)]
-    public class CountWeekEmailFormActivity : Activity
+    public class CountWeekFormActivity : Activity
     {
         // Text Fields and UI Objects
         private EditText _recipientEmail;
@@ -60,7 +60,7 @@ namespace ChristmasBirdCountApp.Email
 
             _txtBirdLabel.Text = "Return to List";
 
-            SetContentView(Resource.Layout.CountWeekEmailForm);        // Display the Count Week Count Type Form
+            SetContentView(Resource.Layout.CountWeekForm);        // Display the Count Week Count Type Form
 
             // Find Fields and Buttons
             _recipientEmail = FindViewById<EditText>(Resource.Id.txtRecipientEmail);

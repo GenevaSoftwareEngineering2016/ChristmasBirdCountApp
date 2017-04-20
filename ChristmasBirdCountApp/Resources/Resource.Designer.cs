@@ -594,13 +594,13 @@ namespace ChristmasBirdCountApp
 			public const int ClearAllPopUp = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int CountWeekEmailForm = 2130903045;
+			public const int CountWeekForm = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int FeederEmailForm = 2130903046;
+			public const int FeederForm = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int FieldEmailForm = 2130903047;
+			public const int FieldForm = 2130903047;
 			
 			// aapt resource value: 0x7f030008
 			public const int Main = 2130903048;
