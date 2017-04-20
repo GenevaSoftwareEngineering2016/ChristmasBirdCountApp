@@ -18,9 +18,6 @@ namespace ChristmasBirdCountApp
         private List<BirdCount> masterBirdList;     // Most up-to-date list of all birds; Used by search function to add birds to "workingBirdList"
         private List<BirdCount> workingBirdList;    // List of all birds with counts 0+; This list is submitted with email report to Compiler
         private List<BirdCount> filteredBirdList;
-        //private Button btnAddBird;
-        //private Button btnClear;
-        //private Button btnSubmit;
         private ImageButton ibClearFilter;
         LinearLayout llClear;
         LinearLayout llAdd;
@@ -43,9 +40,6 @@ namespace ChristmasBirdCountApp
             SetContentView(Resource.Layout.Main);
 
             // Initialize Button Variables
-            //Button btnClear = FindViewById<Button>(Resource.Id.btnClear);
-            //Button btnSubmit = FindViewById<Button>(Resource.Id.btnSubmit);
-            //btnAddBird = FindViewById<Button>(Resource.Id.btnAddBirdMain);
             ibClearFilter = FindViewById<ImageButton>(Resource.Id.ibClearFilter);
 
             llClear = FindViewById<LinearLayout>(Resource.Id.llClear);
@@ -62,14 +56,11 @@ namespace ChristmasBirdCountApp
             birdNameFilter.TextChanged += BirdNameFilter_OnTextChanged;
             userBirdListView.ItemClick += MListView_ItemClick;
             userBirdListView.ItemLongClick += MListView_ItemLongClick;
-            //btnClear.Click += BtnClear_Click;
-            //btnSubmit.Click += BtnSubmit_Click;
             llClear.Click += BtnClear_Click;
             llSubmit.Click += BtnSubmit_Click;
+            // End Button Click Events
 
             birdNameFilter.ClearFocus();    // Do not focus on text field for filter by default.
-
-            // End Button Click Events
         }
 
         protected override void OnStart()
@@ -84,26 +75,20 @@ namespace ChristmasBirdCountApp
             workingBirdList = BirdListFile.LoadWorkingBirdListFromFile();
             filteredBirdList = workingBirdList;
 
-            // Update the "Working" bird list from the "Master" bird list
-            //workingBirdList = BirdListFile.UpdateWorkingBirdListFromMaster(masterBirdList, workingBirdList);
-
             // Initialize ListView Adapter
             userBirdListView.Adapter = new row_adapter(this, filteredBirdList);
 
             // Register Event Handlers
-            //btnAddBird.Click += AddBird_OnClick;
             ibClearFilter.Click += IBClearFilter_OnClick;
             llAdd.Click += AddBird_OnClick;
 
             if (workingBirdList.Count == 0)
             {
-                //btnClear.Enabled = false;
                 llClear.Enabled = false;
                 llClear.SetBackgroundColor(Android.Graphics.Color.LightGray);
             }
             else
             {
-                //btnClear.Enabled = true;
                 llClear.Enabled = true;
                 llClear.SetBackgroundResource(Resource.Drawable.selector);
 
@@ -116,7 +101,6 @@ namespace ChristmasBirdCountApp
             BirdListFile.CreateWorkingBirdListFile(masterBirdList, workingBirdList);
 
             // Deregister Event Handlers
-            //btnAddBird.Click -= AddBird_OnClick;
             ibClearFilter.Click -= IBClearFilter_OnClick;
             llAdd.Click -= AddBird_OnClick;
 
@@ -324,7 +308,6 @@ namespace ChristmasBirdCountApp
                 }
             }
 
-            //workingBirdList.RemoveAt(e.id);       // Cannot use "e.id" on "workingBirdList," because the user may be doing a filtered search
             workingBirdList.RemoveAt(birdIndex);
 
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
@@ -371,7 +354,6 @@ namespace ChristmasBirdCountApp
             userBirdListView = FindViewById<ListView>(Resource.Id.myListView);
 
             birdNameFilter.Text = "";       // Reset the bird name filter
-            //btnClear.Enabled = false;       // Disable the "Clear" button because the list no longer has any items in it.
             llClear.Enabled = false;       // Disable the "Clear" button because the list no longer has any items in it.
             llClear.SetBackgroundColor(Android.Graphics.Color.LightGray);
 
