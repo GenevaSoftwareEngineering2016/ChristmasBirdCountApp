@@ -111,6 +111,48 @@ namespace ChristmasBirdCountApp
             return loadedBirdList;
         }
 
+        public static List<BirdCount> ReadFinalBirdCountsFromCSV()
+        {
+            List<BirdCount> finalBirdListFromCSV = new List<BirdCount>();
+            Directory = Environment.ExternalStorageDirectory.ToString();
+            FilePath = Path.Combine(Directory, "Bird Count Results.csv");
+
+            try
+            {
+                if (File.Exists(FilePath))
+                {
+                    using (StreamReader fileReader = new StreamReader(File.OpenRead(FilePath)))
+                    {
+                        while (!fileReader.EndOfStream)
+                        {
+                            var line = fileReader.ReadLine();
+                            var birdCountItem = line.Split(',');
+                            if (birdCountItem[0] != "" && birdCountItem[0] != null)
+                            {
+                                finalBirdListFromCSV.Insert(0, new BirdCount() { Name = birdCountItem[0], Count = Convert.ToInt32(birdCountItem[1]), InList = Convert.ToBoolean(birdCountItem[2]) });
+                            }
+                            else { }
+                        }
+                    }
+                }
+                else
+                {
+                    // Create a new file, because one does not already exist.
+                    using (StreamWriter streamWriter = new StreamWriter(File.Create(FilePath))) { }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                Toast.MakeText(Application.Context, "Could not load file or file does not exist!", ToastLength.Long).Show();
+            }
+
+            // Invert the Bird List to Correct for Reading the .csv File "Backwards"
+            finalBirdListFromCSV.Reverse();
+
+            return finalBirdListFromCSV;
+        }
+
         public static List<BirdCount> LoadMasterBirdList(Android.Content.Context appContext)
         {
             List<BirdCount> loadedMasterBirdList = new List<BirdCount>();

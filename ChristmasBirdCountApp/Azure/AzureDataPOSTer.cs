@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net.Http;
-using System.Runtime.Serialization.Json;
 using System.Text;
 using Android.Content;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace ChristmasBirdCountApp.Azure
 {
@@ -17,6 +16,7 @@ namespace ChristmasBirdCountApp.Azure
         public AzureDataPOSTer(Context appContext)
         {
             CurrentAppContext = appContext;
+            CountDataJson = "";
         }
 
         public bool PerformPostAgainstAzureFunctionApi()
@@ -56,25 +56,20 @@ namespace ChristmasBirdCountApp.Azure
         private void CreateJsonFromCsv()
         {
             List<BirdCount> csvContents = new List<BirdCount>();
-            csvContents = BirdListFile.LoadWorkingBirdListFromFile();   // Get the latest bird list stored in the CSV
+            csvContents = BirdListFile.ReadFinalBirdCountsFromCSV();   // Get the latest bird list stored in the CSV
 
             // Serialize Bird Count List Contents as JSON
             // Help from: http://www.c-sharpcorner.com/article/json-serialization-and-deserialization-in-c-sharp/
-            DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(BirdCount));
-            using (MemoryStream streamObject = new MemoryStream())
+            // Apply Starting Formatting for JSON Array
+            CountDataJson += "]";
+
+            foreach (BirdCount bird in csvContents)
             {
-                foreach (BirdCount bird in csvContents)
-                {
-                    jsonSerializer.WriteObject(streamObject, bird);
-                }
-
-                streamObject.Position = 0;
-
-                using (StreamReader reader = new StreamReader(streamObject))
-                {
-                    CountDataJson = reader.ReadToEnd();
-                }
+                CountDataJson += JsonConvert.SerializeObject(bird);
             }
+
+            // Apply Ending Formatting for JSON Array
+            CountDataJson += "]";
         }
     }
 }
