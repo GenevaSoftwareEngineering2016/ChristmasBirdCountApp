@@ -7,6 +7,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
 using ChristmasBirdCountApp.Azure;
+using ChristmasBirdCountApp.Forms;
 
 namespace ChristmasBirdCountApp.Email
 {
@@ -264,8 +265,28 @@ namespace ChristmasBirdCountApp.Email
             // Send the Email - We Are Adding an Attachment
             emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);
 
+            // Put all the answers typed into the GUI form into an object (a list of sorts)
+            FeederFormAnswers feederFormAnswers = new FeederFormAnswers
+            (
+                currentDateTime.ToString(),
+                _recipientEmail.Text,
+                _countCircleCode.Text,
+                "Feeder",
+                _observerName.Text,
+                _observerPhone.Text,
+                _observerEmail.Text,
+                _street.Text,
+                _city.Text,
+                _state.SelectedItem.ToString(),
+                _zip.Text,
+                _hoursObserving.Text,
+                _optionalNotes.Text,
+                MainActivity.totalSpeciesSeen.ToString(),
+                MainActivity.totalBirdsSeen.ToString()
+            );
+
             // Submit the Data to Azure
-            AzureDataPOSTer dataPOSTer = new AzureDataPOSTer(this.ApplicationContext);
+            AzureDataPOSTer dataPOSTer = new AzureDataPOSTer(this.ApplicationContext, "feeder", null, feederFormAnswers, null);
             bool dataSentToAzure = dataPOSTer.PerformPostAgainstAzureFunctionApi();
 
             if (emailSent && dataSentToAzure)

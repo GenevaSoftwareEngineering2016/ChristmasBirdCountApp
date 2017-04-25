@@ -1,5 +1,6 @@
 // (c) 2016 Geneva College Senior Software Project Team
 using System;
+using System.Collections.Generic;
 using System.Text;
 using Android.App;
 using Android.Content;
@@ -7,6 +8,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
 using ChristmasBirdCountApp.Azure;
+using ChristmasBirdCountApp.Forms;
 
 namespace ChristmasBirdCountApp.Email
 {
@@ -401,10 +403,41 @@ namespace ChristmasBirdCountApp.Email
             // Send the Email - We Are Adding an Attachment
             emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);
 
+            // Put all the answers typed into the GUI form into an object (a list of sorts)
+            FieldFormAnswers fieldFormAnswers = new FieldFormAnswers
+            (
+                currentDateTime.ToString(),
+                _recipientEmail.Text,
+                _partyMembers.Text,
+                _partySize.Text,
+                _countCircleCode.Text,
+                "Field",
+                _teamLeaderName.Text,
+                _teamLeaderPhone.Text,
+                _teamLeaderEmail.Text,
+                _street.Text,
+                _city.Text,
+                _state.SelectedItem.ToString(),
+                _zip.Text,
+                _startTime1.SelectedItem.ToString(),
+                _endTime1.SelectedItem.ToString(),
+                _startTime2.SelectedItem.ToString(),
+                _endTime2.SelectedItem.ToString(),
+                _hoursDriven.Text,
+                _milesDriven.Text,
+                _hoursWalked.Text,
+                _milesWalked.Text,
+                _hoursOwling.Text,
+                _optionalNotes.Text,
+                MainActivity.totalSpeciesSeen.ToString(),
+                MainActivity.totalBirdsSeen.ToString()
+            );
+
             // Submit the Data to Azure
-            AzureDataPOSTer dataPOSTer = new AzureDataPOSTer(this.ApplicationContext);
+            AzureDataPOSTer dataPOSTer = new AzureDataPOSTer(this.ApplicationContext, "field", fieldFormAnswers, null, null);
             bool dataSentToAzure = dataPOSTer.PerformPostAgainstAzureFunctionApi();
 
+            // Check for success of email and data sending
             if (emailSent && dataSentToAzure)
             {
                 Toast.MakeText(this, "Report submitted!", ToastLength.Short).Show();

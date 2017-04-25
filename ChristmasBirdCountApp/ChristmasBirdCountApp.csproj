@@ -98,6 +98,8 @@
     <Compile Include="Forms\CountWeekFormActivity.cs" />
     <Compile Include="Email\Decryptor.cs" />
     <Compile Include="Email\Email.cs" />
+    <Compile Include="Forms\CountWeekFormAnswers.cs" />
+    <Compile Include="Forms\FeederFormAnswers.cs" />
     <Compile Include="Forms\FieldFormActivity.cs" />
     <Compile Include="BirdListFile.cs" />
     <Compile Include="Email\EmailResource.Designer.cs">
@@ -106,6 +108,7 @@
       <DependentUpon>EmailResource.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\FeederFormActivity.cs" />
+    <Compile Include="Forms\FieldFormAnswers.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PopUp.cs" />
     <Compile Include="PopUpAdd.cs" />

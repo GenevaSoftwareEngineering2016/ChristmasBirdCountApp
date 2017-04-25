@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using Android.Content;
 using Android.Widget;
+using ChristmasBirdCountApp.Forms;
 using Newtonsoft.Json;
 
 namespace ChristmasBirdCountApp.Azure
@@ -11,11 +12,22 @@ namespace ChristmasBirdCountApp.Azure
     class AzureDataPOSTer
     {
         public Context CurrentAppContext { get; private set; }
+
+        public string CountFormType { get; set; }
+
+        public FieldFormAnswers FieldFormAnswers { get; set; }
+        public FeederFormAnswers FeederFormAnswers { get; set; }
+        public CountWeekFormAnswers CountWeekFormAnswers { get; set; }
+
         public String CountDataJson { get; set; }
 
-        public AzureDataPOSTer(Context appContext)
+        public AzureDataPOSTer(Context appContext, string countFormType, FieldFormAnswers fieldFormAnswers = null, FeederFormAnswers feederFormAnswers = null, CountWeekFormAnswers countWeekFormAnswers = null)
         {
             CurrentAppContext = appContext;
+            CountFormType = countFormType.ToLower();
+            FieldFormAnswers = fieldFormAnswers;
+            FeederFormAnswers = feederFormAnswers;
+            CountWeekFormAnswers = countWeekFormAnswers;
             CountDataJson = "";
         }
 
@@ -23,7 +35,7 @@ namespace ChristmasBirdCountApp.Azure
         {
             try
             {
-                CreateJsonFromCsv();
+                CreateJsonFromCsvAndFormFields();
             }
             catch (Exception ex)
             {
@@ -36,7 +48,27 @@ namespace ChristmasBirdCountApp.Azure
                 // HTTP POST to Azure Function
                 using (var client = new HttpClient())
                 {
-                    var url = "https://genevabirding.azurewebsites.net/api/SendCountResultsEmail?code=QhLJtph6QlC4GICWFAJPlcX37WzDLauDGJo2TzFKLr4gbS8hh9d1lg==";
+                    var url = "";
+
+                    if (CountFormType == "field")
+                    {
+                        // Use Field Report API on Azure
+                        url = "https://genevabirding.azurewebsites.net/api/ProcessAndSaveFieldReport?code=gvzl/Rk1IAWacyeQa7QHaDTfF8AupWK3RpnZkzjc3QIrQnFkikb4SA==";
+                    }
+                    else if (CountFormType == "feeder")
+                    {
+                        // Use Feeder Report API on Azure
+                        url = "";
+                    }
+                    else if (CountFormType == "countweek")
+                    {
+                        // Use Count Week Report API on Azure
+                        url = "";
+                    }
+                    else
+                    {
+                        url = "";   // The Count Form Type Was INVALID
+                    }
 
                     var postBody = new StringContent(CountDataJson, Encoding.UTF8, "application/json");
 
@@ -53,23 +85,51 @@ namespace ChristmasBirdCountApp.Azure
             }
         }
 
-        private void CreateJsonFromCsv()
+        private void CreateJsonFromCsvAndFormFields()
         {
-            List<BirdCount> csvContents = new List<BirdCount>();
-            csvContents = BirdListFile.ReadFinalBirdCountsFromCSV();   // Get the latest bird list stored in the CSV
+            // Serialize the Form Fields as JSON
+            CountDataJson += "[{'formAnswers':";
+
+            if (CountFormType == "field")
+            {
+                // Use Field Form Answers
+                CountDataJson += JsonConvert.SerializeObject(FieldFormAnswers);
+            }
+            else if (CountFormType == "feeder")
+            {
+                // Use Feeder Form Answers
+                CountDataJson += JsonConvert.SerializeObject(FeederFormAnswers);
+            }
+            else if (CountFormType == "countweek")
+            {
+                // Use Count Week Form Answers
+                CountDataJson += JsonConvert.SerializeObject(CountWeekFormAnswers);
+            }
+            else
+            {
+                CountDataJson += "Invalid Form Answers";   // The Count Form Type Was INVALID
+            }
+
+            CountDataJson += "},";
 
             // Serialize Bird Count List Contents as JSON
+            // Get the latest bird list stored in the CSV
+            List<BirdCount> csvContents = new List<BirdCount>();
+            csvContents = BirdListFile.ReadFinalBirdCountsFromCSV();
+
             // Help from: http://www.c-sharpcorner.com/article/json-serialization-and-deserialization-in-c-sharp/
             // Apply Starting Formatting for JSON Array
-            CountDataJson += "]";
+            CountDataJson += "{'birdCounts':[";
 
             foreach (BirdCount bird in csvContents)
             {
                 CountDataJson += JsonConvert.SerializeObject(bird);
+                CountDataJson += ",";
             }
 
             // Apply Ending Formatting for JSON Array
-            CountDataJson += "]";
+            CountDataJson.Remove(CountDataJson.LastIndexOf(","), 1);        // Remove the last comma that was not needed
+            CountDataJson += "]}]";
         }
     }
 }
