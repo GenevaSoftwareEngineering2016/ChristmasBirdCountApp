@@ -58,12 +58,12 @@ namespace ChristmasBirdCountApp.Azure
                     else if (CountFormType == "feeder")
                     {
                         // Use Feeder Report API on Azure
-                        url = "";
+                        url = "https://genevabirding.azurewebsites.net/api/ProcessAndSaveFeederReport?code=jFcwkNu9yXMxGy6JXVS6psmRUaYWMQddQojgqbn1Zlbs5/h2JHwjpw==";
                     }
                     else if (CountFormType == "countweek")
                     {
                         // Use Count Week Report API on Azure
-                        url = "";
+                        url = "https://genevabirding.azurewebsites.net/api/ProcessAndSaveCountWeekReport?code=gvzl/Rk1IAWacyeQa7QHaDTfF8AupWK3RpnZkzjc3QIrQnFkikb4SA==";
                     }
                     else
                     {
