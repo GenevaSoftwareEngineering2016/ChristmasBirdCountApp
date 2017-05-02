@@ -64,7 +64,7 @@ namespace ChristmasBirdCountApp.Azure
                     else if (CountFormType == "countweek")
                     {
                         // Use Count Week Report API on Azure
-                        url = "https://genevabirding.azurewebsites.net/api/ProcessAndSaveCountWeekReport?code=gvzl/Rk1IAWacyeQa7QHaDTfF8AupWK3RpnZkzjc3QIrQnFkikb4SA==";
+                        url = "https://genevabirding.azurewebsites.net/api/ProcessAndSaveCountWeekReport?code=nF1RBAiYbPyQacxyp2UXfZ4vPbzy3CcleecX9V7su1KD9zmD4c9gKQ==";
                     }
                     else
                     {
