@@ -225,34 +225,34 @@ namespace ChristmasBirdCountApp.Email
                 return;
             }
 
-            // Create the Body of the Email Message
-            StringBuilder emailBodyText = new StringBuilder();
-            emailBodyText.AppendLine("Christmas Bird Count Results\n");
-            emailBodyText.AppendLine(currentDateTime + "\n");
-            emailBodyText.AppendLine("Count Circle: " + _countCircleCode.Text + "\n");
-            emailBodyText.AppendLine("Count Type: Count Week");
-            emailBodyText.AppendLine("--------------------------------------\n");
+            //// Create the Body of the Email Message
+            //StringBuilder emailBodyText = new StringBuilder();
+            //emailBodyText.AppendLine("Christmas Bird Count Results\n");
+            //emailBodyText.AppendLine(currentDateTime + "\n");
+            //emailBodyText.AppendLine("Count Circle: " + _countCircleCode.Text + "\n");
+            //emailBodyText.AppendLine("Count Type: Count Week");
+            //emailBodyText.AppendLine("--------------------------------------\n");
 
-            emailBodyText.AppendLine("\n");
-            emailBodyText.AppendLine("Counter: " + _counterName.Text + "\n");
-            emailBodyText.AppendLine("Phone: " + _counterPhone.Text + "\n");
-            emailBodyText.AppendLine("Email: " + _counterEmail.Text + "\n");
-            emailBodyText.AppendLine("Address:" + "\n");
-            emailBodyText.AppendLine(_street.Text + "\n");
-            emailBodyText.AppendLine(_city.Text + ", " + _state.SelectedItem.ToString() + " " + _zip.Text + "\n");
-            emailBodyText.AppendLine("\n");
+            //emailBodyText.AppendLine("\n");
+            //emailBodyText.AppendLine("Counter: " + _counterName.Text + "\n");
+            //emailBodyText.AppendLine("Phone: " + _counterPhone.Text + "\n");
+            //emailBodyText.AppendLine("Email: " + _counterEmail.Text + "\n");
+            //emailBodyText.AppendLine("Address:" + "\n");
+            //emailBodyText.AppendLine(_street.Text + "\n");
+            //emailBodyText.AppendLine(_city.Text + ", " + _state.SelectedItem.ToString() + " " + _zip.Text + "\n");
+            //emailBodyText.AppendLine("\n");
 
-            emailBodyText.AppendLine("Total Number of Bird Species Seen: " + MainActivity.totalSpeciesSeen.ToString() + "\n");
-            emailBodyText.AppendLine("Total Number of All Birds Seen: " + MainActivity.totalBirdsSeen.ToString() + "\n");
-            emailBodyText.AppendLine("Notes: " + _optionalNotes.Text);
+            //emailBodyText.AppendLine("Total Number of Bird Species Seen: " + MainActivity.totalSpeciesSeen.ToString() + "\n");
+            //emailBodyText.AppendLine("Total Number of All Birds Seen: " + MainActivity.totalBirdsSeen.ToString() + "\n");
+            //emailBodyText.AppendLine("Notes: " + _optionalNotes.Text);
 
-            // Create and Send the Email Message
-            Email emailToSend = new Email();
+            //// Create and Send the Email Message
+            //Email emailToSend = new Email();
 
-            emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _countCircleCode.Text + " Count Week", emailBodyText);
+            //emailToSend.CreateEmailMessage(_recipientEmail.Text, "Christmas Bird Count Results: " + currentDateTime + " " + _countCircleCode.Text + " Count Week", emailBodyText);
 
-            // Send the Email - We Are Adding an Attachment
-            emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);
+            //// Send the Email - We Are Adding an Attachment
+            //emailSent = emailToSend.SendEmail(true, BirdListFile.FilePath);
 
             // Put all the answers typed into the GUI form into an object (a list of sorts)
             CountWeekFormAnswers countWeekFormAnswers = new CountWeekFormAnswers
@@ -277,14 +277,14 @@ namespace ChristmasBirdCountApp.Email
             AzureDataPOSTer dataPOSTer = new AzureDataPOSTer(this.ApplicationContext, "countweek", null, null, countWeekFormAnswers);
             bool dataSentToAzure = dataPOSTer.PerformPostAgainstAzureFunctionApi();
 
-            if (emailSent && dataSentToAzure)
+            if (dataSentToAzure) //if (emailSent && dataSentToAzure)
             {
                 Toast.MakeText(this, "Report submitted!", ToastLength.Short).Show();
             }
-            else if (!emailSent)
-            {
-                Toast.MakeText(this, "Unable to send email.", ToastLength.Short).Show();
-            }
+            //else if (!emailSent)
+            //{
+            //    Toast.MakeText(this, "Unable to send email.", ToastLength.Short).Show();
+            //}
             else
             {
                 Toast.MakeText(this, "Unable to send data to Azure API.", ToastLength.Short).Show();

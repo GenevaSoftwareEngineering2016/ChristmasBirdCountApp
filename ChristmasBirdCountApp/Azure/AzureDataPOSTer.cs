@@ -1,4 +1,5 @@
-﻿using System;
+﻿// (c) 2017 Geneva College Senior Software Project Team
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
