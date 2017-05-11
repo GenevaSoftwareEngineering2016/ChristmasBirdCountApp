@@ -1,0 +1,5057 @@
+[
+  {
+    "formAnswers": [
+      {
+        "ReportSubmissionTime": "4/24/2017 8:49:22 PM",
+        "RecipientEmail": "adcaldwe@geneva.edu",
+        "PartyMembers": "Austin",
+        "PartySize": "1",
+        "CountCircleCode": "BF-00011",
+        "CountType": "Field",
+        "TeamLeaderName": "Joel Mason",
+        "TeamLeaderPhone": "123-456-1920",
+        "TeamLeaderEmail": "joelxyz@gmail2.com",
+        "Street": "123 Birding Way",
+        "City": "Beaver Falls",
+        "State": "Pennsylvania",
+        "Zip": "15010",
+        "StartTime1": "12:00 AM",
+        "EndTime1": "01:30 AM",
+        "StartTime2": "N/A",
+        "EndTime2": "N/A",
+        "HoursDriven": "10",
+        "MilesDriven": "1.0",
+        "HoursWalked": "5.5",
+        "MilesWalked": "5",
+        "HoursOwling": "3.4",
+        "OptionalNotes": "A simple note.",
+        "TotalBirdSpeciesSeen": "2",
+        "TotalBirdsSeen": "5"
+      }
+    ]
+  },
+  {
+    "birdCounts": [
+      {
+        "Name": "Black-bellied Whistling-Duck",
+        "Count": 2,
+        "InList": true
+      },
+      {
+        "Name": "Fulvous Whistling-Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Taiga Bean-Goose",
+        "Count": 3,
+        "InList": true
+      },
+      {
+        "Name": "Tundra Bean-Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pink-footed Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Greater White-fronted Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser White-fronted Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Graylag Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Emperor Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Snow Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ross's Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brant",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Barnacle Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cackling Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Canada Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mute Swan",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Trumpeter Swan",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tundra Swan",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Whooper Swan",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Egyptian Goose",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Muscovy Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wood Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gadwall",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Falcated Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Wigeon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Wigeon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Black Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mallard",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mottled Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Spot-billed Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue-winged Teal",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cinnamon Teal",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Shoveler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-cheeked Pintail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Pintail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Garganey",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Baikal Teal",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Green-winged Teal",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Canvasback",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Redhead",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Pochard",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ring-necked Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tufted Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Greater Scaup",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser Scaup",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Steller's Eider",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spectacled Eider",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "King Eider",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Eider",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Harlequin Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Labrador Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Surf Scoter",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-winged Scoter",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Scoter",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Scoter",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Long-tailed Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bufflehead",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Goldeneye",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Barrow's Goldeneye",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Smew",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hooded Merganser",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Merganser",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-breasted Merganser",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Masked Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ruddy Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Plain Chachalaca",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mountain Quail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Bobwhite",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Scaled Quail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "California Quail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gambel's Quail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Montezuma Quail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chukar",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Himalayan Snowcock",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Partridge",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ring-necked Pheasant",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ruffed Grouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Greater Sage-Grouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gunnison Sage-Grouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spruce Grouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Willow Ptarmigan",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rock Ptarmigan",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-tailed Ptarmigan",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dusky Grouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sooty Grouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sharp-tailed Grouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Greater Prairie-Chicken",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser Prairie-Chicken",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wild Turkey",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Flamingo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Least Grebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pied-billed Grebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Horned Grebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-necked Grebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eared Grebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Grebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Clark's Grebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rock Pigeon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Scaly-naped Pigeon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-crowned Pigeon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-billed Pigeon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Band-tailed Pigeon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Oriental Turtle-Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "European Turtle-Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Collared-Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spotted Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Passenger Pigeon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Inca Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Ground-Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ruddy Ground-Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ruddy Quail-Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Key West Quail-Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-tipped Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-winged Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Zenaida Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mourning Dove",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Cuckoo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Oriental Cuckoo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-billed Cuckoo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mangrove Cuckoo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-billed Cuckoo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Greater Roadrunner",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Smooth-billed Ani",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Groove-billed Ani",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser Nighthawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Nighthawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Antillean Nighthawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Pauraque",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Poorwill",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chuck-will's-widow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Buff-collared Nightjar",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Whip-poor-will",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mexican Whip-poor-will",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Nightjar",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Swift",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-collared Swift",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chimney Swift",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Vaux's Swift",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-throated Needletail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Swift",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Fork-tailed Swift",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-throated Swift",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Antillean Palm-Swift",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mexican Violetear",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Green-breasted Mango",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Magnificent Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Plain-capped Starthroat",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue-throated Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bahama Woodstar",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lucifer Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ruby-throated Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-chinned Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Anna's Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Costa's Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bumblebee Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Broad-tailed Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rufous Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Allen's Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Calliope Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Broad-billed Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Berylline Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Buff-bellied Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cinnamon Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Violet-crowned Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-eared Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Xantus's Hummingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow Rail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Rail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Corn Crake",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ridgway's Rail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Clapper Rail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "King Rail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Virginia Rail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rufous-necked Wood-Rail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sora",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Paint-billed Crake",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spotted Rail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Purple Swamphen",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Purple Gallinule",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Gallinule",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Moorhen",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Coot",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Coot",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sungrebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Limpkin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sandhill Crane",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Crane",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Whooping Crane",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Double-striped Thick-knee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-winged Stilt",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-necked Stilt",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Avocet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Oystercatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Oystercatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Oystercatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Lapwing",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-bellied Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "European Golden-Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Golden-Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pacific Golden-Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser Sand-Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Greater Sand-Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Collared Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Snowy Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wilson's Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Ringed Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Semipalmated Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Piping Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Little Ringed Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Killdeer",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mountain Plover",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Dotterel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Jacana",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Upland Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Little Curlew",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eskimo Curlew",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Whimbrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bristle-thighed Curlew",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Far Eastern Curlew",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Slender-billed Curlew",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Curlew",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Long-billed Curlew",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-tailed Godwit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hudsonian Godwit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bar-tailed Godwit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Marbled Godwit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ruddy Turnstone",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Turnstone",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Knot",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red Knot",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Surfbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ruff",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Broad-billed Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sharp-tailed Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Stilt Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Curlew Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Temminck's Stint",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Long-toed Stint",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spoon-billed Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-necked Stint",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sanderling",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dunlin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rock Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Purple Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Baird's Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Little Stint",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Least Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-rumped Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Buff-breasted Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pectoral Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Semipalmated Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Short-billed Dowitcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Long-billed Dowitcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Jack Snipe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wilson's Snipe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Snipe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pin-tailed Snipe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Solitary Snipe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Woodcock",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Woodcock",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Terek Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spotted Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Green Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Solitary Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray-tailed Tattler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wandering Tattler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spotted Redshank",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Greater Yellowlegs",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Greenshank",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Willet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser Yellowlegs",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Marsh Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wood Sandpiper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Redshank",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wilson's Phalarope",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-necked Phalarope",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red Phalarope",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Oriental Pratincole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Skua",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "South Polar Skua",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pomarine Jaeger",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Parasitic Jaeger",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Long-tailed Jaeger",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dovekie",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Murre",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Thick-billed Murre",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Razorbill",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Auk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Guillemot",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pigeon Guillemot",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Long-billed Murrelet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Marbled Murrelet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Kittlitz's Murrelet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Scripps's Murrelet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Guadalupe Murrelet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Craveri's Murrelet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ancient Murrelet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cassin's Auklet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Parakeet Auklet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Least Auklet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Whiskered Auklet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Crested Auklet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rhinoceros Auklet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Atlantic Puffin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Horned Puffin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tufted Puffin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Swallow-tailed Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-legged Kittiwake",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-legged Kittiwake",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ivory Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sabine's Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bonaparte's Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray-hooded Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-headed Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Little Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ross's Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Laughing Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Franklin's Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Belcher's Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-tailed Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Heermann's Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mew Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ring-billed Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-footed Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "California Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Herring Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-legged Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Thayer's Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Iceland Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser Black-backed Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Slaty-backed Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Glaucous-winged Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Glaucous Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Black-backed Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Kelp Gull",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown Noddy",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Noddy",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sooty Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bridled Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Aleutian Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Least Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Large-billed Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gull-billed Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Caspian Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-winged Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Whiskered Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Roseate Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Arctic Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Forster's Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Royal Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sandwich Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Elegant Tern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Skimmer",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-tailed Tropicbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-billed Tropicbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-tailed Tropicbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-throated Loon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Arctic Loon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pacific Loon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Loon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-billed Loon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-nosed Albatross",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-capped Albatross",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Salvin's Albatross",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-browed Albatross",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Light-mantled Albatross",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wandering Albatross",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Laysan Albatross",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-footed Albatross",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Short-tailed Albatross",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Fulmar",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great-winged Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Providence Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Trindade Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Murphy's Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mottled Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bermuda Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-capped Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hawaiian Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Fea's Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Zino's Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cook's Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Stejneger's Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bulwer's Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-chinned Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Parkinson's Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Streaked Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cory's Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cape Verde Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wedge-tailed Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Buller's Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Short-tailed Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sooty Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pink-footed Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Flesh-footed Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Manx Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Newell's Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-vented Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Audubon's Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Barolo Shearwater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wilson's Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-faced Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "European Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-bellied Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Fork-tailed Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ringed Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Swinhoe's Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Leach's Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Townsend's Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ashy Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Band-rumped Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wedge-rumped Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tristram's Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Least Storm-Petrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Jabiru",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wood Stork",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Magnificent Frigatebird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Frigatebird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser Frigatebird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Masked Booby",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue-footed Booby",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown Booby",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-footed Booby",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Gannet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brandt's Cormorant",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Neotropic Cormorant",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Double-crested Cormorant",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Cormorant",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-faced Cormorant",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pelagic Cormorant",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Anhinga",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American White Pelican",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown Pelican",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Bittern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow Bittern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Least Bittern",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bare-throated Tiger-Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Blue Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Egret",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Intermediate Egret",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chinese Egret",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Little Egret",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Reef-Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Snowy Egret",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Little Blue Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tricolored Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Reddish Egret",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cattle Egret",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chinese Pond-Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Green Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-crowned Night-Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-crowned Night-Heron",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White Ibis",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Scarlet Ibis",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Glossy Ibis",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-faced Ibis",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Roseate Spoonbill",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Vulture",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Turkey Vulture",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "California Condor",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Osprey",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hook-billed Kite",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Swallow-tailed Kite",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-tailed Kite",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Snail Kite",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Double-toothed Kite",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mississippi Kite",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bald Eagle",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-tailed Eagle",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Steller's Sea-Eagle",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Harrier",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sharp-shinned Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cooper's Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Goshawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Crane Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Black Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Roadside Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Harris's Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-tailed Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-shouldered Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Broad-winged Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Short-tailed Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Swainson's Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Zone-tailed Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-tailed Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rough-legged Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ferruginous Hawk",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Golden Eagle",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Barn Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Flammulated Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Oriental Scops-Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Screech-Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Screech-Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Whiskered Screech-Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Horned Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Snowy Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Hawk Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Pygmy-Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ferruginous Pygmy-Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Elf Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Burrowing Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mottled Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spotted Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Barred Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Gray Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Long-eared Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Stygian Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Short-eared Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Boreal Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Saw-whet Owl",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Boobook",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Elegant Trogon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eared Quetzal",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Hoopoe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ringed Kingfisher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Belted Kingfisher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Amazon Kingfisher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Green Kingfisher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Wryneck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lewis's Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-headed Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Acorn Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gila Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Golden-fronted Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-bellied Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Williamson's Sapsucker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-bellied Sapsucker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-naped Sapsucker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-breasted Sapsucker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Spotted Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ladder-backed Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Nuttall's Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Downy Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hairy Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Arizona Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-cockaded Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-headed Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Three-toed Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-backed Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Flicker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gilded Flicker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pileated Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ivory-billed Woodpecker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Collared Forest-Falcon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Crested Caracara",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Kestrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Kestrel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-footed Falcon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Merlin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Hobby",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Aplomado Falcon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gyrfalcon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Peregrine Falcon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Prairie Falcon",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rosy-faced Lovebird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Monk Parakeet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Carolina Parakeet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Nanday Parakeet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Green Parakeet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Thick-billed Parrot",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-winged Parakeet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-crowned Parrot",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Beardless-Tyrannulet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Greenish Elaenia",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-crested Elaenia",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tufted Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Olive-sided Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Greater Pewee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Wood-Pewee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Wood-Pewee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cuban Pewee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-bellied Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Acadian Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Alder Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Willow Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Least Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hammond's Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dusky Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pacific-slope Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cordilleran Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Buff-breasted Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Phoebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Phoebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Say's Phoebe",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Vermilion Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dusky-capped Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ash-throated Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Nutting's Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Crested Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown-crested Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "La Sagra's Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great Kiskadee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Social Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sulphur-bellied Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Piratic Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Variegated Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Crowned Slaty Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tropical Kingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Couch's Kingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cassin's Kingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Thick-billed Kingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Kingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Kingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Kingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Loggerhead Kingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Scissor-tailed Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Fork-tailed Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Masked Tityra",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray-collared Becard",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rose-throated Becard",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown Shrike",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Loggerhead Shrike",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Shrike",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-capped Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-eyed Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Thick-billed Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bell's Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hutton's Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-throated Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cassin's Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue-headed Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Plumbeous Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Philadelphia Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Warbling Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-eyed Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-green Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-whiskered Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yucatan Vireo",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Green Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pinyon Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Steller's Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Florida Scrub-Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Island Scrub-Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "California Scrub-Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Woodhouse’s Scrub-Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mexican Jay",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Clark's Nutcracker",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-billed Magpie",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-billed Magpie",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Jackdaw",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Crow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northwestern Crow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tamaulipas Crow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Fish Crow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chihuahuan Raven",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Raven",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Skylark",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Horned Lark",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Purple Martin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cuban Martin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray-breasted Martin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Southern Martin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown-chested Martin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tree Swallow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mangrove Swallow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Violet-green Swallow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bahama Swallow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Rough-winged Swallow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bank Swallow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cliff Swallow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cave Swallow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Barn Swallow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common House-Martin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Carolina Chickadee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-capped Chickadee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mountain Chickadee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mexican Chickadee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chestnut-backed Chickadee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Boreal Chickadee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray-headed Chickadee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bridled Titmouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Oak Titmouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Juniper Titmouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tufted Titmouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-crested Titmouse",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Verdin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bushtit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-breasted Nuthatch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-breasted Nuthatch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pygmy Nuthatch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown-headed Nuthatch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown Creeper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rock Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Canyon Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "House Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pacific Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Winter Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sedge Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Marsh Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Carolina Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bewick's Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cactus Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sinaloa Wren",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue-gray Gnatcatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "California Gnatcatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-tailed Gnatcatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-capped Gnatcatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Dipper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-whiskered Bulbul",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Golden-crowned Kinglet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ruby-crowned Kinglet",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Willow Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Chiffchaff",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wood Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dusky Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pallas's Leaf Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-browed Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Arctic Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Kamchatka Leaf Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser Whitethroat",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wrentit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sedge Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blyth's Reed-Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Middendorff's Grasshopper-Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lanceolated Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray-streaked Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Asian Brown Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spotted Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dark-sided Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rufous-tailed Robin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Siberian Rubythroat",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bluethroat",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Siberian Blue Robin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-flanked Bluetail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Narcissus Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mugimaki Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Taiga Flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Wheatear",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Redstart",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Stonechat",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Bluebird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Bluebird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mountain Bluebird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Townsend's Solitaire",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown-backed Solitaire",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Orange-billed Nightingale-Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-headed Nightingale-Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Veery",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray-cheeked Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bicknell's Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Swainson's Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hermit Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wood Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Blackbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eyebrowed Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dusky Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Fieldfare",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Redwing",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Song Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Clay-colored Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-throated Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rufous-backed Robin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Robin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-legged Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Varied Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Aztec Thrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue Mockingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Catbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Curve-billed Thrasher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown Thrasher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Long-billed Thrasher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bendire's Thrasher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "California Thrasher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Le Conte's Thrasher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Crissal Thrasher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sage Thrasher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bahama Mockingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Mockingbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "European Starling",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Myna",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bohemian Waxwing",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cedar Waxwing",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Silky-flycatcher",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Phainopepla",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Olive Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Siberian Accentor",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Scaly-breasted Munia",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "House Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Tree Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Yellow Wagtail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Citrine Wagtail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Wagtail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White Wagtail",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tree Pipit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Olive-backed Pipit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pechora Pipit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-throated Pipit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Pipit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sprague's Pipit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Chaffinch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brambling",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Asian Rosy-Finch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray-crowned Rosy-Finch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black Rosy-Finch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown-capped Rosy-Finch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pine Grosbeak",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Bullfinch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Rosefinch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pallas's Rosefinch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "House Finch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Purple Finch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cassin's Finch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red Crossbill",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-winged Crossbill",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Redpoll",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hoary Redpoll",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Siskin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pine Siskin",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lesser Goldfinch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lawrence's Goldfinch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Goldfinch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Oriental Greenfinch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Evening Grosbeak",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hawfinch",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lapland Longspur",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chestnut-collared Longspur",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Smith's Longspur",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "McCown's Longspur",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Snow Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "McKay's Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Ovenbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Worm-eating Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Louisiana Waterthrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Waterthrush",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bachman's Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Golden-winged Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue-winged Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-and-white Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Prothonotary Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Swainson's Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Crescent-chested Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tennessee Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Orange-crowned Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Colima Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lucy's Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Nashville Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Virginia's Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Connecticut Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray-crowned Yellowthroat",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "MacGillivray's Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Mourning Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Kentucky Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Yellowthroat",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hooded Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Redstart",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Kirtland's Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cape May Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cerulean Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Parula",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tropical Parula",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Magnolia Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bay-breasted Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blackburnian Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chestnut-sided Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blackpoll Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-throated Blue Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Palm Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pine Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-rumped Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-throated Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Prairie Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Grace's Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-throated Gray Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Townsend's Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hermit Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Golden-cheeked Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-throated Green Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Fan-tailed Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rufous-capped Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Golden-crowned Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Canada Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Wilson's Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-faced Warbler",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Painted Redstart",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Slate-throated Redstart",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-breasted Chat",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Spindalis",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-legged Honeycreeper",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bananaquit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-faced Grassquit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-faced Grassquit",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-collared Seedeater",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Olive Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Green-tailed Towhee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spotted Towhee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Towhee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rufous-crowned Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Canyon Towhee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "California Towhee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Abert's Towhee",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rufous-winged Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Botteri's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Cassin's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bachman's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "American Tree Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chipping Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Clay-colored Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brewer's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Field Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Worthen's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-chinned Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Vesper Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lark Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Five-striped Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-throated Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sagebrush Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bell's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lark Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Savannah Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Grasshopper Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Baird's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Henslow's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Le Conte's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Nelson's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Saltmarsh Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Seaside Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Fox Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Song Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lincoln's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Swamp Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-throated Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Harris's Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "White-crowned Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Golden-crowned Sparrow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dark-eyed Junco",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-eyed Junco",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pine Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-browed Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Little Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rustic Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-throated Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-breasted Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gray Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pallas's Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Reed Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hepatic Tanager",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Summer Tanager",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Scarlet Tanager",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Tanager",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Flame-colored Tanager",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Crimson-collared Grosbeak",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Northern Cardinal",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Pyrrhuloxia",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow Grosbeak",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rose-breasted Grosbeak",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-headed Grosbeak",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Blue Grosbeak",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Lazuli Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Indigo Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Varied Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Painted Bunting",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Dickcissel",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bobolink",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Red-winged Blackbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tricolored Blackbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tawny-shouldered Blackbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eastern Meadowlark",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Western Meadowlark",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Yellow-headed Blackbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Rusty Blackbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brewer's Blackbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Grackle",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Boat-tailed Grackle",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Great-tailed Grackle",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Shiny Cowbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bronzed Cowbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Brown-headed Cowbird",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Black-vented Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Orchard Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hooded Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Streak-backed Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Bullock's Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Spot-breasted Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Altamira Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Audubon's Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Baltimore Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Scott's Oriole",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Duck Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Merganser Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Gull Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Hawk Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Accipiter Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Buteo Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Owl Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Woodpecker Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chickadee Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Finch Species",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Sparrow Species",
+        "Count": 0,
+        "InList": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "formAnswers":
+      {
+        "ReportSubmissionTime": "4/24/2017 8:49:22 PM",
+        "RecipientEmail": "adcaldwe@geneva.edu",
+        "PartyMembers": "Austin",
+        "PartySize": "1",
+        "CountCircleCode": "BF-00011",
+        "CountType": "Field",
+        "TeamLeaderName": "Joel Mason",
+        "TeamLeaderPhone": "123-456-1920",
+        "TeamLeaderEmail": "joelxyz@gmail2.com",
+        "Street": "123 Birding Way",
+        "City": "Beaver Falls",
+        "State": "Pennsylvania",
+        "Zip": "15010",
+        "StartTime1": "12:00 AM",
+        "EndTime1": "01:30 AM",
+        "StartTime2": "N/A",
+        "EndTime2": "N/A",
+        "HoursDriven": "10",
+        "MilesDriven": "1.0",
+        "HoursWalked": "5.5",
+        "MilesWalked": "5",
+        "HoursOwling": "3.4",
+        "OptionalNotes": "A simple note.",
+        "TotalBirdSpeciesSeen": "2",
+        "TotalBirdsSeen": "5"
+      }
+  },
+  {
+    "birdCounts": [
+      {
+        "Name": "Black-bellied Whistling-Duck",
+        "Count": 2,
+        "InList": true
+      },
+      {
+        "Name": "Fulvous Whistling-Duck",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Taiga Bean-Goose",
+        "Count": 3,
+        "InList": true
+      },
+      {
+        "Name": "Northwestern Crow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Tamaulipas Crow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Fish Crow",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Chihuahuan Raven",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Common Raven",
+        "Count": 0,
+        "InList": false
+      },
+      {
+        "Name": "Eurasian Skylark",
+        "Count": 0,
+        "InList": false
+      }
+    ]
+  }
+]

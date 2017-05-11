@@ -1,0 +1,10 @@
+{
+  "frameworks": {
+    "net46":{
+      "dependencies": {
+        "MailKit": "1.14.2",
+        "MimeKit": "1.14.1"
+      }
+    }
+   }
+}
